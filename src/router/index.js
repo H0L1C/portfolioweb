@@ -1,29 +1,43 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Router from 'vue-router'
+import Top from '@/components/Top'
+import Gallery from '@/components/Gallery'
+import 'lazysizes'
+import 'mailgo'
+import VScrollLock from 'v-scroll-lock'
 
-Vue.use(VueRouter)
+let VueScrollTo = require('vue-scrollto');
 
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
+Vue.use(VueScrollTo)
+Vue.use(VScrollLock)
+Vue.use(Router)
+
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Top',
+      component: Top
+    },
+    {
+      path: '/Gallery',
+      name: 'Gallery',
+      component: Gallery
+    }
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
     }
   }
-]
 
-const router = new VueRouter({
-  routes
 })
 
-export default router
+
+
+
+
+
+
