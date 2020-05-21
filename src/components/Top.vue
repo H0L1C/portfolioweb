@@ -1,6 +1,6 @@
 <template>
   <div id="main" class="main">
-    <div class="title">
+    <div class="title" id="Home">
       <h1>H0L1C Portfolio</h1>
       <a href="#">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.12 23.56" class="arrow">
@@ -28,8 +28,19 @@
       </li>
     </ul>
     <h2 id="About">About</h2>
+    <div class="myProfile"></div>
     <h2 id="Work">Work</h2>
+    <div class="projectList">
+      <div v-for="{ id, name } in list" :key="id" class="projectItem">
+        <router-link :to="`/project/${ id }`" class="projectLink">{{ name }}</router-link>
+      </div>
+    </div>
+
     <h2 id="Contact">Contact</h2>
+    <div class="contactList">
+      <div class="contactItem"></div>
+      <div class="contactItem"></div>
+    </div>
   </div>
 </template>
 
@@ -73,6 +84,45 @@
   border-color: var(--main-bg) !important;
 }
 
+h2 {
+  margin: 60px 0 40px 0;
+}
+
+.myProfile {
+  height: 400px;
+  width: 50%;
+  margin: auto;
+  border: solid 1px var(--main-text);
+}
+
+.projectList {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.projectItem {
+  width: 300px;
+  height: 300px;
+  margin: 20px 0;
+  border: solid 1px var(--main-text);
+}
+
+.contactList {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contactItem {
+  width: 300px;
+  height: 450px;
+  border: solid 1px var(--main-text);
+}
+
 @-webkit-keyframes scrollanim {
   0% {
     -webkit-transform: translate(0, 0);
@@ -99,12 +149,18 @@
     opacity: 0;
   }
 }
+
+.projectLink {
+  display: block;
+  height: 300px;
+}
 </style>
 
 <script>
+import products from "@/project.js";
 export default {
-  data() {
-    return {};
+  computed: {
+    list: () => products.fetch()
   }
 };
 </script>

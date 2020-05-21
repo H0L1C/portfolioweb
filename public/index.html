@@ -24,12 +24,18 @@
 
 <body class="light-theme">
   <div id="app"></div>
+  <footer>
+    <p>&copy; 2020
+      <script>new Date().getFullYear() > 2010 && document.write("-" + new Date().getFullYear());</script>
+      ,
+      H0L1C.</p>
+  </footer>
 </body>
 
 <script>
-  const btn = document.querySelector("#btn-mode");
-  btn.addEventListener("change", () => {
-    if (btn.checked == true) {
+  const BTN = document.querySelector("#btn-mode");
+  BTN.addEventListener("change", () => {
+    if (BTN.checked == true) {
       document.body.classList.remove("light-theme");
       document.body.classList.add("dark-theme");
     } else {

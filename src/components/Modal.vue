@@ -1,7 +1,7 @@
 <template>
   <div class="overlay">
     <div class="content" >
-      <img :src="list.image" />
+      <img :src="list.image" class="lazyload"> 
       <p>説明：{{ list.title }}</p>
       <p>作業範囲：{{ list.range }}</p>
       <p>使用技術：{{ list.lang }}</p>

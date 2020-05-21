@@ -274,7 +274,7 @@ span {
 }
 
 .menuList {
-  position: absolute;
+  position: fixed;
   display: inline-block;
   top: 60px;
   right: 60px;
@@ -311,6 +311,15 @@ span {
   text-align: center;
   width: 100%;
   overflow: hidden;
+}
+
+footer {
+  margin-top: 160px;
+  height: 40px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  opacity: 0.5;
 }
 
 @media (prefers-color-scheme: dark) {
