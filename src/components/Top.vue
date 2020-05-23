@@ -1,4 +1,4 @@
-<template>
+2<template>
   <div id="main" class="main">
     <div class="title" id="Home">
       <h1>H0L1C Portfolio</h1>
@@ -28,7 +28,14 @@
       </li>
     </ul>
     <h2 id="About">About</h2>
-    <div class="myProfile"></div>
+    <div class="myProfile">
+      <lottie
+        :options="defaultOptions"
+        :height="400"
+        :width="400"
+        v-on:animCreated="handleAnimation"
+      />
+    </div>
     <h2 id="Work">Work</h2>
     <div class="projectList">
       <div v-for="{ id, name } in list" :key="id" class="projectItem">
@@ -157,8 +164,40 @@ h2 {
 </style>
 
 <script>
+import Lottie from "./lottie.vue";
+import * as animationData from "../assets/data.json";
 import products from "@/project.js";
 export default {
+  components: {
+    lottie: Lottie
+  },
+  data() {
+    return {
+      defaultOptions: { animationData: animationData },
+      animationSpeed: 1
+    };
+  },
+  methods: {
+    handleAnimation: function(anim) {
+      this.anim = anim;
+    },
+
+    stop: function() {
+      this.anim.stop();
+    },
+
+    play: function() {
+      this.anim.play();
+    },
+
+    pause: function() {
+      this.anim.pause();
+    },
+
+    onSpeedChange: function() {
+      this.anim.setSpeed(this.animationSpeed);
+    }
+  },
   computed: {
     list: () => products.fetch()
   }
