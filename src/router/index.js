@@ -5,16 +5,13 @@ import Gallery from '@/components/Gallery'
 import Project from '@/components/Project'
 import 'lazysizes'
 import 'mailgo'
-
 import VScrollLock from 'v-scroll-lock'
-
 
 let VueScrollTo = require('vue-scrollto');
 
-Vue.use(Router)
 Vue.use(VueScrollTo)
 Vue.use(VScrollLock)
-
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
@@ -38,7 +35,7 @@ export default new Router({
       })
     },
   ],
-
+  
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
