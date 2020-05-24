@@ -18,29 +18,74 @@
         <p class="HomeLink" v-scroll-to="'#Home'">Home</p>
       </li>
       <li>
-        <p class="AboutLink" v-scroll-to="'#About'">About</p>
+        <p
+          class="AboutLink"
+          v-scroll-to="{
+          el:'#About',
+          offset:-60,
+        }"
+        >About</p>
       </li>
       <li>
-        <p class="WorkLink" v-scroll-to="'#Work'">Work</p>
+        <p
+          class="WorkLink"
+          v-scroll-to="{
+          el:'#Work',
+          offset:-60,
+        }"
+        >Work</p>
       </li>
       <li>
-        <p class="ContactLink" v-scroll-to="'#Contact'">Contact</p>
+        <p
+          class="ContactLink"
+          v-scroll-to="{
+          el:'#Contact',
+          offset:-60,
+        }"
+        >Contact</p>
       </li>
     </ul>
+
     <h2 id="About">About</h2>
-    <div class="myProfile"></div>
+    <dl class="myProfile">
+      <dt class="myIcon">
+        <div class="myName">
+          <h3>H0L1C</h3>
+        </div>
+        <div class="myImg"></div>
+      </dt>
+      <dd class="profileText">
+        <h3>Profile</h3>
+        <p>
+          1999年生まれ
+          <br />映像・グラフィックデザイン・Webコンテンツなどを制作しています
+          <br />ご依頼はTwitterDM・E-mailにて受け付けております
+        </p>
+        <h3 class="skill">Skill</h3>
+      </dd>
+      <intersect @enter="play">
+        <lottie
+          :options="defaultOptions"
+          :height="216"
+          :width="380"
+          v-on:animCreated="lottieAnimation"
+          class="lottieCanvas"
+        />
+      </intersect>
+    </dl>
+
     <h2 id="Work">Work</h2>
-    <div class="projectList">
-      <div v-for="{ id, name } in list" :key="id" class="projectItem">
+    <dl class="projectList">
+      <dd v-for="{ id, name } in list" :key="id" class="projectItem">
         <router-link :to="`/project/${ id }`" class="projectLink">{{ name }}</router-link>
-      </div>
-    </div>
+      </dd>
+    </dl>
 
     <h2 id="Contact">Contact</h2>
-    <div class="contactList">
-      <div class="contactItem"></div>
-      <div class="contactItem"></div>
-    </div>
+    <dl class="contactList">
+      <dd class="contactItem"></dd>
+      <dd class="contactItem"></dd>
+    </dl>
   </div>
 </template>
 
@@ -85,14 +130,110 @@
 }
 
 h2 {
-  margin: 60px 0 40px 0;
+  margin: 80px 0 40px 0;
+}
+
+.myProfile,
+.projectItem,
+.contactItem {
+  background-color: var(--alpha-bg);
+}
+
+.myProfile,
+.myIcon,
+.profileText,
+.projectItem,
+.contactItem {
+  border-radius: 10px;
+}
+
+.myProfile,
+.projectList,
+.contactList {
+  min-width: 620px;
 }
 
 .myProfile {
-  height: 400px;
+  position: relative;
+  height: 450px;
   width: 50%;
   margin: auto;
-  border: solid 1px var(--main-text);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.myIcon {
+  width: calc(100% - 400px);
+  min-width: 240px;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.myImg {
+  width: 100%;
+  height: calc(100% - 60px);
+  background-image: url(../assets/images/myLogo.svg);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: lighten;
+  background-color: var(--alpha-bg);
+  border-radius: 10px 0 0 0;
+}
+
+.myName {
+  width: 100%;
+  height: 60px;
+  background-color: var(--alpha-bg);
+  border-radius: 0 0 0 10px;
+}
+
+.myName h3 {
+  font-size: 260%;
+  line-height: 60px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.profileText {
+  position: absolute;
+  width: 384px;
+  height: calc(100% - 220px);
+  margin: 0;
+  right: 0;
+  color: var(--main-text);
+}
+
+.profileText h3 {
+  font-size: 160%;
+  padding: 0 10px;
+  margin: 20px;
+  color: var(--main-text);
+  text-align: left;
+  border-left: 8px solid;
+  border-image: linear-gradient(
+      to bottom,
+      var(--sub-color) 0% 50%,
+      var(--main-text) 50% 100%
+    )
+    1;
+}
+
+.profileText p {
+  text-align: left;
+  padding: 5px 20px;
+}
+
+.skill {
+  margin-top: 30px !important;
+}
+
+.lottieCanvas {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .projectList {
@@ -104,7 +245,9 @@ h2 {
 }
 
 .projectItem {
-  width: 300px;
+  width: calc((100% - 40px) / 2);
+  flex-basis: 300px;
+  min-width: 300px;
   height: 300px;
   margin: 20px 0;
   border: solid 1px var(--main-text);
@@ -118,8 +261,10 @@ h2 {
 }
 
 .contactItem {
-  width: 300px;
-  height: 450px;
+  width: calc((100% - 40px) / 2);
+  min-width: 300px;
+  height: 250px;
+  margin: 20px 0;
   border: solid 1px var(--main-text);
 }
 
@@ -157,8 +302,31 @@ h2 {
 </style>
 
 <script>
+import Lottie from "./lottie.vue";
+import * as animationData from "../assets/data.json";
+import Intersect from "vue-intersect";
 import products from "@/project.js";
+
 export default {
+  components: {
+    Lottie,
+    Intersect
+  },
+  data() {
+    return {
+      defaultOptions: { animationData: animationData },
+      animationSpeed: 1
+    };
+  },
+  methods: {
+    lottieAnimation: function(anim) {
+      this.anim = anim;
+    },
+
+    play: function() {
+      this.anim.play();
+    }
+  },
   computed: {
     list: () => products.fetch()
   }

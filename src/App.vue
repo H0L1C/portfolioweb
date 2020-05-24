@@ -101,6 +101,7 @@ body {
   --main-text: #353535;
   --main-bg: #fafafa;
   --sub-color: #eb5160;
+  --alpha-bg: #fafafaca;
 }
 
 input[type="checkbox"] {
@@ -149,6 +150,34 @@ span {
   text-decoration: none;
   margin: 0;
   padding: 0;
+}
+
+h2 {
+  font-size: 200%;
+  position: relative;
+  display: inline-block;
+  padding: 0 45px;
+}
+
+h2::before,
+h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 34px;
+  height: 1px;
+  background-color: var(--main-text);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+
+h2::before{
+  left: 0;
+}
+
+h2::after{
+  right: 0;
 }
 
 .main {
@@ -277,7 +306,7 @@ span {
   position: fixed;
   display: inline-block;
   top: 60px;
-  right: 60px;
+  right: 20px;
   border-top: solid 1px;
   border-bottom: solid 1px;
   padding: 0.5em 1.5em 0.5em 1.5em;
