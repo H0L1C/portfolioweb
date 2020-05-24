@@ -1,16 +1,15 @@
 <template>
-  <div id="app" :class="{'dark': dark}">
+  <div id="app">
     <div class="side">
-      <input id="btn-mode" type="checkbox" @click="toggleMode()" />
       <ul>
         <li>
           <router-link to="/" class="TopPage">
-            <span :class="{'dark': dark}">Top</span>
+            <span>Top</span>
           </router-link>
         </li>
         <li>
           <router-link to="/Gallery" class="GalleryPage">
-            <span :class="{'dark': dark}">Gallery</span>
+            <span>Gallery</span>
           </router-link>
         </li>
         <li>
@@ -56,20 +55,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "App",
-  data() {
-    return {
-      dark: false,
-      toggleMode() {
-        this.dark = !this.dark;
-      }
-    };
-  }
-};
-</script>
-
 <style>
 .v-enter-active,
 .v-leave-active {
@@ -95,6 +80,10 @@ body {
   background: var(--main-bg);
   margin: 0;
   transition: 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 :root {
@@ -102,42 +91,6 @@ body {
   --main-bg: #fafafa;
   --sub-color: #eb5160;
   --alpha-bg: #fafafaca;
-}
-
-input[type="checkbox"] {
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin-top: 20px;
-  background-image: url(../src/assets//images/moon.svg);
-  background-size: contain;
-}
-
-input[type="checkbox"]:checked {
-  display: inline-block;
-  background: url(../src/assets//images/darkmoon.svg);
-  background-size: contain;
-}
-
-.light-theme {
-  background: var(--main-bg);
-  color: var(--main-text);
-  fill: var(--main-bg);
-  stroke: var(--main-text);
-}
-.dark-theme {
-  background: var(--main-text);
-  color: var(--main-bg);
-  fill: var(--main-text);
-  stroke: var(--main-bg);
-}
-
-.dark {
-  color: var(--main-bg) !important;
-  border-color: var(--main-bg) !important;
 }
 
 h1,
@@ -150,6 +103,7 @@ span {
   text-decoration: none;
   margin: 0;
   padding: 0;
+  color: var(--main-text);
 }
 
 h2 {
@@ -172,11 +126,11 @@ h2::after {
   transform: rotate(-60deg);
 }
 
-h2::before{
+h2::before {
   left: 0;
 }
 
-h2::after{
+h2::after {
   right: 0;
 }
 
@@ -351,11 +305,4 @@ footer {
   opacity: 0.5;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--main-bg);
-    color: var(--main-text);
-    transition: 0.5s;
-  }
-}
 </style>

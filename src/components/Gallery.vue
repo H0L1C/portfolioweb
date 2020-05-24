@@ -36,6 +36,7 @@ h1 {
   position: fixed;
   width: 100%;
   z-index: 1;
+  background-color: var(--main-bg);
 }
 
 .BG {

@@ -3,14 +3,7 @@
     <div class="title" id="Home">
       <h1>H0L1C Portfolio</h1>
       <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45.12 23.56" class="arrow">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M1 1l21.56 21.56M44.12 1L22.56 22.56"
-          />
-        </svg>
+        <span></span>
       </a>
     </div>
     <ul class="menuList">
@@ -101,6 +94,7 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-size: 400%;
+  background: none;
 }
 
 .title a {
@@ -112,21 +106,28 @@
   text-decoration: none;
 }
 
-.arrow {
+.title a {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.title a span {
   cursor: default;
   position: absolute;
   top: 0;
   left: 50%;
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   margin-left: -12px;
+  border-left: 2px solid var(--main-text);
+  border-bottom: 2px solid var(--main-text);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
   -webkit-animation: scrollanim 2s infinite;
   animation: scrollanim 2s infinite;
   box-sizing: border-box;
-}
-
-.borderDark {
-  border-color: var(--main-bg) !important;
 }
 
 h2 {
@@ -171,6 +172,21 @@ h2 {
   flex-wrap: wrap;
 }
 
+.myName {
+  width: 100%;
+  height: 60px;
+  background-color: var(--alpha-bg);
+  border-radius: 10px 0 0 0;
+}
+
+.myName h3 {
+  font-size: 260%;
+  line-height: 60px;
+  text-align: left;
+  padding-left: 20px;
+  color: var(--main-text);
+}
+
 .myImg {
   width: 100%;
   height: calc(100% - 60px);
@@ -180,21 +196,7 @@ h2 {
   background-position: center;
   background-blend-mode: lighten;
   background-color: var(--alpha-bg);
-  border-radius: 10px 0 0 0;
-}
-
-.myName {
-  width: 100%;
-  height: 60px;
-  background-color: var(--alpha-bg);
   border-radius: 0 0 0 10px;
-}
-
-.myName h3 {
-  font-size: 260%;
-  line-height: 60px;
-  text-align: left;
-  padding-left: 20px;
 }
 
 .profileText {
@@ -270,27 +272,27 @@ h2 {
 
 @-webkit-keyframes scrollanim {
   0% {
-    -webkit-transform: translate(0, 0);
+    -webkit-transform: rotate(-45deg) translate(0, 0);
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    -webkit-transform: translate(0, 20px);
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;
   }
 }
 @keyframes scrollanim {
   0% {
-    transform: translate(0, 0);
+    transform: rotate(-45deg) translate(0, 0);
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    transform: translate(0, 20px);
+    transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;
   }
 }
