@@ -12,12 +12,6 @@
   </div>
 </template>
 
-<style>
-.loadText {
-  font-family: "Montserrat", sans-serif;
-}
-</style>
-
 <script>
 import project from "@/project.js";
 export default {

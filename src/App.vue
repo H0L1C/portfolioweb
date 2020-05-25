@@ -80,10 +80,6 @@ body {
   background: var(--main-bg);
   margin: 0;
   transition: 0.5s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 :root {
@@ -96,6 +92,7 @@ body {
 h1,
 h2,
 h3,
+h4,
 p,
 a,
 span {

@@ -27,6 +27,10 @@ export default new Router({
       component: Gallery
     },
     {
+      path: '/Project', 
+      component: Top
+    },
+    {
       path: '/Project/:id',
       name: 'Project',
       component: Project,
@@ -35,7 +39,7 @@ export default new Router({
       })
     },
   ],
-  
+
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
