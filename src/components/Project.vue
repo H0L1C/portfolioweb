@@ -9,6 +9,7 @@
       <dt>商品説明</dt>
       <dd>{{ item.content }}</dd>
     </dl>
+    <img class="lazyload" :src="item.image" loading="lazy" alt="My works images" />
   </div>
 </template>
 
@@ -32,6 +33,6 @@ export default {
       },
       immediate: true
     }
-  }
+  },
 };
 </script>

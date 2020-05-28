@@ -170,25 +170,24 @@ h2::after {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   transform: rotateZ(180deg);
+  transform: 0.3s;
 }
 
 .TopPage::after,
 .GalleryPage::after {
   position: absolute;
-  bottom: 0;
-  left: -6px;
+  top: 0;
+  left: -8px;
   content: "";
   width: 3px;
-  height: 100%;
+  height: 0;
   background: var(--sub-color);
-  transform: scale(1, 0);
-  transform-origin: left top;
-  transition: transform 0.3s;
+  transition: 0.3s;
 }
 
 .TopPage:hover::after,
 .GalleryPage:hover::after {
-  transform: scale(1, 1);
+  height: 100%;
 }
 
 .side svg {
@@ -301,5 +300,4 @@ footer {
   bottom: 0;
   opacity: 0.5;
 }
-
 </style>

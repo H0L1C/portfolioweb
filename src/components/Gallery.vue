@@ -15,7 +15,7 @@
           <div class="project-image-wrapper">
             <img
               class="project-image lazyload"
-              v-bind:src="project.image"
+              :src="project.image"
               loading="lazy"
               alt="Project image"
             />
@@ -83,7 +83,7 @@ export default {
       projects: [
         {
           title: "Artwork",
-          image: "https://placehold.jp/200x200.png",
+          image: require("../assets/images/myLogo.svg"),
           name: "let's try Vue.js",
           detail: "study JS, CoffeeScript, ES6, TypeScript.",
           anime: "Image/test.jpg"

@@ -69,8 +69,10 @@
 
     <h2 id="Work">Work</h2>
     <dl class="projectList">
-      <dd v-for="{ id, name } in list" :key="id" class="projectItem">
-        <router-link :to="`/project/${ id }`" class="projectLink">{{ name }}</router-link>
+      <dd v-for="{id} in list" :key="id" class="projectItem">
+        <router-link :to="`/project/${ id }`" class="projectLink">
+          <img class="lazyload" :src="image" loading="lazy" alt="My works images" />
+        </router-link>
       </dd>
     </dl>
 
@@ -260,14 +262,14 @@ h2 {
   width: calc((100% - 40px) / 2);
   max-width: 350px;
   min-width: 300px;
-  height: 350px;
+  height: 260px;
   margin: 20px 0 0 0;
   border: solid 1px var(--main-text);
 }
 
 .projectLink {
   display: block;
-  height: 350px;
+  height: 100%;
 }
 
 .contactList {
@@ -358,7 +360,7 @@ import products from "@/project.js";
 export default {
   components: {
     Lottie,
-    Intersect
+    Intersect,
   },
   data() {
     return {
@@ -377,7 +379,8 @@ export default {
   },
   computed: {
     list: () => products.fetch()
-  }
+  },
+
 };
 </script>
 

@@ -35,7 +35,7 @@ export default new Router({
       name: 'Project',
       component: Project,
       props: route => ({
-        id: Number(route.params.id)
+        id: Number(route.params.id),
       })
     },
   ],
