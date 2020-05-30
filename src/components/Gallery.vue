@@ -56,7 +56,6 @@ h1 {
   justify-content: space-around;
   width: 80%;
   margin: 0 auto;
-  z-index: -9999;
 }
 
 .project {

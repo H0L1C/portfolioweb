@@ -21,12 +21,12 @@
 }
 .title h1 {
   position: absolute;
+  width: 100%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-size: 400%;
-  background: none;
 }
 
 .title a {
@@ -74,7 +74,7 @@ h2 {
 
 .myProfile,
 .myIcon,
-.profileText,
+.profile,
 .projectItem,
 .contactItem {
   border-radius: 10px;
@@ -83,7 +83,7 @@ h2 {
 .myProfile,
 .projectList,
 .contactList {
-  min-width: 620px;
+  min-width: 640px;
 }
 
 @-webkit-keyframes scrollanim {

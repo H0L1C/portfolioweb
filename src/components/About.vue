@@ -2,29 +2,31 @@
   <div>
     <h2 id="About">About</h2>
     <dl class="myProfile">
-      <dt class="myIcon">
+      <dt class="profile">
         <div class="myName">
           <h3>H0L1C</h3>
         </div>
-        <div class="myImg"></div>
-      </dt>
-      <dd class="profileText">
-        <h3>Profile</h3>
+        <h3 class="profileText">Profile</h3>
         <p>
           1999年生まれ
           <br />映像・グラフィックデザイン・Webコンテンツなどを制作しています
           <br />ご依頼はTwitterDM・E-mailにて受け付けております
         </p>
-        <h3 class="skill">Skill</h3>
-      </dd>
+      </dt>
+      <dt class="myIcon">
+        <div class="myImg"></div>
+      </dt>
       <intersect @enter="play">
-        <lottie
-          :options="defaultOptions"
-          :height="216"
-          :width="380"
-          v-on:animCreated="lottieAnimation"
-          class="lottieCanvas"
-        />
+        <div>
+          <h3 class="skill">Skill</h3>
+          <lottie
+            :options="defaultOptions"
+            :height="300"
+            :width="640"
+            v-on:animCreated="lottieAnimation"
+            class="lottieCanvas"
+          />
+        </div>
       </intersect>
     </dl>
   </div>
@@ -60,22 +62,23 @@ export default {
 </script>
 
 <style>
+
+#About{
+  margin-top: 0;
+}
+
 .myProfile {
   position: relative;
-  height: 450px;
+  height: 600px;
   width: 50%;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 }
 
 .myIcon {
-  width: calc(100% - 400px);
-  min-width: 240px;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  position: absolute;
+  width: 50%;
+  height: calc(100% - 300px);
+  right: 0;
 }
 
 .myName {
@@ -89,13 +92,12 @@ export default {
   font-size: 260%;
   line-height: 60px;
   text-align: left;
-  padding-left: 20px;
   color: var(--main-text);
 }
 
 .myImg {
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
   background-image: url(../assets/images/myLogo.svg);
   background-size: 65%;
   background-repeat: no-repeat;
@@ -105,42 +107,52 @@ export default {
   border-radius: 0 0 0 10px;
 }
 
-.profileText {
+.profile {
   position: absolute;
-  width: 384px;
-  height: calc(100% - 220px);
+  width: 50%;
+  height: calc(100% - 300px);
   margin: 0;
-  right: 0;
+  left: 0;
   color: var(--main-text);
 }
 
-.profileText h3 {
+.profileText {
   font-size: 160%;
   padding: 0 10px;
   margin: 20px;
   color: var(--main-text);
   text-align: left;
-  border-left: 8px solid;
-  border-image: linear-gradient(
+  border-left: 6px solid var(--sub-color);
+  /*border-image: linear-gradient(
       to bottom,
       var(--sub-color) 0% 50%,
       var(--main-text) 50% 100%
     )
-    1;
+    1;*/
 }
 
-.profileText p {
+.profile p {
   text-align: left;
-  padding: 5px 20px;
+  padding: 0 34px;
 }
 
 .skill {
-  margin-top: 30px !important;
+  position: relative;
+  font-size: 160%;
+  padding: 0 10px;
+  top: 320px;
+  margin: 20px;
+  color: var(--main-text);
+  text-align: left;
+  border-left: 6px solid var(--sub-color);
+  margin-top: 30px;
 }
 
 .lottieCanvas {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 </style>

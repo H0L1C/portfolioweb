@@ -5,6 +5,7 @@
       <dd v-for="work in works" :key="work.id" class="projectItem">
         <router-link :to="work.name" class="projectLink">
           <img class="lazyload" :src="work.image" loading="lazy" alt="My works images" />
+          <h3>{{ work.name }}</h3>
         </router-link>
       </dd>
     </dl>
@@ -25,6 +26,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  transition: 0.3s;
 }
 
 .projectItem {
@@ -32,12 +34,51 @@ export default {
   max-width: 350px;
   min-width: 300px;
   height: 260px;
-  margin: 20px 0 0 0;
-  border: solid 1px var(--main-text);
+  margin: 40px 0 0 0;
 }
 
 .projectLink {
+  position: relative;
   display: block;
+  width: 100%;
   height: 100%;
+}
+
+.projectLink img {
+  width: 300px;
+  height: 220px;
+  border-radius: 10px;
+}
+.projectLink::before,
+.projectLink::after {
+  position: absolute;
+  bottom: -5px;
+  content: "";;
+  height: 3px;
+  display: inline-block;
+  width: 0;
+  background: var(--sub-color);
+  transition: 0.3s;
+}
+
+.projectLink::before {
+  left: 50%;
+}
+
+.projectLink::after {
+  right: 50%;
+}
+
+.projectLink:hover::before,
+.projectLink:hover::after {
+  width: 60px;
+}
+
+.projectLink h3 {
+  padding: -10px 0;
+  display: block;
+  margin: 0 auto;
+  line-height: 40px;
+  font-size: 140%;
 }
 </style>

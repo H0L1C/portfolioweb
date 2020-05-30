@@ -8,32 +8,32 @@ const works = [
         },
         {
           id: 2,
-          name: "商品B",
+          name: "MP",
           price: 200,
           content: "商品B詳細",
-          image: "https://placehold.jp/200x200.png"
+          image: "https://placehold.jp/300x220.png"
         },
         {
           id: 3,
-          name: "商品C",
+          name: "KOUSA",
           price: 300,
           content: "商品C詳細",
-          image: "https://placehold.jp/200x200.png"
+          image: "https://placehold.jp/300x220.png"
         },
         {
           id: 4,
-          name: "商品D",
+          name: "ToyLabo",
           price: 400,
           content: "商品D詳細",
-          image: "https://placehold.jp/200x200.png"
+          image: "https://placehold.jp/300x220.png"
         },
-        {
+       /* {
           id: 5,
-          name: "商品D",
+          name: "Habaki",
           price: 500,
           content: "商品E詳細",
-          image: "https://placehold.jp/200x200.png"
-        }
+          image: "https://placehold.jp/300x220.png"
+        }*/
       ]
 
 
