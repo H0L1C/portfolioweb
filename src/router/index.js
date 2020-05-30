@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Top from '@/components/Top'
 import Gallery from '@/components/Gallery'
-import Project from '@/components/Project'
+import IxD from '@/components/IxD'
 import 'lazysizes'
 import 'mailgo'
 import VScrollLock from 'v-scroll-lock'
@@ -27,16 +27,9 @@ export default new Router({
       component: Gallery
     },
     {
-      path: '/Project', 
-      component: Top
-    },
-    {
-      path: '/Project/:id',
-      name: 'Project',
-      component: Project,
-      props: route => ({
-        id: Number(route.params.id),
-      })
+      path: '/IxD',
+      name:IxD,
+      component: IxD
     },
   ],
 

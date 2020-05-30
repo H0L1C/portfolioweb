@@ -19,7 +19,7 @@ export default {
       style: {
         width: this.width ? `${this.width}px` : "100%",
         height: this.height ? `${this.height}px` : "100%",
-        overflow: "hidden",
+        overflow: "hidden"
       }
     };
   },

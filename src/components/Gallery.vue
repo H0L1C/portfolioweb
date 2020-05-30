@@ -30,7 +30,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 h1 {
   padding: 10px;
   position: fixed;
