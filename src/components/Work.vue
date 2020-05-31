@@ -4,7 +4,7 @@
     <dl class="projectList" name="works">
       <dd v-for="work in works" :key="work.id" class="projectItem">
         <router-link :to="work.name" class="projectLink">
-          <img class="lazyload" :src="work.image" loading="lazy" alt="My works images" />
+          <img  v-lazy="work.image" loading="lazy" alt="My works images" />
           <h3>{{ work.name }}</h3>
         </router-link>
       </dd>

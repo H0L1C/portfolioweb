@@ -3,14 +3,13 @@ import Router from 'vue-router'
 import Top from '@/components/Top'
 import Gallery from '@/components/Gallery'
 import IxD from '@/components/IxD'
-import 'lazysizes'
+import VueLazyload from 'vue-lazyload'
 import 'mailgo'
-import VScrollLock from 'v-scroll-lock'
 
 let VueScrollTo = require('vue-scrollto');
 
+Vue.use(VueLazyload)
 Vue.use(VueScrollTo)
-Vue.use(VScrollLock)
 Vue.use(Router)
 
 export default new Router({
@@ -28,7 +27,7 @@ export default new Router({
     },
     {
       path: '/IxD',
-      name:IxD,
+      name: IxD,
       component: IxD
     },
   ],

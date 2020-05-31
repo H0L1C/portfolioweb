@@ -9,7 +9,7 @@
 
 <script>
 import sidebar from "./components/sidebar.vue";
-
+require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
 export default {
   components: {
     sidebar
@@ -67,12 +67,12 @@ span {
 }
 
 h2 {
-  font-size: 200%;
+  font-size: 280%;
   position: relative;
   display: inline-block;
-  padding: 0 45px;
+  padding: 0 50px;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
 }
 
 h2::before,
@@ -82,7 +82,7 @@ h2::after {
   top: 50%;
   display: inline-block;
   width: 34px;
-  height: 1px;
+  height: 3px;
   background-color: var(--main-text);
   -webkit-transform: rotate(-60deg);
   transform: rotate(-60deg);

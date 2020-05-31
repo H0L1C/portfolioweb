@@ -1,34 +1,42 @@
 <template>
-  <div id="main" class="main" v-scroll-lock="look">
+  <div id="main" class="main">
     <h1>H0L1C Gallery</h1>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 60" class="BG">
-      <path d="M0 0h1920v60H0z" />
-    </svg>
     <div class="gallery">
-      <div class="projects" name="projects">
+      <div class="projects" name="images">
         <div
           class="project"
-          v-bind:key="project.title"
-          v-for="project in projects"
-          @click="modalOpen(project); toggoleLook()"
+          v-bind:key="img.title"
+          v-for="(img,index) in images"
+          @click="show(index)"
         >
           <div class="project-image-wrapper">
-            <img
-              class="project-image lazyload"
-              :src="project.image"
-              loading="lazy"
-              alt="Project image"
-            />
-            <span class="project-title">
-              <p>{{project.title}}</p>
-            </span>
+            <img v-lazy="img.thumb" loading="lazy" alt="Project image" />
           </div>
         </div>
-        <modal :list="Item" v-show="showContent" @close="modalClose" />
       </div>
+      <light-box ref="lightbox" :media="images" :show-light-box="false" :show-caption="false"></light-box>
     </div>
+    <topbtn></topbtn>
   </div>
 </template>
+
+<script>
+import images from "../gallery.js";
+import topbtn from "./topbtn.vue";
+import lightBox from "vue-image-lightbox";
+export default {
+  components: {
+    topbtn,
+    lightBox
+  },
+  mixins: [images],
+  methods: {
+    show: function(index) {
+      this.$refs.lightbox.showImage(index);
+    },
+  }
+};
+</script>
 
 <style scoped>
 h1 {
@@ -37,13 +45,7 @@ h1 {
   width: 100%;
   z-index: 1;
   background-color: var(--main-bg);
-}
-
-.BG {
-  position: fixed;
-  width: 100%;
-  stroke: none;
-  left: 0;
+  filter: drop-shadow(0 0 4px rgba(35, 35, 35, 0.2));
 }
 
 .gallery {
@@ -59,106 +61,30 @@ h1 {
 }
 
 .project {
-  width: 300px;
-  height: 300px;
-  margin: 10px 30px;
+  position: relative;
+  width: 640px;
+  height: 360px;
+  margin: 30px 30px;
+  border-radius: 10px;
+}
+
+.project img {
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  transition: opacity 0.3s ease;
   cursor: pointer;
+  box-shadow: 5px 5px 5px -7px #353535;
+}
+[lazy="loading"] {
+  opacity: 0;
+}
+
+[lazy="loaded"] {
+  opacity: 1;
 }
 </style>
 
-<script>
-import Modal from "./Modal.vue";
 
-export default {
-  components: {
-    Modal
-  },
-  data() {
-    return {
-      showContent: false,
-      lock: true,
-      look: false,
-      Item: "",
-      projects: [
-        {
-          title: "Artwork",
-          image: require("../assets/images/myLogo.svg"),
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "hoge",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "3",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "4",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "5",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "6",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "7",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "8",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        },
-        {
-          title: "9",
-          image: "https://placehold.jp/200x200.png",
-          name: "let's try Vue.js",
-          detail: "study JS, CoffeeScript, ES6, TypeScript.",
-          anime: "Image/test.jpg"
-        }
-      ]
-    };
-  },
-  methods: {
-    modalOpen(project) {
-      this.showContent = true;
-      this.Item = project;
-    },
-    modalClose() {
-      this.showContent = false;
-      this.look = false;
-    },
-    toggoleLook: function() {
-      if (this.look == true) this.look = false;
-      else this.look = true;
-    }
-  }
-};
-</script>

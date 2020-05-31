@@ -120,6 +120,7 @@ export default {
   font-size: 160%;
   padding: 0 10px;
   margin: 20px;
+  margin-top: 30px;
   color: var(--main-text);
   text-align: left;
   border-left: 6px solid var(--sub-color);

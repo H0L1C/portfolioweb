@@ -56,7 +56,8 @@
   height: 100vh;
   border-right: 2px solid;
   position: fixed;
-  z-index: 9999;
+  background-color: var(--main-bg);
+  z-index: 2;
 }
 
 .side ul {
