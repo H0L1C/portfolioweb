@@ -1,6 +1,6 @@
 <template>
   <div class="workBody">
-    <h1>{{ works[0].name }}</h1>
+    <h1>{{ works[id].name }}</h1>
     <hr />
     <div class="sectionCenter">
       <p>ここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいる</p>
@@ -34,6 +34,7 @@
     <topbtn></topbtn>
   </div>
 </template>
+
 <script>
 import works from "../product.js";
 import topbtn from "./topbtn.vue";
@@ -41,7 +42,10 @@ export default {
   components: {
     topbtn
   },
-  mixins: [works]
+  mixins: [works],
+  props: {
+    id: Number
+  }
 };
 </script>
 

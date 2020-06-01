@@ -3,8 +3,8 @@
     <h2 id="Work">Work</h2>
     <dl class="projectList" name="works">
       <dd v-for="work in works" :key="work.id" class="projectItem">
-        <router-link :to="work.name" class="projectLink">
-          <img  v-lazy="work.image" loading="lazy" alt="My works images" />
+        <router-link :to="`/Product/${ work.id }`" class="projectLink">
+          <img v-lazy="work.image" loading="lazy" alt="My works images" />
           <h3>{{ work.name }}</h3>
         </router-link>
       </dd>
@@ -15,7 +15,7 @@
 <script>
 import works from "../product.js";
 export default {
-  mixins: [works]
+  mixins: [works],
 };
 </script>
 
@@ -53,7 +53,7 @@ export default {
 .projectLink::after {
   position: absolute;
   bottom: -5px;
-  content: "";;
+  content: "";
   height: 3px;
   display: inline-block;
   width: 0;

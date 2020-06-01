@@ -2,15 +2,20 @@
   <div class="side">
     <ul>
       <li>
-        <router-link to="/" class="TopPage">
+        <router-link to="/" class="Page">
           <span>Top</span>
         </router-link>
       </li>
       <li>
-        <router-link to="/Gallery" class="GalleryPage">
+        <router-link to="/Gallery" class="Page">
           <span>Gallery</span>
         </router-link>
       </li>
+      <!--<li>
+        <router-link to="/Vj-Download" class="Page">
+          <span>Vj</span>
+        </router-link>
+      </li>-->
       <li>
         <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 47">
@@ -78,8 +83,7 @@
   color: var(--main-text);
 }
 
-.TopPage,
-.GalleryPage {
+.Page {
   margin: 15px 20px;
   writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
@@ -88,8 +92,7 @@
   transform: 0.3s;
 }
 
-.TopPage::after,
-.GalleryPage::after {
+.Page::after {
   position: absolute;
   top: 0;
   left: -8px;
@@ -100,8 +103,7 @@
   transition: 0.3s;
 }
 
-.TopPage:hover::after,
-.GalleryPage:hover::after {
+.Page:hover::after {
   height: 100%;
 }
 

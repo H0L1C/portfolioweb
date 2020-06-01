@@ -2,18 +2,23 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Top from '@/components/Top'
 import Gallery from '@/components/Gallery'
-import IxD from '@/components/IxD'
+import Vj from '@/components/Vj-Download'
+import Product from '@/components/Product'
 import VueLazyload from 'vue-lazyload'
 import 'mailgo'
 
 let VueScrollTo = require('vue-scrollto');
 
-Vue.use(VueLazyload)
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  attempt: 1,
+  throttleWait: 50
+});
 Vue.use(VueScrollTo)
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  mode:'history',
   routes: [
     {
       path: '/',
@@ -26,9 +31,16 @@ export default new Router({
       component: Gallery
     },
     {
-      path: '/IxD',
-      name: IxD,
-      component: IxD
+      path: '/Vj-Download',
+      name: 'Vj',
+      component: Vj
+    },
+    {
+      path: '/Product/:id',
+      component: Product,
+      props: route => ({
+        id: Number(route.params.id)
+      })
     },
   ],
 
