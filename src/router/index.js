@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Top from '@/components/Top'
-import Gallery from '@/components/Gallery'
-import Vj from '@/components/Vj-Download'
 import Product from '@/components/Product'
 import VueLazyload from 'vue-lazyload'
+import VScrollLock from 'v-scroll-lock'
+import VueMq from 'vue-mq'
 import 'mailgo'
 
 let VueScrollTo = require('vue-scrollto');
@@ -14,26 +14,30 @@ Vue.use(VueLazyload, {
   attempt: 1,
   throttleWait: 50
 });
+
+Vue.use(VueMq, {
+  breakpoints: {
+    xs: 320,
+    s: 321,
+    m: 415,
+    l: 960,
+    xl: Infinity
+  },
+  defaultBreakpoint: 'l'
+});
+
 Vue.use(VueScrollTo)
+Vue.use(VScrollLock)
 Vue.use(Router)
 
+
 export default new Router({
-  mode:'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'Top',
       component: Top
-    },
-    {
-      path: '/Gallery',
-      name: 'Gallery',
-      component: Gallery
-    },
-    {
-      path: '/Vj-Download',
-      name: 'Vj',
-      component: Vj
     },
     {
       path: '/Product/:id',
@@ -51,6 +55,7 @@ export default new Router({
       return { x: 0, y: 0 }
     }
   }
+
 })
 
 

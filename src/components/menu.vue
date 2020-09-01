@@ -50,6 +50,7 @@
   cursor: pointer;
 }
 
+.TopLink:hover,
 .HomeLink:hover,
 .AboutLink:hover,
 .WorkLink:hover,
@@ -58,7 +59,7 @@
   color: var(--sub-color);
 }
 
-.menuList p {
+.menuList p, span {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

@@ -1,51 +1,84 @@
 <template>
-  <div class="workBody">
-    <h1>{{ works[id].name }}</h1>
-    <hr />
-    <div class="sectionCenter">
-      <p>ここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいる</p>
-    </div>
-    <div class="sectionList">
-      <div class="section">
-        <h2>タイトルタイトル</h2>
-        <div class="articleLeft">
-          <div class="leftParts">
-            <img src="https://placehold.jp/300x220.png" alt class="articleImg" />
-          </div>
-          <div class="rightParts">
-            <h3>概要</h3>
-            <p>ここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいる</p>
+  <div>
+    <mq-layout :mq="['l','m','s','xs']">
+      <SocialIcon></SocialIcon>
+    </mq-layout>
+    <div class="workBody" id="workmain" v-scroll-lock="scrollLook">
+      <h1>{{ works[id].name }}</h1>
+      <hr />
+      <div class="sectionCenter">
+        <p>ここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいる</p>
+      </div>
+      <div class="sectionList">
+        <div class="section" v-for="(section,index) in works[id].sections" :key="section.title">
+          <h2>{{section.title}}</h2>
+          <div class="article">
+            <div class="leftParts">
+              <img
+                v-lazy="section.img"
+                loading="lazy"
+                alt
+                class="articleImg"
+                @click="openModal(index)"
+              />
+            </div>
+            <div class="rightParts">
+              <h3>概要</h3>
+              <p>{{ section.text }}</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="section">
-        <h2>タイトルタイトル</h2>
-        <div class="articleRight">
-          <div class="leftParts">
-            <h3>概要</h3>
-            <p>ここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいる</p>
-          </div>
-          <div class="rightParts">
-            <img src="https://placehold.jp/300x220.png" alt class="articleImg" />
-          </div>
+
+      <div class="popup" v-if="popupActive">
+        <img v-lazy="works[id].sections[num].img" alt class="zoomImg" @click="closeModal()" />
+        <div class="closeBtn" @click="closeModal()">
+          <p>CLOSE</p>
         </div>
+        <div class="popupBG"></div>
       </div>
+
+      <topbtn></topbtn>
     </div>
-    <topbtn></topbtn>
+    <mq-layout :mq="['l','m','s','xs']">
+      <ProductBottomMenu></ProductBottomMenu>
+    </mq-layout>
   </div>
 </template>
 
 <script>
 import works from "../product.js";
-import topbtn from "./topbtn.vue";
+import topbtn from "./TopBtn.vue";
+import SocialIcon from "./SocialIcon.vue";
+import ProductBottomMenu from "./ProductBottomMenu.vue";
 export default {
   components: {
-    topbtn
+    topbtn,
+    SocialIcon,
+    ProductBottomMenu,
   },
   mixins: [works],
   props: {
-    id: Number
-  }
+    id: Number,
+  },
+  data: function () {
+    return {
+      num: "",
+      popupActive: false,
+      scrollLook: false,
+    };
+  },
+  methods: {
+    openModal(index) {
+      this.num = index;
+      this.popupActive = true;
+      this.scrollLook = true;
+    },
+    closeModal() {
+      this.popupActive = false;
+      this.scrollLook = false;
+    },
+  },
 };
 </script>
 
@@ -64,7 +97,7 @@ export default {
 
 .workBody h2 {
   font-size: 140%;
-  margin: 0;
+  margin: 20px 0;
   padding: 2px 20px;
   border-left: solid 4px var(--sub-color);
   text-align: left;
@@ -96,51 +129,79 @@ hr {
 .sectionCenter p {
   text-align: left;
 }
-
-.section {
-  margin: 40px 0;
-  margin-bottom: 15%;
-  height: 100%;
-  min-height: 350px;
-}
-
-.articleLeft,
-.articleRight {
-  margin-top: 30px;
+.article {
+  margin: 20px 0;
   display: flex;
+  justify-content: space-between;
 }
-
 .leftParts,
 .rightParts {
-  height: 100%;
-}
-
-.leftParts {
-  position: relative;
-  width: 50%;
+  min-width: 300px;
+  min-height: 220px;
 }
 
 .articleImg {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.rightParts > .articleImg {
-  left: auto;
-  right: 0;
-}
-
-.rightParts {
   position: relative;
-  width: 50%;
+  max-width: 320px;
+  max-height: 220px;
+  cursor: zoom-in;
 }
 
-.leftParts p,
 .rightParts p {
   text-align: left;
-  margin-left: 10px;
-  padding: 5px 20px;
+  padding: 0 30px;
+}
+
+.popupBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: #00000060;
+  z-index: 9998;
+}
+
+.zoomImg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80vh;
+  max-height: 80vh;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+.closeBtn {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  opacity: 0.8;
+}
+
+.closeBtn p {
+  color: var(--main-bg);
+  padding: 10px 20px;
+  border: solid 2px var(--main-bg);
+}
+@media screen and (max-width: 415px) {
+  .workBody {
+    width: 90%;
+    margin: auto;
+  }
+  .articleImg {
+    max-width: 290px;
+    max-height: 220px;
+    cursor: zoom-in;
+  }
 }
 </style>

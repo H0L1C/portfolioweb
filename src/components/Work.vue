@@ -1,11 +1,12 @@
 <template>
-  <div>
+  <div class="work">
     <h2 id="Work">Work</h2>
     <dl class="projectList" name="works">
       <dd v-for="work in works" :key="work.id" class="projectItem">
         <router-link :to="`/Product/${ work.id }`" class="projectLink">
           <img v-lazy="work.image" loading="lazy" alt="My works images" />
           <h3>{{ work.name }}</h3>
+          <p>{{ work.caption }}</p>
         </router-link>
       </dd>
     </dl>
@@ -20,6 +21,10 @@ export default {
 </script>
 
 <style>
+.work {
+  margin-top: 120px;
+}
+
 .projectList {
   width: 50%;
   margin: auto;
@@ -31,9 +36,9 @@ export default {
 
 .projectItem {
   width: calc((100% - 40px) / 2);
-  max-width: 350px;
+  max-width: 300px;
   min-width: 300px;
-  height: 260px;
+  height: 300px;
   margin: 40px 0 0 0;
 }
 
@@ -52,9 +57,9 @@ export default {
 .projectLink::before,
 .projectLink::after {
   position: absolute;
-  bottom: -5px;
+  bottom: 40px;
   content: "";
-  height: 3px;
+  height: 2px;
   display: inline-block;
   width: 0;
   background: var(--sub-color);
@@ -80,5 +85,10 @@ export default {
   margin: 0 auto;
   line-height: 40px;
   font-size: 140%;
+}
+
+.projectLink p {
+  font-size: 90%;
+  opacity: 0.6;
 }
 </style>

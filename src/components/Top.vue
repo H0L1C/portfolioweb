@@ -1,6 +1,11 @@
 <template>
   <div id="main" class="main">
-    <Menu></Menu>
+    <mq-layout :mq="['xl']">
+      <Menu></Menu>
+    </mq-layout>
+    <mq-layout :mq="['l','m','s','xs']">
+      <SocialIcon></SocialIcon>
+    </mq-layout>
     <div class="title" id="Home">
       <h1>H0L1C Portfolio</h1>
       <a href="#">
@@ -11,6 +16,9 @@
     <About></About>
     <Work></Work>
     <Contact></Contact>
+    <mq-layout :mq="['l','m','s','xs']">
+      <BottomMenu></BottomMenu>
+    </mq-layout>
   </div>
 </template>
 
@@ -21,7 +29,7 @@
 }
 .title h1 {
   position: absolute;
-  width: 100%;
+  width: 80%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -55,12 +63,6 @@
 
 h2 {
   margin: 120px 0 40px 0;
-}
-
-.myProfile,
-.projectItem,
-.contactItem {
-  background-color: var(--alpha-bg);
 }
 
 .myProfile,
@@ -106,17 +108,21 @@ h2 {
 </style>
 
 <script>
-import Menu from "./menu.vue";
+import Menu from "./Menu.vue";
 import About from "./About.vue";
 import Work from "./Work.vue";
 import Contact from "./Contact.vue";
+import SocialIcon from "./SocialIcon.vue";
+import BottomMenu from "./BottomMenu.vue";
 
 export default {
   components: {
     Menu,
     About,
     Work,
-    Contact
+    Contact,
+    SocialIcon,
+    BottomMenu
   }
 };
 </script>

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <sidebar></sidebar>
+    <mq-layout :mq="['xl']">
+      <sidebar></sidebar>
+    </mq-layout>
     <transition mode="out-in">
       <router-view></router-view>
     </transition>
@@ -8,12 +10,11 @@
 </template>
 
 <script>
-import sidebar from "./components/sidebar.vue";
-require("vue-image-lightbox/dist/vue-image-lightbox.min.css");
+import sidebar from "./components/Sidebar.vue";
 export default {
   components: {
-    sidebar
-  }
+    sidebar,
+  },
 };
 </script>
 
@@ -111,3 +112,4 @@ footer {
   opacity: 0.5;
 }
 </style>
+

@@ -1,0 +1,99 @@
+@media screen and (max-width: 959px) {
+    .main {
+        width: 100%;
+    }
+    .title a {
+        top: 60%;
+        -webkit-transform: translateY(-60%);
+        transform: translateY(-60%);
+    }
+    .topBtn {
+        bottom: 80px;
+    }
+    .sectionCenter {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .article {
+        flex-wrap: wrap;
+    }
+    .leftParts {
+        margin: auto;
+    }
+    .rightParts {
+        margin-top: 20px;
+    }
+    .even {
+        order: 0;
+    }
+    .workBody {
+        position: relative;
+        top: 60px;
+    }
+    .workBody h2 {
+        margin-top: 60px;
+    }
+    .workBody h3, .rightParts p {
+        padding: 0;
+    }
+    footer {
+        margin-bottom: 80px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .myProfile {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        max-height: 100%;
+        min-width: 100%;
+    }
+    .myProfile h3 {
+        margin: 30px;
+    }
+    .myIcon {
+        width: auto;
+        min-width: 280px;
+        height: 300px;
+        margin: 20px;
+    }
+    .profile {
+        width: auto;
+        max-width: 640px;
+    }
+    .skillSlot {
+        grid-column: 1/1;
+    }
+    .lottieCanvas {
+        max-width: 90%;
+    }
+    .work {
+        margin-top: -60px;
+    }
+    .projectList {
+        min-width: 100%;
+        justify-content: space-around;
+    }
+    .contactList {
+        min-width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 470px) {
+    .title h1 {
+        width: 90%;
+    }
+    .main {
+        padding-right: 0;
+        width: 100%;
+    }
+    .lottieCanvas {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 321px) {}

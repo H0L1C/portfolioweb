@@ -1,5 +1,8 @@
 <template>
-  <div class="topBtn" v-scroll-to="'#main'" v-bind:class="{ show: show }">
+  <div class="topBtn" v-scroll-to="{
+          el:'#workmain',
+          offset:-60,
+        }" v-bind:class="{ show: show }">
     <a href="#">
       <span></span>
     </a>
@@ -11,12 +14,13 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  right: 20px;
+  right: 10px;
   bottom: 20px;
   cursor: pointer;
   opacity: 0;
   transition: 0.5s ease;
   visibility: hidden;
+  z-index: 9997;
 }
 
 .show {
