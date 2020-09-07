@@ -14,7 +14,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  right: 10px;
+  right: 20px;
   bottom: 20px;
   cursor: pointer;
   opacity: 0;

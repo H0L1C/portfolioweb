@@ -1,5 +1,8 @@
 <template>
   <div id="main" class="main">
+    <transition name="loadingFade">
+      <div class="loadingAnim" v-if="loading"></div>
+    </transition>
     <mq-layout :mq="['xl']">
       <Menu></Menu>
     </mq-layout>
@@ -23,6 +26,26 @@
 </template>
 
 <style>
+.loadingAnim {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  top: 0;
+  left: 0;
+  background-color: var(--main-bg);
+  z-index: 9999 !important;
+}
+
+.loadingFade-enter-active,
+.loadingFade-leave-active {
+  transition: opacity 1s;
+}
+.loadingFade-enter,
+.loadingFade-leave-to {
+  opacity: 0;
+}
+
 .title {
   position: relative;
   height: 100vh;
@@ -105,6 +128,29 @@ h2 {
     opacity: 0;
   }
 }
+
+@media screen and (max-width: 660px) {
+  .title h1 {
+    font-size: 260%;
+  }
+
+  h2 {
+    font-size: 200%;
+  }
+  .myIcon {
+    max-height: 240px;
+  }
+
+  .myImg {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .title h1 {
+    font-size: 200%;
+  }
+}
 </style>
 
 <script>
@@ -116,14 +162,24 @@ import SocialIcon from "./SocialIcon.vue";
 import BottomMenu from "./BottomMenu.vue";
 
 export default {
+  data() {
+    return {
+      loading: true,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 300);
+  },
   components: {
     Menu,
     About,
     Work,
     Contact,
     SocialIcon,
-    BottomMenu
-  }
+    BottomMenu,
+  },
 };
 </script>
 

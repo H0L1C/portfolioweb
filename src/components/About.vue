@@ -132,4 +132,5 @@ export default {
   position: relative;
   top: -15%;
 }
+
 </style>

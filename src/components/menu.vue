@@ -39,7 +39,7 @@
   border-top: solid 1px;
   border-bottom: solid 1px;
   padding: 0.5em 1.5em 0.5em 1.5em;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 .menuList li {

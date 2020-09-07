@@ -1,9 +1,17 @@
 <template>
   <div>
+    <mq-layout :mq="['xl']">
+      <WorkMenu></WorkMenu>
+    </mq-layout>
     <mq-layout :mq="['l','m','s','xs']">
       <SocialIcon></SocialIcon>
     </mq-layout>
-    <div class="workBody" id="workmain" v-scroll-lock="scrollLook">
+    <div
+      class="workBody"
+      id="workmain"
+      v-scroll-lock="scrollLook"
+      v-bind:class="{productBody:move , productBodyActive:moved}"
+    >
       <h1>{{ works[id].name }}</h1>
       <hr />
       <div class="sectionCenter">
@@ -51,11 +59,13 @@ import works from "../product.js";
 import topbtn from "./TopBtn.vue";
 import SocialIcon from "./SocialIcon.vue";
 import ProductBottomMenu from "./ProductBottomMenu.vue";
+import WorkMenu from "./WorkMenu.vue";
 export default {
   components: {
     topbtn,
     SocialIcon,
     ProductBottomMenu,
+    WorkMenu,
   },
   mixins: [works],
   props: {
@@ -66,6 +76,9 @@ export default {
       num: "",
       popupActive: false,
       scrollLook: false,
+      move: false,
+      moved: false,
+      entered: false,
     };
   },
   methods: {
@@ -78,11 +91,46 @@ export default {
       this.popupActive = false;
       this.scrollLook = false;
     },
+    enter() {
+      this.move = true;
+    },
+    leave() {
+      this.move = false;
+      this.moved = true;
+      setTimeout(() => {
+        this.moved = false;
+      }, 500);
+    },
+  },
+  watch: {
+    entered: function () {
+      this.entered ? this.enter() : this.leave();
+    },
+  },
+  mounted() {
+    this.$router.beforeResolve((to, from, next) => {
+      this.entered = true;
+      next();
+    });
+    this.$router.afterEach((to, from, next) => {
+      setTimeout(() => {
+        this.entered = false;
+      }, 260);
+    });
   },
 };
 </script>
 
 <style>
+.productBody {
+  opacity: 0;
+}
+
+.productBodyActive {
+  transition: all 0.5s;
+  opacity: 1;
+}
+
 .workBody {
   width: 60%;
   margin: auto;
@@ -176,7 +224,7 @@ hr {
 
 .closeBtn {
   position: fixed;
-  top: 70%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
@@ -192,16 +240,5 @@ hr {
   color: var(--main-bg);
   padding: 10px 20px;
   border: solid 2px var(--main-bg);
-}
-@media screen and (max-width: 415px) {
-  .workBody {
-    width: 90%;
-    margin: auto;
-  }
-  .articleImg {
-    max-width: 290px;
-    max-height: 220px;
-    cursor: zoom-in;
-  }
 }
 </style>

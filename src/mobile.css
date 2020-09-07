@@ -44,18 +44,25 @@
 @media screen and (max-width: 760px) {
     .myProfile {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: repeat(3, 280px);
+        ;
         max-height: 100%;
         min-width: 100%;
     }
     .myProfile h3 {
-        margin: 30px;
+        margin: 0 30px 30px 30px;
     }
     .myIcon {
+        grid-row-start: 1;
         width: auto;
         min-width: 280px;
-        height: 300px;
-        margin: 20px;
+        height: 260px;
+        margin: 0;
+        border-radius: 0;
+        background-color: var(--main-bg);
+    }
+    .myImg {
+        width: 260px;
     }
     .profile {
         width: auto;
@@ -68,7 +75,7 @@
         max-width: 90%;
     }
     .work {
-        margin-top: -60px;
+        margin-top: 80px;
     }
     .projectList {
         min-width: 100%;
@@ -81,7 +88,11 @@
     }
 }
 
-@media screen and (max-width: 640px) {}
+@media screen and (max-width: 640px) {
+    .work {
+        margin-top: 0;
+    }
+}
 
 @media screen and (max-width: 470px) {
     .title h1 {
@@ -93,6 +104,21 @@
     }
     .lottieCanvas {
         max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .workBody {
+        width: 90%;
+        margin: auto;
+    }
+    .articleImg {
+        max-width: 290px;
+        max-height: 220px;
+        cursor: zoom-in;
+    }
+    .work {
+        margin-top: -60px;
     }
 }
 

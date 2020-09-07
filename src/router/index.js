@@ -26,7 +26,19 @@ Vue.use(VueMq, {
   defaultBreakpoint: 'l'
 });
 
-Vue.use(VueScrollTo)
+Vue.use(VueScrollTo, {
+  container: "body",
+  duration: 50,
+  easing: "ease-in",
+  offset: 0,
+  force: true,
+  cancelable: true,
+  onStart: false,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true
+})
 Vue.use(VScrollLock)
 Vue.use(Router)
 
@@ -40,22 +52,27 @@ export default new Router({
       component: Top
     },
     {
-      path: '/Product/:id',
+      path: '/product/:id',
       component: Product,
       props: route => ({
         id: Number(route.params.id)
       })
     },
   ],
-
   scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
-    }
+    return new Promise(resolve => {
+      this.app.$root.$once("triggerScroll", () => {
+        let position = { x: 0, y: 0 };
+        if (savedPosition) {
+          position = savedPosition;
+        }
+        if (to.hash) {
+          position = { selector: to.hash };
+        }
+        resolve(position);
+      });
+    });
   }
-
 })
 
 

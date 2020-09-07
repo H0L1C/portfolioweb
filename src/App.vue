@@ -3,7 +3,7 @@
     <mq-layout :mq="['xl']">
       <sidebar></sidebar>
     </mq-layout>
-    <transition mode="out-in">
+    <transition mode="out-in" @before-enter="beforeEnter">
       <router-view></router-view>
     </transition>
   </div>
@@ -14,6 +14,11 @@ import sidebar from "./components/Sidebar.vue";
 export default {
   components: {
     sidebar,
+  },
+  methods: {
+    beforeEnter() {
+      this.$root.$emit("triggerScroll");
+    },
   },
 };
 </script>

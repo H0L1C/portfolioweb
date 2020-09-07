@@ -68,7 +68,7 @@
 export default {
   data: function () {
     return {
-      isActive: false,
+      isActive: true,
     };
   },
   methods: {
@@ -119,7 +119,7 @@ export default {
 }
 
 .menuBtn span:nth-child(2) {
-  transform: translateX(4px) rotate(45deg);
+  transform: translateX(5px) rotate(45deg);
 }
 
 .btnActive span:nth-child(1) {
@@ -127,7 +127,7 @@ export default {
 }
 
 .btnActive span:nth-child(2) {
-  transform: translateX(4px) rotate(-45deg);
+  transform: translateX(5px) rotate(-45deg);
 }
 
 .menuContents {
