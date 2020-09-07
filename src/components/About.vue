@@ -23,6 +23,8 @@
             :options="defaultOptions"
             v-on:animCreated="lottieAnimation"
             class="lottieCanvas"
+            :height="0"
+            :width="0"
           />
         </div>
       </intersect>
@@ -38,24 +40,24 @@ import Intersect from "vue-intersect";
 export default {
   components: {
     Lottie,
-    Intersect
+    Intersect,
   },
-  data: function() {
+  data: function () {
     return {
       defaultOptions: { animationData: animationData },
-      animationSpeed: 1
+      animationSpeed: 1,
     };
   },
 
   methods: {
-    lottieAnimation: function(anim) {
+    lottieAnimation: function (anim) {
       this.anim = anim;
     },
 
-    play: function() {
+    play: function () {
       this.anim.play();
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -132,5 +134,4 @@ export default {
   position: relative;
   top: -15%;
 }
-
 </style>
