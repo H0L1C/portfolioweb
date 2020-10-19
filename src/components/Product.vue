@@ -108,12 +108,12 @@ export default {
   },
   mounted() {
     this.$router.beforeResolve((to, from, next) => {
+      scrollTo(0, 0);
       this.entered = true;
       next();
     });
     this.$router.afterEach((to, from, next) => {
       setTimeout(() => {
-        scrollTo(0, 0);
         this.entered = false;
       }, 260);
     });
