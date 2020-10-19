@@ -59,6 +59,7 @@ body {
   background: var(--main-bg);
   margin: 0;
   transition: 0.5s;
+  user-select: none;
 }
 
 :root {
