@@ -9,8 +9,23 @@
         <h3 class="profileText">Profile</h3>
         <p>
           1999年生まれ 映像クリエイター
-          <br />映像作品・Webコンテンツなどを制作しています
-          <br />ご依頼はTwitterDM・E-mailにて受け付けております
+          <br />映像作品・Webコンテンツなどを制作しています <br />ご依頼は
+          <a
+            href="https://twitter.com/HLC012"
+            target="_blank"
+            rel="noopener"
+            class="contactLinkText"
+          >
+            TwitterDM</a
+          >
+          ・
+          <a
+            href="#mailgo"
+            data-address="contact"
+            data-domain="h0l1c.work"
+            class="contactLinkText"
+            >E-mail</a
+          >にて受け付けております
         </p>
       </dt>
       <dt class="myIcon">
@@ -134,5 +149,13 @@ export default {
   max-width: 80%;
   position: relative;
   top: -15%;
+}
+
+.contactLinkText{
+  transition: all 0.5s;
+}
+
+.contactLinkText:hover {
+  color: var(--sub-color);
 }
 </style>
