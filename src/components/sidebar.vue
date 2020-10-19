@@ -2,7 +2,7 @@
   <div class="side">
     <ul>
       <li>
-        <router-link to="/" class="Page">
+        <router-link to="/" class="page" active-class="pageActive" exact>
           <span>Top</span>
         </router-link>
       </li>
@@ -11,14 +11,14 @@
           href="https://www.behance.net/H0L1C/projects"
           target="_blank"
           rel="noopener"
-          class="Page"
+          class="page"
         >
           <span>Gallery</span>
         </a>
       </li>
       <!-- <li>
         <a href="" target="_blank" rel="noopener" class="Page"> Boothのリンクいれる
-          <span>Vj</span>
+          <span>Download</span>
         </a>
       </li>!-->
       <li>
@@ -34,7 +34,11 @@
         </a>
       </li>
       <li>
-        <a href="https://www.instagram.com/h0l1c2/" target="_blank" rel="noopener">
+        <a
+          href="https://www.instagram.com/h0l1c2/"
+          target="_blank"
+          rel="noopener"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.26 486.49">
             <defs />
             <path
@@ -101,7 +105,7 @@
   color: var(--main-text);
 }
 
-.Page {
+.page {
   margin: 15px 20px;
   writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
@@ -110,7 +114,7 @@
   transform: 0.3s;
 }
 
-.Page::after {
+.page::after {
   position: absolute;
   top: 0;
   left: -8px;
@@ -121,7 +125,19 @@
   transition: 0.3s;
 }
 
-.Page:hover::after {
+.page:hover::after {
+  height: 100%;
+}
+
+.pageActive::after {
+  position: absolute;
+  top: 0;
+  left: -8px;
+  content: "";
+  width: 3px;
+  height: 0;
+  background: var(--sub-color);
+  transition: 0.3s;
   height: 100%;
 }
 

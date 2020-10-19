@@ -3,11 +3,27 @@
     <h2 id="Work">Work</h2>
     <dl class="projectList" name="works">
       <dd v-for="work in works" :key="work.id" class="projectItem">
-        <router-link :to="`/Product/${ work.id }`" class="projectLink">
-          <img v-lazy="work.image" loading="lazy" alt="My works images" />
+        <router-link :to="`/Product/${work.id}`" class="projectLink">
+          <img v-lazy="work.image" loading="lazy" :alt="work.alt" />
           <h3>{{ work.name }}</h3>
           <p>{{ work.caption }}</p>
         </router-link>
+      </dd>
+      <dd class="projectItem">
+        <a
+          href="https://www.behance.net/H0L1C/projects"
+          target="_blank"
+          rel="noopener"
+          class="projectLink"
+        >
+          <img
+            src="../assets/images/Gallery_thumbnail.png"
+            loading="lazy"
+            alt="Galleryサムネイル画像"
+          />
+          <h3>Gallery</h3>
+          <p>個人制作作品集</p>
+        </a>
       </dd>
     </dl>
   </div>
@@ -90,5 +106,33 @@ export default {
 .projectLink p {
   font-size: 90%;
   opacity: 0.6;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.originalProject {
+  position: relative;
+  width: 300px;
+  min-width: 300px;
+  margin: 60px auto 0 auto;
+  cursor: pointer;
+}
+
+.originalProject h3 {
+  position: relative;
+  padding: 10px 30px;
+  font-size: 160%;
+  height: 30px;
+  line-height: 30px;
+  color: var(--main-bg);
+  border: solid 2px;
+  border-radius: 2px;
+  background-color: var(--main-text);
+  transition: 0.3s;
+}
+
+.originalProject h3:hover {
+  color: var(--main-textr);
+  background-color: var(--main-bg);
+  border: solid 2px;
 }
 </style>

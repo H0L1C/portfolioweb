@@ -6,9 +6,6 @@
     <mq-layout :mq="['xl']">
       <Menu></Menu>
     </mq-layout>
-    <mq-layout :mq="['l','m','s','xs']">
-      <SocialIcon></SocialIcon>
-    </mq-layout>
     <div class="title" id="Home">
       <h1>H0L1C Portfolio</h1>
       <a href="#">
@@ -19,9 +16,6 @@
     <About></About>
     <Work></Work>
     <Contact></Contact>
-    <mq-layout :mq="['l','m','s','xs']">
-      <BottomMenu></BottomMenu>
-    </mq-layout>
   </div>
 </template>
 
@@ -158,8 +152,6 @@ import Menu from "./Menu.vue";
 import About from "./About.vue";
 import Work from "./Work.vue";
 import Contact from "./Contact.vue";
-import SocialIcon from "./SocialIcon.vue";
-import BottomMenu from "./BottomMenu.vue";
 
 export default {
   data() {
@@ -177,8 +169,6 @@ export default {
     About,
     Work,
     Contact,
-    SocialIcon,
-    BottomMenu,
   },
 };
 </script>

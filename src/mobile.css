@@ -7,13 +7,6 @@
         -webkit-transform: translateY(-60%);
         transform: translateY(-60%);
     }
-    .topBtn {
-        bottom: 80px;
-    }
-    .sectionCenter {
-        width: 100%;
-        margin-bottom: 20px;
-    }
     .article {
         flex-wrap: wrap;
     }
@@ -36,8 +29,10 @@
     .workBody h3, .rightParts p {
         padding: 0;
     }
-    footer {
-        margin-bottom: 80px;
+    .articleImg {
+        width: 100%;
+        max-width: 600px;
+        max-height: 420px;
     }
 }
 
@@ -73,9 +68,10 @@
     }
     .lottieCanvas {
         max-width: 90%;
+        top: 0;
     }
     .work {
-        margin-top: 80px;
+        margin-top: 140px;
     }
     .projectList {
         min-width: 100%;
@@ -89,8 +85,8 @@
 }
 
 @media screen and (max-width: 640px) {
-    .work {
-        margin-top: 0;
+    .lottieCanvas {
+        top: 0;
     }
 }
 

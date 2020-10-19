@@ -8,8 +8,8 @@
         </div>
         <h3 class="profileText">Profile</h3>
         <p>
-          1999年生まれ
-          <br />映像・グラフィックデザイン・Webコンテンツなどを制作しています
+          1999年生まれ 映像クリエイター
+          <br />映像作品・Webコンテンツなどを制作しています
           <br />ご依頼はTwitterDM・E-mailにて受け付けております
         </p>
       </dt>
@@ -113,6 +113,7 @@ export default {
 .profile p {
   text-align: left;
   padding: 0 40px;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .skill {

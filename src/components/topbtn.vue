@@ -1,9 +1,14 @@
 <template>
-  <div class="topBtn" v-scroll-to="{
-          el:'#workmain',
-          offset:-60,
-        }" v-bind:class="{ show: show }">
+  <div
+    class="topBtn"
+    v-scroll-to="{
+      el: '#Top',
+      offset: -60,
+    }"
+    v-bind:class="{ show: show }"
+  >
     <a href="#">
+      <span></span>
       <span></span>
     </a>
   </div>
@@ -11,16 +16,22 @@
 <style>
 .topBtn {
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  right: 20px;
-  bottom: 20px;
-  cursor: pointer;
+  right: 10px;
+  bottom: 10px;
   opacity: 0;
   transition: 0.5s ease;
   visibility: hidden;
-  z-index: 9997;
+  z-index: 11;
+  cursor: pointer;
+  background-color: var(--main-bg);
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
+  -moz-filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
+  -ms-filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
 }
 
 .show {
@@ -29,19 +40,22 @@
 }
 
 .topBtn a span {
-  cursor: default;
   position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  border-left: 1px solid var(--main-text);
-  border-bottom: 1px solid var(--main-text);
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  box-sizing: border-box;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 4px;
+  background-color: var(--main-text);
+  border-radius: 4px;
   cursor: pointer;
+}
+
+.topBtn a span:nth-child(1) {
+  transform: translateX(17px) rotate(45deg);
+}
+
+.topBtn a span:nth-child(2) {
+  transform: translateX(5px) rotate(-45deg);
 }
 </style>
 
@@ -49,13 +63,13 @@
 export default {
   data() {
     return {
-      show: false
+      show: false,
     };
   },
   mounted() {
     window.addEventListener("scroll", () => {
       this.show = window.scrollY > 200;
     });
-  }
+  },
 };
 </script>

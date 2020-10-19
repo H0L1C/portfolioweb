@@ -1,19 +1,30 @@
 <template>
-  <div>
+  <div id="Top">
     <mq-layout :mq="['xl']">
-      <sidebar></sidebar>
+      <Sidebar></Sidebar>
+    </mq-layout>
+    <mq-layout :mq="['l', 'm', 's', 'xs']">
+      <Hamburger></Hamburger>
     </mq-layout>
     <transition mode="out-in" @before-enter="beforeEnter">
       <router-view></router-view>
     </transition>
+    <mq-layout :mq="['l', 'm', 's', 'xs']">
+      <Topbtn></Topbtn>
+    </mq-layout>
   </div>
 </template>
 
 <script>
-import sidebar from "./components/Sidebar.vue";
+import Sidebar from "./components/Sidebar.vue";
+import Hamburger from "./components/Hamburger.vue";
+import Topbtn from "./components/TopBtn.vue";
+
 export default {
   components: {
-    sidebar,
+    Sidebar,
+    Hamburger,
+    Topbtn,
   },
   methods: {
     beforeEnter() {

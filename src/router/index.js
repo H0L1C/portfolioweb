@@ -39,9 +39,13 @@ Vue.use(VueScrollTo, {
   x: false,
   y: true
 })
-Vue.use(VScrollLock)
-Vue.use(Router)
+Vue.use(VScrollLock, {
+  bodyScrollOptions: {
+    reserveScrollBarGap: true,
+  },
+})
 
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',

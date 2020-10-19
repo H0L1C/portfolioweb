@@ -5,14 +5,14 @@
       <dd class="contactItem leftItem">
         <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
           <h3>TwitterDM</h3>
+          <h4>@HLC012</h4>
         </a>
-        <h4>@HLC012</h4>
       </dd>
       <dd class="contactItem rightItem">
         <a href="#mailgo" data-address="contact" data-domain="h0l1c.work">
           <h3>Mail</h3>
+          <h4>contact&#64;h0l1c.work</h4>
         </a>
-        <h4>contact&#64;h0l1c.work</h4>
       </dd>
     </dl>
   </div>

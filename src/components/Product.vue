@@ -3,68 +3,67 @@
     <mq-layout :mq="['xl']">
       <WorkMenu></WorkMenu>
     </mq-layout>
-    <mq-layout :mq="['l','m','s','xs']">
-      <SocialIcon></SocialIcon>
-    </mq-layout>
     <div
       class="workBody"
       id="workmain"
       v-scroll-lock="scrollLook"
-      v-bind:class="{productBody:move , productBodyActive:moved}"
+      v-bind:class="{ productBody: move, productBodyActive: moved }"
     >
       <h1>{{ works[id].name }}</h1>
-      <hr />
-      <div class="sectionCenter">
-        <p>ここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいるここに説明がはいる</p>
+      <div class="description">
+        <p class="creationTime">制作期間：　{{ works[id].time }}</p>
       </div>
+
       <div class="sectionList">
-        <div class="section" v-for="(section,index) in works[id].sections" :key="section.title">
-          <h2>{{section.title}}</h2>
+        <div
+          class="section"
+          v-for="(section, index) in works[id].sections"
+          :key="section.title"
+        >
+          <h2>{{ section.title }}</h2>
           <div class="article">
             <div class="leftParts">
               <img
                 v-lazy="section.img"
                 loading="lazy"
-                alt
+                :alt="section.alt"
                 class="articleImg"
                 @click="openModal(index)"
               />
             </div>
             <div class="rightParts">
-              <h3>概要</h3>
-              <p>{{ section.text }}</p>
+              <p class="sectionText">{{ section.text1 }}</p>
+              <p class="sectionText">{{ section.text2 }}</p>
+              <p class="sectionText">{{ section.text3 }}</p>
+              <a :href="section.link" target="_blank" rel="noopener">
+                <p class="sectionLink">{{ section.linktext }}</p>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="popup" v-if="popupActive">
-        <img v-lazy="works[id].sections[num].img" alt class="zoomImg" @click="closeModal()" />
+        <img
+          v-lazy="works[id].sections[num].img"
+          :alt="works[id].sections[num].alt"
+          class="zoomImg"
+          @click="closeModal()"
+        />
         <div class="closeBtn" @click="closeModal()">
           <p>CLOSE</p>
         </div>
         <div class="popupBG"></div>
       </div>
-
-      <topbtn></topbtn>
     </div>
-    <mq-layout :mq="['l','m','s','xs']">
-      <ProductBottomMenu></ProductBottomMenu>
-    </mq-layout>
   </div>
 </template>
 
 <script>
 import works from "../product.js";
-import topbtn from "./TopBtn.vue";
-import SocialIcon from "./SocialIcon.vue";
-import ProductBottomMenu from "./ProductBottomMenu.vue";
 import WorkMenu from "./WorkMenu.vue";
 export default {
   components: {
-    topbtn,
-    SocialIcon,
-    ProductBottomMenu,
     WorkMenu,
   },
   mixins: [works],
@@ -114,6 +113,7 @@ export default {
     });
     this.$router.afterEach((to, from, next) => {
       setTimeout(() => {
+        scrollTo(0, 0);
         this.entered = false;
       }, 260);
     });
@@ -138,9 +138,11 @@ export default {
 
 .workBody h1 {
   font-size: 300%;
-  padding-top: 30px;
-  padding-bottom: 5px;
+  margin: 0 0 30px 0;
+  padding: 30px 0 5px 0;
   display: block;
+  text-align: left;
+  border-bottom: solid 4px var(--sub-color);
 }
 
 .workBody h2 {
@@ -158,25 +160,39 @@ export default {
   height: 0;
 }
 
-.workBody h3 {
-  font-size: 140%;
-  text-align: left;
-  padding: 0 20px;
+.sectionList {
+  min-width: 300px;
 }
 
-hr {
-  width: 20%;
-  border: solid 2px var(--sub-color);
+.sectionLink {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: bold;
+  color: var(--sub-color);
+  margin: 20px 0 0 0;
+  transition: all 0.3s;
+  display: inline-block;
 }
 
-.sectionCenter {
-  width: 60%;
-  margin: auto;
-  padding-top: 20px;
+.sectionLink:hover {
+  color: var(--main-text);
+  opacity: 0.8;
 }
-.sectionCenter p {
-  text-align: left;
+
+.sectionText {
+  margin: 5px 0;
 }
+
+.description {
+  margin: 10px 0;
+}
+
+.description p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 90%;
+  text-align: right;
+  opacity: 0.6;
+}
+
 .article {
   margin: 20px 0;
   display: flex;
@@ -184,20 +200,24 @@ hr {
 }
 .leftParts,
 .rightParts {
-  min-width: 300px;
+  min-width: 290px;
+}
+
+.leftParts {
   min-height: 220px;
 }
 
 .articleImg {
   position: relative;
-  max-width: 320px;
+  max-width: 300px;
   max-height: 220px;
   cursor: zoom-in;
 }
 
 .rightParts p {
   text-align: left;
-  padding: 0 30px;
+  padding: 0 0 0 40px;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 .popupBG {
@@ -216,15 +236,15 @@ hr {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 80vh;
-  max-height: 80vh;
+  max-width: 70%;
+  max-height: 70%;
   z-index: 9999;
   cursor: zoom-out;
 }
 
 .closeBtn {
   position: fixed;
-  top: 75%;
+  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
