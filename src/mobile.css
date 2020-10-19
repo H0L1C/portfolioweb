@@ -67,7 +67,7 @@
         grid-column: 1/1;
     }
     .lottieCanvas {
-        max-width: 90%;
+        max-width: 80%;
         top: 0;
     }
     .work {
@@ -97,9 +97,6 @@
     .main {
         padding-right: 0;
         width: 100%;
-    }
-    .lottieCanvas {
-        max-width: 100%;
     }
 }
 
