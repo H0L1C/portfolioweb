@@ -23,7 +23,6 @@
       </li>!-->
       <li>
         <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
-          <p class="dummyText">twitter</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 398.04">
             <defs />
             <path
@@ -40,7 +39,6 @@
           target="_blank"
           rel="noopener"
         >
-          <p class="dummyText">instagram</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.26 486.49">
             <defs />
             <path
@@ -61,7 +59,6 @@
       </li>
       <li>
         <a href="#mailgo" data-address="contact" data-domain="h0l1c.work">
-          <p class="dummyText">mail</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 358.26">
             <defs />
             <path
@@ -171,15 +168,6 @@
 .ring2:hover {
   -webkit-animation: hover 1s ease;
   animation: hover 1s ease;
-}
-
-.dummyText {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 1px;
-  color: var(--main-bg);
-  z-index: -9999;
 }
 
 @-webkit-keyframes hover {
