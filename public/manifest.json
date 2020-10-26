@@ -1,0 +1,9 @@
+{
+    "name": "H0L1C Portfolio",
+    "short_name": "H0L1C",
+    "theme_color": "#eb5160",
+    "background_color": "#eb5160",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+  }
