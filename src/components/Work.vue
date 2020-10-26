@@ -16,11 +16,7 @@
           rel="noopener"
           class="projectLink"
         >
-          <img
-            src="../assets/images/Gallery_thumbnail.png"
-            loading="lazy"
-            alt="Galleryサムネイル画像"
-          />
+          <img v-lazy="GalleryImage" loading="lazy" alt="Galleryサムネイル画像" />
           <h3>Gallery</h3>
           <p>個人制作作品集</p>
         </a>
@@ -32,6 +28,11 @@
 <script>
 import works from "../product.js";
 export default {
+  data() {
+    return {
+      GalleryImage :require("../assets/images/Gallery_thumbnail.png"),
+    };
+  },
   mixins: [works],
 };
 </script>
