@@ -1,15 +1,15 @@
 <template>
   <div class="work">
     <h2 id="Work">Work</h2>
-    <dl class="projectList" name="works">
-      <dd v-for="work in works" :key="work.id" class="projectItem">
+    <div class="projectList" name="works">
+      <div v-for="work in works" :key="work.id" class="projectItem">
         <router-link :to="`/Product/${work.id}`" class="projectLink">
           <img v-lazy="work.image" loading="lazy" :alt="work.alt" />
           <h3>{{ work.name }}</h3>
           <p>{{ work.caption }}</p>
         </router-link>
-      </dd>
-      <dd class="projectItem">
+      </div>
+      <div class="projectItem">
         <a
           href="https://www.behance.net/H0L1C/projects"
           target="_blank"
@@ -24,8 +24,8 @@
           <h3>Gallery</h3>
           <p>個人制作作品集</p>
         </a>
-      </dd>
-    </dl>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -105,7 +105,7 @@ export default {
 
 .projectLink p {
   font-size: 90%;
-  opacity: 0.6;
+  opacity: 0.7;
   font-family: "Noto Sans JP", sans-serif;
 }
 

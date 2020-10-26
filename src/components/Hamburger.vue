@@ -9,21 +9,21 @@
       <div class="headerInner">
         <div
           id="js-open-menu"
-          class="header__menu"
+          class="headerMenu"
           @click="mainMenuToggle"
           :class="{ active: headerMenu_state }"
         >
-          <span class="header__menu__line"></span>
-          <span class="header__menu__line"></span>
-          <span class="header__menu__line"></span>
+          <span class="headerMenuLine"></span>
+          <span class="headerMenuLine"></span>
+          <span class="headerMenuLine"></span>
         </div>
 
         <div
-          class="header__menu__inner"
+          class="headerMenuInner"
           :class="{ active: headerMenu_state }"
           @click="modalBkClick"
         >
-          <ul class="header__menuList">
+          <ul class="headerMenuList">
             <li class="menuText">
               <router-link to="/" active-class="currentPage" exact>
                 <span>Top</span>
@@ -188,7 +188,7 @@ export default {
   background: #00000000;
 }
 
-.header__menu {
+.headerMenu {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,7 +201,7 @@ export default {
   box-sizing: border-box;
   cursor: pointer;
 }
-.header__menu .header__menu__line {
+.headerMenu .headerMenuLine {
   display: block;
   width: 15px;
   height: 2px;
@@ -209,28 +209,28 @@ export default {
   background: var(--main-text);
   transition: all 0.4s;
 }
-.header__menu .header__menu__line:nth-child(3) {
+.headerMenu .headerMenuLine:nth-child(3) {
   width: 10px;
 }
-.header__menu.active .header__menu__line {
+.headerMenu.active .headerMenuLine {
   position: relative;
   width: 17px;
   background: var(--main-bg);
 }
-.header__menu.active .header__menu__line:nth-of-type(1) {
+.headerMenu.active .headerMenuLine:nth-of-type(1) {
   top: -2px;
   transform: translateY(5px) rotate(-45deg);
 }
-.header__menu.active .header__menu__line:nth-of-type(2) {
+.headerMenu.active .headerMenuLine:nth-of-type(2) {
   opacity: 0;
 }
-.header__menu.active .header__menu__line:nth-of-type(3) {
+.headerMenu.active .headerMenuLine:nth-of-type(3) {
   top: 0;
   width: 17px;
   transform: translateY(-11px) rotate(45deg);
 }
 
-.header__menu__inner {
+.headerMenuInner {
   position: fixed;
   top: 46px;
   left: 0;
@@ -240,11 +240,11 @@ export default {
   transition: all 0.3s;
 }
 
-.header__menu__inner.active {
+.headerMenuInner.active {
   transform: translateX(0);
 }
 
-.header__menu__inner hr {
+.headerMenuInner hr {
   position: absolute;
   top: 68%;
   left: 50%;
@@ -263,11 +263,11 @@ export default {
   margin: 30px 0;
 }
 
-.header__menuList {
+.headerMenuList {
   height: calc(100vh - 46px);
 }
 
-.header__menuList span {
+.headerMenuList span {
   color: var(--main-bg);
   font-size: 300%;
   font-weight: bold;

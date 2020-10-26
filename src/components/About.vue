@@ -1,8 +1,8 @@
 <template>
   <div class="about">
     <h2 id="About">About</h2>
-    <dl class="myProfile">
-      <dt class="profile">
+    <div class="myProfile">
+      <div class="profile">
         <div class="myName">
           <h3>H0L1C</h3>
         </div>
@@ -27,10 +27,10 @@
             >E-mail</a
           >にて受け付けております
         </p>
-      </dt>
-      <dt class="myIcon">
+      </div>
+      <div class="myIcon">
         <img src="../assets/images/myLogo.svg" alt="MyIcon" class="myImg" />
-      </dt>
+      </div>
       <intersect @enter="play">
         <div class="skillSlot">
           <h3 class="skill">Skill</h3>
@@ -43,7 +43,7 @@
           />
         </div>
       </intersect>
-    </dl>
+    </div>
   </div>
 </template>
 

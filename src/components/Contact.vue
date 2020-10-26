@@ -1,20 +1,20 @@
 <template>
   <div>
     <h2 id="Contact">Contact</h2>
-    <dl class="contactList">
-      <dd class="contactItem leftItem">
+    <div class="contactList">
+      <div class="contactItem leftItem">
         <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
           <h3>TwitterDM</h3>
           <h4>@HLC012</h4>
         </a>
-      </dd>
-      <dd class="contactItem rightItem">
+      </div>
+      <div class="contactItem rightItem">
         <a href="#mailgo" data-address="contact" data-domain="h0l1c.work">
           <h3>Mail</h3>
           <h4>contact&#64;h0l1c.work</h4>
         </a>
-      </dd>
-    </dl>
+      </div>
+    </div>
   </div>
 </template>
 
