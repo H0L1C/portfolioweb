@@ -23,6 +23,7 @@
       </li>!-->
       <li>
         <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
+          <p class="dummyText">twitter</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 398.04">
             <defs />
             <path
@@ -39,6 +40,7 @@
           target="_blank"
           rel="noopener"
         >
+          <p class="dummyText">instagram</p>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.26 486.49">
             <defs />
             <path
