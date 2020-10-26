@@ -175,7 +175,11 @@
 
 .dummyText {
   position: absolute;
-  display: none;
+  top: 20px;
+  left: 20px;
+  font-size: 1px;
+  color: var(--main-bg);
+  z-index: -9999;
 }
 
 @-webkit-keyframes hover {
