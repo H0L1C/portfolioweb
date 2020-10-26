@@ -1,5 +1,10 @@
 <template>
   <ul class="workMenuList" name="works">
+    <li>
+      <router-link to="/">
+        <p>Top</p>
+      </router-link>
+    </li>
     <li v-for="work in works" :key="work.id">
       <router-link :to="`/Product/${work.id}`" active-class="activeList">
         <p>{{ work.name }}</p>
