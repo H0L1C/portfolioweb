@@ -22,8 +22,8 @@
         </a>
       </li>!-->
       <li>
-        <a href="https://twitter.com/HLC012" target="_blank" rel="noopener" alt="Twitterリンク">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 398.04" alt="Twitterアイコン">
+        <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 398.04">
             <defs />
             <path
               fill="#353535"
@@ -38,9 +38,8 @@
           href="https://www.instagram.com/h0l1c2/"
           target="_blank"
           rel="noopener"
-          alt="Instagramリンク"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.26 486.49" alt="Instagramアイコン">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.26 486.49">
             <defs />
             <path
               fill="#353535"
@@ -59,8 +58,9 @@
         </a>
       </li>
       <li>
-        <a href="#mailgo" data-address="contact" data-domain="h0l1c.work" alt="メールアドレス">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 358.26" alt="メールアイコン">
+        <a href="#mailgo" data-address="contact" data-domain="h0l1c.work">
+          <p class="dummyText">mail</p>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 358.26">
             <defs />
             <path
               fill="#353535"
@@ -169,6 +169,11 @@
 .ring2:hover {
   -webkit-animation: hover 1s ease;
   animation: hover 1s ease;
+}
+
+.dummyText {
+  position: absolute;
+  display: none;
 }
 
 @-webkit-keyframes hover {
