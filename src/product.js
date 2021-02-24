@@ -87,6 +87,81 @@ const works = [
       },
     ]
   },
+  {
+    id: 3,
+    name: "PictIce",
+    time: "2019/05/27 ~ 07/29",
+    image: require("./assets/images/PICTICE_thumbnail.png"),
+    alt: "PictIceサムネイル画像",
+    caption: "コミュニケーションデザインの提案",
+    sections: [
+      {
+        title: "Concept",
+        img: require("./assets/images/PictIceConcept.png"),
+        alt: "PictIceロゴ画像",
+        text1: "2020年に開催予定であった東京オリンピック・パラリンピックを想定したコミュニケーションデザインの提案を行う課題で取り組んだ作品です。シンクロナイズドスイミングから名称が変更されたアーティスティックスイミングをより楽しんでもらうためのデザインとして「競技中の選手の形をデフォルメしたアイスキューブ」を提案しました。",
+        text2: "会場内で販売されているドリンクに入れることを想定し、手元でも競技を再現して楽しめ身近に感じることができることをコンセプトに制作しました。",
+      },
+      {
+        title: "Website",
+        img: require("./assets/images/PictIceWeb.png"),
+        alt: "PictIceWebサイト画像",
+        text1: "提案したデザインを紹介するためのWebサイトのデザイン・制作を行いました。「アイスキューブ」という冷やすことを目的とした製品に合わせ、ユーザーのスクロールに応じて温度が下がるような表現を取り入れたデザインにまとめました。",
+        linktext: "Site：PictIceWeb",
+        link: "https://h0l1c.github.io/IxDFinalWeb/",
+      },
+    ]
+  },
+  {
+    id: 4,
+    name: "PictIce",
+    time: "2019/05/27 ~ 07/29",
+    image: require("./assets/images/PICTICE_thumbnail.png"),
+    alt: "PictIceサムネイル画像",
+    caption: "コミュニケーションデザインの提案",
+    sections: [
+      {
+        title: "Concept",
+        img: require("./assets/images/PictIceConcept.png"),
+        alt: "PictIceロゴ画像",
+        text1: "2020年に開催予定であった東京オリンピック・パラリンピックを想定したコミュニケーションデザインの提案を行う課題で取り組んだ作品です。シンクロナイズドスイミングから名称が変更されたアーティスティックスイミングをより楽しんでもらうためのデザインとして「競技中の選手の形をデフォルメしたアイスキューブ」を提案しました。",
+        text2: "会場内で販売されているドリンクに入れることを想定し、手元でも競技を再現して楽しめ身近に感じることができることをコンセプトに制作しました。",
+      },
+      {
+        title: "Website",
+        img: require("./assets/images/PictIceWeb.png"),
+        alt: "PictIceWebサイト画像",
+        text1: "提案したデザインを紹介するためのWebサイトのデザイン・制作を行いました。「アイスキューブ」という冷やすことを目的とした製品に合わせ、ユーザーのスクロールに応じて温度が下がるような表現を取り入れたデザインにまとめました。",
+        linktext: "Site：PictIceWeb",
+        link: "https://h0l1c.github.io/IxDFinalWeb/",
+      },
+    ]
+  },
+  {
+    id: 5,
+    name: "PictIce",
+    time: "2019/05/27 ~ 07/29",
+    image: require("./assets/images/PICTICE_thumbnail.png"),
+    alt: "PictIceサムネイル画像",
+    caption: "コミュニケーションデザインの提案",
+    sections: [
+      {
+        title: "Concept",
+        img: require("./assets/images/PictIceConcept.png"),
+        alt: "PictIceロゴ画像",
+        text1: "2020年に開催予定であった東京オリンピック・パラリンピックを想定したコミュニケーションデザインの提案を行う課題で取り組んだ作品です。シンクロナイズドスイミングから名称が変更されたアーティスティックスイミングをより楽しんでもらうためのデザインとして「競技中の選手の形をデフォルメしたアイスキューブ」を提案しました。",
+        text2: "会場内で販売されているドリンクに入れることを想定し、手元でも競技を再現して楽しめ身近に感じることができることをコンセプトに制作しました。",
+      },
+      {
+        title: "Website",
+        img: require("./assets/images/PictIceWeb.png"),
+        alt: "PictIceWebサイト画像",
+        text1: "提案したデザインを紹介するためのWebサイトのデザイン・制作を行いました。「アイスキューブ」という冷やすことを目的とした製品に合わせ、ユーザーのスクロールに応じて温度が下がるような表現を取り入れたデザインにまとめました。",
+        linktext: "Site：PictIceWeb",
+        link: "https://h0l1c.github.io/IxDFinalWeb/",
+      },
+    ]
+  },
 
 ]
 

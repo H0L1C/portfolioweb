@@ -58,7 +58,7 @@
         </a>
       </li>
       <li>
-        <a href="#mailgo" data-address="contact" data-domain="h0l1c.work">
+        <a href="#mailgo" data-address="h0l1c.biz" data-domain="gmail.com">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 358.26">
             <defs />
             <path

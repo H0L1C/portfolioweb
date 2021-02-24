@@ -1,31 +1,48 @@
 <template>
   <ul class="menuList">
     <li>
-      <p class="HomeLink" v-scroll-to="'#Home'">Home</p>
-    </li>
-    <li>
       <p
         class="AboutLink"
         v-scroll-to="{
-          el:'#About',
-          offset:-60,
+          el: '#About',
+          offset: -60,
         }"
-      >About</p>
+      >
+        About
+      </p>
     </li>
     <li>
-      <p class="WorkLink" v-scroll-to="{
-          el:'#Work',
-          offset:-60,
-        }">Work</p>
+      <p
+        class="WorkLink"
+        v-scroll-to="{
+          el: '#Work',
+          offset: -60,
+        }"
+      >
+        Work
+      </p>
+    </li>
+    <li>
+      <p
+        class="SkillLink"
+        v-scroll-to="{
+          el: '#Skill',
+          offset: -60,
+        }"
+      >
+        Skill
+      </p>
     </li>
     <li>
       <p
         class="ContactLink"
         v-scroll-to="{
-          el:'#Contact',
-          offset:-60,
+          el: '#Contact',
+          offset: -60,
         }"
-      >Contact</p>
+      >
+        Contact
+      </p>
     </li>
   </ul>
 </template>
@@ -50,16 +67,15 @@
   cursor: pointer;
 }
 
-.TopLink:hover,
-.HomeLink:hover,
 .AboutLink:hover,
 .WorkLink:hover,
-.GalleryLink:hover,
+.SkillLink:hover,
 .ContactLink:hover {
   color: var(--sub-color);
 }
 
-.menuList p, span {
+.menuList p,
+span {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

@@ -19,19 +19,14 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  right: 10px;
-  bottom: 10px;
+  right: 20px;
+  bottom: 13px;
   opacity: 0;
   transition: 0.5s ease;
   visibility: hidden;
   z-index: 11;
   cursor: pointer;
-  background-color: var(--main-bg);
-  border-radius: 50%;
-  -webkit-filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
-  -moz-filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
-  -ms-filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
-  filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.1));
+
 }
 
 .show {

@@ -1,27 +1,43 @@
 <template>
-  <div class="work">
-    <h2 id="Work">Work</h2>
+  <div class="work section">
+    <hr />
+    <h2 id="Work">WORKS</h2>
+    <p class="caption">2020/11 ~ {{ date }}</p>
     <div class="projectList" name="works">
-      <div v-for="work in works" :key="work.id" class="projectItem">
+      <div
+        v-for="(work, index) in works"
+        :key="work.id"
+        class="projectItem"
+        :class="[
+          { hide: index >= number && more == true },
+          { fade: index >= number },
+          { heightCon: index >= number && delSpace == true },
+        ]"
+      >
         <router-link :to="`/Product/${work.id}`" class="projectLink">
           <img v-lazy="work.image" loading="lazy" :alt="work.alt" />
           <h3>{{ work.name }}</h3>
           <p>{{ work.caption }}</p>
         </router-link>
       </div>
-      <div class="projectItem">
+      <!--div class="projectItem">
         <a
           href="https://www.behance.net/H0L1C/projects"
           target="_blank"
           rel="noopener"
           class="projectLink"
         >
-          <img v-lazy="GalleryImage" loading="lazy" alt="Galleryサムネイル画像" />
+          <img
+            v-lazy="GalleryImage"
+            loading="lazy"
+            alt="Galleryサムネイル画像"
+          />
           <h3>Gallery</h3>
           <p>個人制作作品集</p>
         </a>
-      </div>
+      </div-->
     </div>
+    <!--p class="moreBtn" @click="toggleBtn">{{ btnText }}<p-->
   </div>
 </template>
 
@@ -30,25 +46,58 @@ import works from "../product.js";
 export default {
   data() {
     return {
-      GalleryImage :require("../assets/images/Gallery_thumbnail.png"),
+      GalleryImage: require("../assets/images/Gallery_thumbnail.png"),
+      date: "2021/02",
+      more: false,
+      delSpace: true,
+      number: 6,
+      btnText: "ReadMore",
     };
+  },
+  methods: {
+    toggleBtn() {
+      this.more = !this.more;
+      if (!this.more) {
+        setTimeout(this.spaceControl, 200);
+      } else {
+        this.btnText = "Close";
+        this.delSpace = false;
+      }
+    },
+    spaceControl() {
+      this.delSpace = true;
+      this.btnText = "ReadMore";
+    },
+    updateTime: function () {
+      let currentdate = new Date();
+      this.date =
+        this.zeroPadding(currentdate.getFullYear(), 4) +
+        "/" +
+        this.zeroPadding(currentdate.getMonth() + 1, 2);
+    },
+    zeroPadding: function (num, len) {
+      let zero = "";
+
+      for (var i = 0; i < len; i++) {
+        zero += "0";
+      }
+      return (zero + num).slice(-len);
+    },
+  },
+  mounted: function () {
+    window.onload = this.updateTime;
   },
   mixins: [works],
 };
 </script>
 
 <style>
-.work {
-  margin-top: 120px;
-}
-
 .projectList {
   width: 50%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  transition: 0.3s;
 }
 
 .projectItem {
@@ -56,7 +105,14 @@ export default {
   max-width: 300px;
   min-width: 300px;
   height: 300px;
-  margin: 40px 0 0 0;
+  margin: 0 0 40px 0;
+  background-color: var(--sub-bg);
+  box-shadow: 0px 1px 3px 0px #00000026;
+  transition: 0.3s;
+}
+
+.projectItem:hover {
+  transform: translate(0, -4px);
 }
 
 .projectLink {
@@ -69,71 +125,69 @@ export default {
 .projectLink img {
   width: 300px;
   height: 220px;
-  border-radius: 10px;
-}
-.projectLink::before,
-.projectLink::after {
-  position: absolute;
-  bottom: 40px;
-  content: "";
-  height: 2px;
-  display: inline-block;
-  width: 0;
-  background: var(--sub-color);
+  border-radius: 10px 10px 0 0;
+  opacity: 1;
   transition: 0.3s;
 }
 
-.projectLink::before {
-  left: 50%;
-}
-
-.projectLink::after {
-  right: 50%;
-}
-
-.projectLink:hover::before,
-.projectLink:hover::after {
-  width: 60px;
+.projectLink img:hover {
+  opacity: 0.7;
 }
 
 .projectLink h3 {
-  padding: -10px 0;
   display: block;
   margin: 0 auto;
-  line-height: 40px;
-  font-size: 140%;
+  line-height: 45px;
+  font-size: 160%;
 }
 
 .projectLink p {
   font-size: 90%;
   opacity: 0.7;
   font-family: "Noto Sans JP", sans-serif;
+  padding: 2px 0;
+}
+.fade {
+  transition: opacity 1s, visibility 0s ease 1s;
+  opacity: 0;
+  visibility: hidden;
 }
 
-.originalProject {
-  position: relative;
-  width: 300px;
-  min-width: 300px;
-  margin: 60px auto 0 auto;
-  cursor: pointer;
+.heightCon {
+  height: 0px;
+  transform: scaleY(0);
 }
 
-.originalProject h3 {
+.hide {
+  transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+  height: 300px;
+  transform: scaleY(1);
+}
+
+.moreBtn {
   position: relative;
-  padding: 10px 30px;
-  font-size: 160%;
+  margin: 20px 0;
+  padding: 6px 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+  width: 10%;
+  min-width: 200px;
   height: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   line-height: 30px;
-  color: var(--main-bg);
-  border: solid 2px;
+  color: var(--main-text);
+  border: solid 1px;
   border-radius: 2px;
-  background-color: var(--main-text);
   transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.6;
 }
 
-.originalProject h3:hover {
-  color: var(--main-textr);
-  background-color: var(--main-bg);
-  border: solid 2px;
+.moreBtn:hover {
+  color: var(--sub-color);
+  opacity: 1;
 }
 </style>

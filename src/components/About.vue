@@ -1,161 +1,76 @@
 <template>
-  <div class="about">
-    <h2 id="About">About</h2>
+  <div class="about section">
+    <hr />
+    <h2 id="About">ABOUT</h2>
+    <p class="caption"></p>
     <div class="myProfile">
+      <div class="icon">
+        <img src="../assets/images/HLC_IO.png" alt="MyIcon" class="myImg" />
+        <h3>H0L1C</h3>
+      </div>
       <div class="profile">
-        <div class="myName">
-          <h3>H0L1C</h3>
-        </div>
-        <h3 class="profileText">Profile</h3>
         <p>
-          1999年生まれ 映像クリエイター
-          <br />映像作品・Webコンテンツなどを制作しています <br />ご依頼は
-          <a
-            href="https://twitter.com/HLC012"
-            target="_blank"
-            rel="noopener"
-            class="contactLinkText"
-          >
-            TwitterDM</a
-          >
-          ・
-          <a
-            href="#mailgo"
-            data-address="contact"
-            data-domain="h0l1c.work"
-            class="contactLinkText"
-            >E-mail</a
-          >にて受け付けております
+          <br />
+          1999年生まれ 動画クリエイター / VJ<br /><br />
+          動画作品やWeb・VRコンテンツの制作をしています。<br />
+          また、ライブシステムの開発からオペレーションなども行っています。<br />
         </p>
       </div>
-      <div class="myIcon">
-        <img src="../assets/images/myLogo.svg" alt="MyIcon" class="myImg" />
-      </div>
-      <intersect @enter="play">
-        <div class="skillSlot">
-          <h3 class="skill">Skill</h3>
-          <lottie
-            :options="defaultOptions"
-            v-on:animCreated="lottieAnimation"
-            class="lottieCanvas"
-            :height="0"
-            :width="0"
-          />
-        </div>
-      </intersect>
     </div>
   </div>
 </template>
 
-<script>
-import Lottie from "./Lottie.vue";
-import * as animationData from "../assets/data.json";
-import Intersect from "vue-intersect";
 
-export default {
-  components: {
-    Lottie,
-    Intersect,
-  },
-  data: function () {
-    return {
-      defaultOptions: { animationData: animationData },
-      animationSpeed: 1,
-    };
-  },
-
-  methods: {
-    lottieAnimation: function (anim) {
-      this.anim = anim;
-    },
-
-    play: function () {
-      this.anim.play();
-    },
-  },
-};
-</script>
 
 <style>
-#About {
-  margin-top: 0;
-}
-
 .myProfile {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 0.6fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: minmax(200px, 0.5fr) 1fr;
   height: auto;
-  max-height: 600px;
   width: 50%;
-  margin: auto;
+  margin: 50px auto 0 auto;
 }
 
-.myProfile h3 {
-  font-size: 160%;
-  padding: 0 10px;
-  margin-bottom: 30px;
+.icon h3 {
   color: var(--main-text);
-  text-align: left;
-}
-
-.myName h3 {
-  font-size: 260%;
-  line-height: 60px;
+  font-size: 200%;
   padding: 0;
+  position: absolute;
+  width: 300px;
+  margin: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
 }
 
-.myIcon {
+.icon {
   position: relative;
-  min-width: 300px;
+  min-width: 200px;
+  height: 200px;
 }
 
 .myImg {
   position: absolute;
-  width: 80%;
-  max-width: 300px;
-  top: 50%;
+  width: 145px;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: solid 2px var(--sub-bg);
+  box-shadow: 0px 1px 3px 0px #00000026;
 }
 
-.profileText,
-.skill {
+.profileText {
+  font-size: 160% !important;
+  padding: 0 10px !important;
   border-left: 6px solid var(--sub-color);
 }
 
 .profile p {
   text-align: left;
-  padding: 0 40px;
+  padding: 0;
   font-family: "Noto Sans JP", sans-serif;
-}
-
-.skill {
-  margin-top: 60px !important;
-}
-
-.skillSlot {
-  grid-column: 1/3;
-}
-
-.lottieCanvas {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  width: auto !important;
-  height: auto !important;
-  max-width: 80%;
-  position: relative;
-  top: -15%;
-}
-
-.contactLinkText{
-  transition: all 0.5s;
-}
-
-.contactLinkText:hover {
-  color: var(--sub-color);
 }
 </style>

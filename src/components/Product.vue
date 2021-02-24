@@ -1,8 +1,5 @@
 <template>
   <div>
-    <mq-layout :mq="['xl']">
-      <WorkMenu></WorkMenu>
-    </mq-layout>
     <div
       class="workBody"
       id="workmain"
@@ -43,7 +40,9 @@
         </div>
       </div>
 
-      <div class="popup" v-if="popupActive">
+      <WorkMenu></WorkMenu>
+
+      <div class="popup" v-if="popupActive" @click="closeModal()">
         <img
           v-lazy="works[id].sections[num].img"
           :alt="works[id].sections[num].alt"

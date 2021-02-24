@@ -1,17 +1,18 @@
 <template>
-  <div>
-    <h2 id="Contact">Contact</h2>
+  <div class="contact section">
+    <hr />
+    <h2 id="Contact">CONTACT</h2>
+    <p class="caption">ご依頼などは、TwitterDM・メールにてお願い致します。</p>
     <div class="contactList">
       <div class="contactItem leftItem">
         <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
           <h3>TwitterDM</h3>
-          <h4>@HLC012</h4>
         </a>
       </div>
+
       <div class="contactItem rightItem">
-        <a href="#mailgo" data-address="contact" data-domain="h0l1c.work">
+        <a href="#mailgo" data-address="h0l1c.biz" data-domain="gmail.com">
           <h3>Mail</h3>
-          <h4>contact&#64;h0l1c.work</h4>
         </a>
       </div>
     </div>
@@ -19,6 +20,7 @@
 </template>
 
 <style>
+
 .contactList {
   width: 50%;
   margin: auto;

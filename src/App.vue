@@ -9,7 +9,7 @@
     <transition mode="out-in" @before-enter="beforeEnter">
       <router-view></router-view>
     </transition>
-    <mq-layout :mq="['l', 'm', 's', 'xs']">
+    <mq-layout :mq="['xl', 'l', 'm', 's', 'xs']">
       <Topbtn></Topbtn>
     </mq-layout>
     <footer>
@@ -70,6 +70,7 @@ html::-webkit-scrollbar {
 
 html,
 body {
+  -webkit-font-smoothing: antialiased;
   background: var(--main-bg);
   margin: 0;
   transition: 0.5s;
@@ -77,10 +78,11 @@ body {
 }
 
 :root {
-  --main-text: #353535;
+  --main-text: #202020;
   --main-bg: #fafafa;
-  --sub-color: #eb5160;
+  --sub-bg: #fcfcfc;
   --alpha-bg: #fafafaca;
+  --sub-color: #eb5160;
 }
 
 h1,
@@ -102,7 +104,8 @@ h2 {
   font-size: 280%;
   position: relative;
   display: inline-block;
-  padding: 0 50px;
+  margin: 50px 0 0 0;
+  padding: 0 60px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -119,13 +122,22 @@ h2::after {
   -webkit-transform: rotate(-60deg);
   transform: rotate(-60deg);
 }
-
 h2::before {
   left: 0;
 }
-
 h2::after {
   right: 0;
+}
+
+hr {
+  border: 1px solid #20202010;
+  width: 50%;
+  min-width: 500px;
+  margin: 0 auto 50px auto;
+}
+
+.section {
+  margin: 0 0 100px 0;
 }
 
 .main {
@@ -135,7 +147,7 @@ h2::after {
 }
 
 footer {
-  margin-top: 160px;
+  margin-top: 60px;
   height: 40px;
   text-align: center;
   position: relative;

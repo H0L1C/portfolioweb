@@ -34,46 +34,33 @@
         max-width: 600px;
         max-height: 420px;
     }
+    .workMenu {
+        margin: 100px 0 100px 0;
+    }
 }
 
 @media screen and (max-width: 760px) {
     .myProfile {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, 280px);
-        ;
+        grid-template-rows: repeat(2, minmax(200px, 1fr));
         max-height: 100%;
         min-width: 100%;
     }
-    .myProfile h3 {
-        margin: 0 30px 30px 30px;
-    }
-    .myIcon {
-        grid-row-start: 1;
-        width: auto;
-        min-width: 280px;
-        height: 260px;
-        margin: 0;
-        border-radius: 0;
-        background-color: var(--main-bg);
-    }
-    .myImg {
-        width: 260px;
+    .icon {
+        height: 200px;
     }
     .profile {
         width: auto;
-        max-width: 640px;
+        min-width: 300px;
     }
-    .skillSlot {
-        grid-column: 1/1;
+    .profile p {
+        position: absolute;
+        padding: 0;
+        min-width: 500px;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
-    .lottieCanvas {
-        max-width: 80%;
-        top: 0;
-    }
-    .work {
-        margin-top: 140px;
-    }
-    .projectList {
+    .projectList, .skillList {
         min-width: 100%;
         justify-content: space-around;
     }
@@ -82,11 +69,16 @@
         flex-wrap: wrap;
         justify-content: space-around;
     }
+    .contactItem {
+        height: auto;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    .lottieCanvas {
-        top: 0;
+    .profile p {
+        padding: 0;
+        min-width: auto;
+        width: 80%;
     }
 }
 
@@ -98,9 +90,16 @@
         padding-right: 0;
         width: 100%;
     }
+    hr {
+        width: 80%;
+        min-width: 0px;
+    }
 }
 
 @media screen and (max-width: 415px) {
+    .title h1 {
+        font-size: 200%;
+    }
     .workBody {
         width: 90%;
         margin: auto;
@@ -110,8 +109,31 @@
         max-height: 220px;
         cursor: zoom-in;
     }
-    .work {
-        margin-top: -60px;
+    .skillItem {
+        display: grid;
+        grid-template-rows: 150px 40px;
+        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        height: 190px;
+        margin: 20px 0 0 0;
+    }
+    .skillImage {
+        width: 40px;
+        height: 40px;
+    }
+    .graph svg {
+        transform: rotate(-90deg);
+        background-color: var(--sub-bg);
+        border-radius: 10px;
+        width: 150px;
+        height: 150px;
+    }
+    .graphTitle {
+        font-size: 80%;
+    }
+    circle {
+        scale: 0.75;
     }
 }
 

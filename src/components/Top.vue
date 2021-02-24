@@ -3,10 +3,11 @@
     <transition name="loadingFade">
       <div class="loadingAnim" v-if="loading"></div>
     </transition>
+    <p class="version">Ver : {{ ver }}</p>
     <mq-layout :mq="['xl']">
       <Menu></Menu>
     </mq-layout>
-    <div class="title" id="Home">
+    <div class="title" id="Top">
       <h1>H0L1C Portfolio</h1>
       <a href="#">
         <span></span>
@@ -15,11 +16,23 @@
 
     <About></About>
     <Work></Work>
+    <Skill></Skill>
     <Contact></Contact>
   </div>
 </template>
 
 <style>
+.version {
+  position: absolute;
+  font-size: 12px;
+  top: 13px;
+  right: 20px;
+  opacity: 0.2;
+  font-family: "Montserrat";
+  font-weight: bold;
+  z-index: 9999;
+}
+
 .loadingAnim {
   position: fixed;
   width: 100%;
@@ -64,7 +77,7 @@
 .title a span {
   cursor: default;
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 50%;
   width: 24px;
   height: 24px;
@@ -76,10 +89,21 @@
   -webkit-animation: scrollanim 2s infinite;
   animation: scrollanim 2s infinite;
   box-sizing: border-box;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
-h2 {
-  margin: 120px 0 40px 0;
+.caption {
+  margin: 20px 0 40px 0;
+  font-family: "Noto Sans JP", sans-serif;
+  text-decoration: none;
+  padding: 0;
+  color: var(--main-text);
+  text-align: center;
+  font-size: 90%;
+  opacity: 0.7;
 }
 
 .myProfile,
@@ -92,6 +116,7 @@ h2 {
 
 .myProfile,
 .projectList,
+.skillList,
 .contactList {
   min-width: 640px;
 }
@@ -139,24 +164,20 @@ h2 {
     max-width: 200px;
   }
 }
-
-@media screen and (max-width: 415px) {
-  .title h1 {
-    font-size: 200%;
-  }
-}
 </style>
 
 <script>
 import Menu from "./Menu.vue";
 import About from "./About.vue";
 import Work from "./Work.vue";
+import Skill from "./Skill.vue";
 import Contact from "./Contact.vue";
 
 export default {
   data() {
     return {
       loading: true,
+      ver: "2.0.0",
     };
   },
   mounted() {
@@ -168,6 +189,7 @@ export default {
     Menu,
     About,
     Work,
+    Skill,
     Contact,
   },
 };
