@@ -132,8 +132,10 @@
     .graphTitle {
         font-size: 80%;
     }
-    circle {
-        scale: 0.75;
+    .graph svg {
+        width: 200px;
+        height: 200px;
+        transform: translate(-50%, -50%) scale(0.75);
     }
 }
 
