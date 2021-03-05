@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Top from '@/components/Top'
 import Product from '@/components/Product'
+import WorkList from '@/components/WorkList.vue'
 import VueLazyload from 'vue-lazyload'
 import VScrollLock from 'v-scroll-lock'
 import VueMq from 'vue-mq'
@@ -17,9 +18,9 @@ Vue.use(VueLazyload, {
 
 Vue.use(VueMq, {
   breakpoints: {
-    xs: 320,
-    s: 321,
-    m: 415,
+    xs: 321,
+    s: 416,
+    m: 641,
     l: 960,
     xl: Infinity
   },
@@ -54,6 +55,11 @@ export default new Router({
       path: '/',
       name: 'Top',
       component: Top
+    },
+    {
+      path: '/Gallery',
+      name: 'Gallery',
+      component: WorkList
     },
     {
       path: '/product/:id',

@@ -30,13 +30,9 @@
               </router-link>
             </li>
             <li class="menuText">
-              <a
-                href="https://www.behance.net/H0L1C/projects"
-                target="_blank"
-                rel="noopener"
-              >
+              <router-link to="/Gallery" active-class="currentPage" exact>
                 <span>Gallery</span>
-              </a>
+              </router-link>
             </li>
           </ul>
 

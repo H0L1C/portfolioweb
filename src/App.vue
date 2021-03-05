@@ -9,9 +9,9 @@
     <transition mode="out-in" @before-enter="beforeEnter">
       <router-view></router-view>
     </transition>
-    <mq-layout :mq="['xl', 'l', 'm', 's', 'xs']">
+
       <Topbtn></Topbtn>
-    </mq-layout>
+
     <footer>
       <p class="copyright" v-html="copy + ' ' + now + ' ' + copyright"></p>
     </footer>

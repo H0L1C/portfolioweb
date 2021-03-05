@@ -8,7 +8,7 @@
           offset: -60,
         }"
       >
-        About
+        ABOUT
       </p>
     </li>
     <li>
@@ -19,7 +19,7 @@
           offset: -60,
         }"
       >
-        Work
+        WORKS
       </p>
     </li>
     <li>
@@ -30,7 +30,7 @@
           offset: -60,
         }"
       >
-        Skill
+        SKILL
       </p>
     </li>
     <li>
@@ -41,7 +41,7 @@
           offset: -60,
         }"
       >
-        Contact
+        CONTACT
       </p>
     </li>
   </ul>

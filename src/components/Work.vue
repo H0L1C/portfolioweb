@@ -1,43 +1,26 @@
 <template>
   <div class="work section">
     <hr />
-    <h2 id="Work">WORKS</h2>
+    <h2 id="Work">{{ worksTitle }}</h2>
     <p class="caption">2020/11 ~ {{ date }}</p>
     <div class="projectList" name="works">
-      <div
-        v-for="(work, index) in works"
-        :key="work.id"
-        class="projectItem"
-        :class="[
-          { hide: index >= number && more == true },
-          { fade: index >= number },
-          { heightCon: index >= number && delSpace == true },
-        ]"
-      >
+      <div v-for="work in workList" :key="work.id" class="projectItem">
         <router-link :to="`/Product/${work.id}`" class="projectLink">
           <img v-lazy="work.image" loading="lazy" :alt="work.alt" />
           <h3>{{ work.name }}</h3>
           <p>{{ work.caption }}</p>
         </router-link>
       </div>
-      <!--div class="projectItem">
-        <a
-          href="https://www.behance.net/H0L1C/projects"
-          target="_blank"
-          rel="noopener"
-          class="projectLink"
-        >
-          <img
-            v-lazy="GalleryImage"
-            loading="lazy"
-            alt="Galleryサムネイル画像"
-          />
-          <h3>Gallery</h3>
-          <p>個人制作作品集</p>
-        </a>
-      </div-->
     </div>
-    <!--p class="moreBtn" @click="toggleBtn">{{ btnText }}<p-->
+    <div class="moreBtnWrap">
+      <router-link
+        to="./Gallery"
+        v-if="this.$route.path == '/'"
+        class="moreBtnLink"
+      >
+        <p class="moreBtn">{{ btnText }}</p>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -46,28 +29,11 @@ import works from "../product.js";
 export default {
   data() {
     return {
-      GalleryImage: require("../assets/images/Gallery_thumbnail.png"),
       date: "2021/02",
-      more: false,
-      delSpace: true,
-      number: 6,
-      btnText: "ReadMore",
+      btnText: "AllWorks & Events",
     };
   },
   methods: {
-    toggleBtn() {
-      this.more = !this.more;
-      if (!this.more) {
-        setTimeout(this.spaceControl, 200);
-      } else {
-        this.btnText = "Close";
-        this.delSpace = false;
-      }
-    },
-    spaceControl() {
-      this.delSpace = true;
-      this.btnText = "ReadMore";
-    },
     updateTime: function () {
       let currentdate = new Date();
       this.date =
@@ -75,6 +41,7 @@ export default {
         "/" +
         this.zeroPadding(currentdate.getMonth() + 1, 2);
     },
+
     zeroPadding: function (num, len) {
       let zero = "";
 
@@ -87,6 +54,12 @@ export default {
   mounted: function () {
     window.onload = this.updateTime;
   },
+  computed: {
+    workList() {
+      return this.works.slice(0, this.num);
+    },
+  },
+  props: ["num", "worksTitle"],
   mixins: [works],
 };
 </script>
@@ -147,47 +120,35 @@ export default {
   font-family: "Noto Sans JP", sans-serif;
   padding: 2px 0;
 }
-.fade {
-  transition: opacity 1s, visibility 0s ease 1s;
-  opacity: 0;
-  visibility: hidden;
-}
 
-.heightCon {
-  height: 0px;
-  transform: scaleY(0);
-}
-
-.hide {
-  transition-delay: 0s;
-  opacity: 1;
-  visibility: visible;
-  height: 300px;
-  transform: scaleY(1);
-}
-
-.moreBtn {
+.moreBtnWrap {
   position: relative;
-  margin: 20px 0;
-  padding: 6px 6px;
+  width: 100%;
+}
+.moreBtn {
+  position: absolute;
+  margin: 20px 0 0 0;
   font-family: "Montserrat", sans-serif;
-  font-size: 100%;
+  font-size: 92%;
+  font-weight: bold;
   width: 10%;
-  min-width: 200px;
-  height: 30px;
+  min-width: 300px;
+  height: 36px;
   left: 50%;
   transform: translateX(-50%);
-  line-height: 30px;
+  line-height: 36px;
   color: var(--main-text);
-  border: solid 1px;
+  border: solid 2px var(--main-text);
   border-radius: 2px;
   transition: 0.3s;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .moreBtn:hover {
-  color: var(--sub-color);
+  color: var(--main-bg);
+  border: solid 2px var(--sub-color);
+  background-color: var(--sub-color);
   opacity: 1;
 }
 </style>

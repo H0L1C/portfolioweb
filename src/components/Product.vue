@@ -40,7 +40,10 @@
         </div>
       </div>
 
-      <WorkMenu></WorkMenu>
+      <div class="btnWrap">
+        <p class="backBtn backTop">Back to Top</p>
+        <p class="backBtn backWorks">Other Works</p>
+      </div>
 
       <div class="popup" v-if="popupActive" @click="closeModal()">
         <img
@@ -60,11 +63,8 @@
 
 <script>
 import works from "../product.js";
-import WorkMenu from "./WorkMenu.vue";
 export default {
-  components: {
-    WorkMenu,
-  },
+  components: {},
   mixins: [works],
   props: {
     id: Number,
@@ -211,6 +211,7 @@ export default {
   max-width: 300px;
   max-height: 220px;
   cursor: zoom-in;
+  box-shadow: 0px 1px 3px 0px #00000026;
 }
 
 .rightParts p {
@@ -259,5 +260,36 @@ export default {
   color: var(--main-bg);
   padding: 10px 20px;
   border: solid 2px var(--main-bg);
+}
+
+.btnWrap {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.backBtn {
+  margin: 20px 0 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 92%;
+  font-weight: bold;
+  width: 10%;
+  min-width: 240px;
+  height: 36px;
+  line-height: 36px;
+  color: var(--main-text);
+  border: solid 2px var(--main-text);
+  border-radius: 2px;
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.backTop:hover,
+.backWorks:hover {
+  color: var(--main-bg);
+  border: solid 2px var(--sub-color);
+  background-color: var(--sub-color);
+  opacity: 1;
 }
 </style>

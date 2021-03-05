@@ -5,7 +5,12 @@
     <p class="caption"></p>
     <div class="myProfile">
       <div class="icon">
-        <img src="../assets/images/HLC_IO.png" alt="MyIcon" class="myImg" />
+        <img
+          src="../assets/images/HLC_IO.png"
+          alt="MyIcon"
+          class="myImg"
+          loading="lazy"
+        />
         <h3>H0L1C</h3>
       </div>
       <div class="profile">

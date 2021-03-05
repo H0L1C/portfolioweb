@@ -134,12 +134,11 @@ export default {
   position: absolute;
   width: 200px;
   height: 200px;
-  transform: rotate(-90deg);
   border-radius: 10px;
   background-color: #fafafa00;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) rotate(-90deg) scale(1);
 }
 
 .graph {

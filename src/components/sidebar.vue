@@ -7,14 +7,9 @@
         </router-link>
       </li>
       <li>
-        <a
-          href="https://www.behance.net/H0L1C/projects"
-          target="_blank"
-          rel="noopener"
-          class="page"
-        >
+        <router-link to="/Gallery" class="page" active-class="pageActive" exact>
           <span>Gallery</span>
-        </a>
+        </router-link>
       </li>
       <!-- <li>
         <a href="" target="_blank" rel="noopener" class="Page"> Boothのリンクいれる

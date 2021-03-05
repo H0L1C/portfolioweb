@@ -8,14 +8,14 @@
       <Menu></Menu>
     </mq-layout>
     <div class="title" id="Top">
-      <h1>H0L1C Portfolio</h1>
+      <h1>STUDIO H0L1C</h1>
       <a href="#">
         <span></span>
       </a>
     </div>
 
     <About></About>
-    <Work></Work>
+    <Work :num="3" :worksTitle="workTitle"></Work>
     <Skill></Skill>
     <Contact></Contact>
   </div>
@@ -96,7 +96,7 @@
 }
 
 .caption {
-  margin: 20px 0 40px 0;
+  margin: 20px auto 40px auto;
   font-family: "Noto Sans JP", sans-serif;
   text-decoration: none;
   padding: 0;
@@ -117,7 +117,8 @@
 .myProfile,
 .projectList,
 .skillList,
-.contactList {
+.contactList,
+.eventsList {
   min-width: 640px;
 }
 
@@ -178,6 +179,7 @@ export default {
     return {
       loading: true,
       ver: "2.0.0",
+      workTitle: "WORKS",
     };
   },
   mounted() {

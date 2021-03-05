@@ -20,7 +20,6 @@
 </template>
 
 <style>
-
 .contactList {
   width: 50%;
   margin: auto;
@@ -43,13 +42,15 @@
   height: 30px;
   line-height: 30px;
   color: var(--main-text);
-  border: solid 2px;
+  border: solid 2px var(--main-text);
   border-radius: 2px;
   transition: 0.3s;
 }
 
 .contactItem h3:hover {
-  color: var(--sub-color);
+  color: var(--main-bg);
+  border: solid 2px var(--sub-color);
+  background-color: var(--sub-color);
 }
 
 .contactItem h4 {
