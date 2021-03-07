@@ -138,6 +138,9 @@
         width: 40px;
         height: 40px;
     }
+    .projectList {
+        margin: 0 0 60px 0;
+    }
     .topicPath {
         width: 90%;
     }
@@ -150,7 +153,7 @@
     .section {
         margin: 0;
     }
-    .section :last-child {
+    .sectionList :last-child, .eventsList {
         margin: 0 0 30px 0;
     }
 }

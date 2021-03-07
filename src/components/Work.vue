@@ -121,7 +121,7 @@ export default {
 .projectLink h3 {
   display: block;
   width: 90%;
-  font-size: 3.8vmin;
+  font-size: 2.6vmin;
 }
 
 .projectLink p {
