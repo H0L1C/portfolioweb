@@ -99,9 +99,6 @@
     th:last-child, td:last-child {
         min-width: 240px;
     }
-    .projectLink h3 {
-        font-size: 160%;
-    }
     .topicPath p {
         font-size: 2vmin;
     }
