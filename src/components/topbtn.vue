@@ -26,7 +26,7 @@
   visibility: hidden;
   z-index: 11;
   cursor: pointer;
-
+  background-color: var(--sub-bg);
 }
 
 .show {

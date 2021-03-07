@@ -7,25 +7,13 @@
         -webkit-transform: translateY(-60%);
         transform: translateY(-60%);
     }
-    .article {
-        flex-wrap: wrap;
-    }
-    .leftParts {
+    .topParts {
         margin: auto;
-    }
-    .rightParts {
-        margin-top: 20px;
-    }
-    .even {
-        order: 0;
-    }
-    .workBody {
-        margin-top: 60px;
     }
     .workBody h2 {
         margin-top: 60px;
     }
-    .workBody h3, .rightParts p {
+    .workBody h3, .bottomParts p {
         padding: 0;
     }
     .articleImg {
@@ -38,6 +26,13 @@
     }
     .btnWrap {
         flex-wrap: wrap;
+    }
+    .productTitle:before, .productTitle:after {
+        padding: 0;
+    }
+    .topicPath {
+        width: 60%;
+        margin-top: 60px;
     }
 }
 
@@ -62,6 +57,9 @@
         left: 50%;
         transform: translate(-50%, 0);
     }
+    .section {
+        margin: 0 0 30px 0;
+    }
     .projectList, .skillList {
         min-width: 100%;
         justify-content: space-around;
@@ -77,6 +75,9 @@
     .eventsList {
         min-width: auto;
         width: 96%;
+    }
+    .productImage {
+        height: 280px;
     }
 }
 
@@ -98,6 +99,12 @@
     th:last-child, td:last-child {
         min-width: 240px;
     }
+    .projectLink h3 {
+        font-size: 160%;
+    }
+    .topicPath p {
+        font-size: 2vmin;
+    }
 }
 
 @media screen and (max-width: 470px) {
@@ -112,19 +119,11 @@
         width: 90%;
         min-width: 0px;
     }
-}
-
-@media screen and (max-width: 415px) {
     .title h1 {
         font-size: 200%;
     }
     .workBody {
         width: 90%;
-    }
-    .articleImg {
-        max-width: 290px;
-        max-height: 220px;
-        cursor: zoom-in;
     }
     .skillItem {
         display: grid;
@@ -139,19 +138,19 @@
         width: 40px;
         height: 40px;
     }
-    .graph svg {
-        transform: rotate(-90deg);
-        background-color: var(--sub-bg);
-        border-radius: 10px;
-        width: 150px;
-        height: 150px;
+    .topicPath {
+        width: 90%;
     }
-    .graphTitle {
-        font-size: 80%;
+    .topicPath p {
+        font-size: 3vmin;
     }
-    .graph svg {
-        width: 200px;
-        height: 200px;
-        transform: translate(-50%, -50%) rotate(-90deg) scale(0.75);
+    .sectionList {
+        margin: 0;
+    }
+    .section {
+        margin: 0;
+    }
+    .section :last-child {
+        margin: 0 0 30px 0;
     }
 }

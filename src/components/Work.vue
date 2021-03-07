@@ -7,7 +7,9 @@
       <div v-for="work in workList" :key="work.id" class="projectItem">
         <router-link :to="`/Product/${work.id}`" class="projectLink">
           <img v-lazy="work.image" loading="lazy" :alt="work.alt" />
-          <h3>{{ work.name }}</h3>
+          <div class="productName">
+            <h3>{{ work.name }}</h3>
+          </div>
           <p>{{ work.caption }}</p>
         </router-link>
       </div>
@@ -77,7 +79,7 @@ export default {
   width: calc((100% - 40px) / 2);
   max-width: 300px;
   min-width: 300px;
-  height: 300px;
+  height: 330px;
   margin: 0 0 40px 0;
   background-color: var(--sub-bg);
   box-shadow: 0px 1px 3px 0px #00000026;
@@ -107,15 +109,28 @@ export default {
   opacity: 0.7;
 }
 
+.productName {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+}
+
 .projectLink h3 {
   display: block;
-  margin: 0 auto;
-  line-height: 45px;
-  font-size: 160%;
+  width: 90%;
+  font-size: 3.8vmin;
 }
 
 .projectLink p {
-  font-size: 90%;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, 0);
+  font-size: 80%;
   opacity: 0.7;
   font-family: "Noto Sans JP", sans-serif;
   padding: 2px 0;

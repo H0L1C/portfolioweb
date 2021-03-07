@@ -74,7 +74,6 @@
 
 <style>
 .side {
-  position: relative;
   width: 60px;
   height: 100vh;
   position: fixed;

@@ -6,6 +6,7 @@ import WorkList from '@/components/WorkList.vue'
 import VueLazyload from 'vue-lazyload'
 import VScrollLock from 'v-scroll-lock'
 import VueMq from 'vue-mq'
+import VueYoutube from 'vue-youtube'
 import 'mailgo'
 
 let VueScrollTo = require('vue-scrollto');
@@ -46,6 +47,8 @@ Vue.use(VScrollLock, {
   },
 })
 
+Vue.use(VueYoutube)
+
 Vue.use(Router)
 
 export default new Router({
@@ -62,7 +65,7 @@ export default new Router({
       component: WorkList
     },
     {
-      path: '/product/:id',
+      path: '/Product/:id',
       component: Product,
       props: route => ({
         id: Number(route.params.id)

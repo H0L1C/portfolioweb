@@ -1,25 +1,44 @@
 <template>
   <div>
+    <ul class="topicPath">
+      <li class="topicPathLink">
+        <router-link to="/">
+          <p>Top</p>
+        </router-link>
+      </li>
+      <li class="topicPathLink">
+        <router-link to="/Gallery">
+          <p>Gallery</p>
+        </router-link>
+      </li>
+      <li class="topicPathCurrent">
+        <p>{{ works[id].name }}</p>
+      </li>
+    </ul>
+
     <div
       class="workBody"
       id="workmain"
       v-scroll-lock="scrollLook"
       v-bind:class="{ productBody: move, productBodyActive: moved }"
     >
-      <h1>{{ works[id].name }}</h1>
+      <h1 class="productTitle">{{ works[id].name }}</h1>
       <div class="description">
-        <p class="creationTime">制作期間：　{{ works[id].time }}</p>
+        <p>制作期間：　{{ works[id].time }}</p>
       </div>
-
+      <div
+        class="productImage"
+        :style="{ backgroundImage: 'url(' + works[id].image + ')' }"
+      ></div>
       <div class="sectionList">
         <div
           class="section"
           v-for="(section, index) in works[id].sections"
           :key="section.title"
         >
-          <h2>{{ section.title }}</h2>
+          <h2 v-if="section.title">{{ section.title }}</h2>
           <div class="article">
-            <div class="leftParts">
+            <div v-if="section.img" class="topParts">
               <img
                 v-lazy="section.img"
                 loading="lazy"
@@ -28,11 +47,24 @@
                 @click="openModal(index)"
               />
             </div>
-            <div class="rightParts">
-              <p class="sectionText">{{ section.text1 }}</p>
-              <p class="sectionText">{{ section.text2 }}</p>
-              <p class="sectionText">{{ section.text3 }}</p>
-              <a :href="section.link" target="_blank" rel="noopener">
+            <youtube
+              :resize="true"
+              :fitParent="true"
+              v-if="section.movie"
+              :video-id="section.movie"
+              class="articleMovie"
+            />
+
+            <div class="bottomParts">
+              <p v-if="section.text" class="sectionText">
+                {{ section.text }}
+              </p>
+              <a
+                v-if="section.link"
+                :href="section.link"
+                target="_blank"
+                rel="noopener"
+              >
                 <p class="sectionLink">{{ section.linktext }}</p>
               </a>
             </div>
@@ -41,8 +73,12 @@
       </div>
 
       <div class="btnWrap">
-        <p class="backBtn backTop">Back to Top</p>
-        <p class="backBtn backWorks">Other Works</p>
+        <router-link to="/" exact>
+          <p class="backBtn backTop">Back to Top</p>
+        </router-link>
+        <router-link to="/Gallery" exact>
+          <p class="backBtn backWorks">Other Works</p>
+        </router-link>
       </div>
 
       <div class="popup" v-if="popupActive" @click="closeModal()">
@@ -63,8 +99,8 @@
 
 <script>
 import works from "../product.js";
+
 export default {
-  components: {},
   mixins: [works],
   props: {
     id: Number,
@@ -121,6 +157,63 @@ export default {
 </script>
 
 <style>
+.topicPath {
+  position: relative;
+  width: 60%;
+  height: 60px;
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: left;
+}
+
+.topicPath li {
+  list-style: none;
+  margin: 0 6px;
+}
+
+.topicPath p {
+  position: relative;
+  font-size: 92%;
+  font-weight: bold;
+  padding: 0 0 0 16px;
+  margin: 20px 0;
+  opacity: 0.7;
+}
+
+.topicPath p::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  margin: auto;
+  box-sizing: border-box;
+  border: 5px solid transparent;
+  border-left: 8px solid var(--main-text);
+  opacity: 0.7;
+}
+
+.topicPathLink p {
+  transition: all ease 0.3s;
+}
+
+.topicPathLink p:hover {
+  opacity: 1;
+  color: var(--sub-color);
+}
+
+.topicPathCurrent p {
+  color: var(--sub-color);
+  opacity: 1;
+}
+
+.topicPathCurrent p::after {
+  opacity: 0.5;
+}
+
 .productBody {
   opacity: 0;
 }
@@ -130,25 +223,50 @@ export default {
   opacity: 1;
 }
 
+.productImage {
+  width: 100%;
+  height: 420px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--alpha-bg);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  box-shadow: 0px 1px 3px 0px #00000026;
+  margin: 0 0 60px 0;
+}
+
+.productTitle {
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  background: var(--sub-color);
+  color: var(--main-bg);
+  line-height: 60px;
+  display: flex;
+  box-shadow: 0px 1px 3px 0px #00000026;
+}
+.productTitle:before,
+.productTitle:after {
+  content: "";
+  flex: 1;
+  background: var(--main-bg);
+  padding: 3px 0;
+  height: 0;
+  transform: rotate(45deg);
+}
+
 .workBody {
   width: 60%;
   margin: auto;
 }
 
-.workBody h1 {
-  font-size: 300%;
-  margin: 0 0 30px 0;
-  padding: 30px 0 5px 0;
-  display: block;
-  text-align: left;
-  border-bottom: solid 4px var(--sub-color);
-}
-
 .workBody h2 {
-  font-size: 140%;
-  margin: 20px 0;
+  font-size: 160%;
+  margin: 30px 0;
   padding: 2px 20px;
-  border-left: solid 4px var(--sub-color);
+  border-left: solid 3px var(--sub-color);
   text-align: left;
   left: 0;
   transform: translateX(0);
@@ -160,7 +278,8 @@ export default {
 }
 
 .sectionList {
-  min-width: 300px;
+  max-width: 640px;
+  margin: 60px auto 0;
 }
 
 .sectionLink {
@@ -179,10 +298,13 @@ export default {
 
 .sectionText {
   margin: 5px 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.6em;
 }
 
 .description {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .description p {
@@ -193,30 +315,26 @@ export default {
 }
 
 .article {
-  margin: 20px 0;
   display: flex;
-  justify-content: space-between;
-}
-.leftParts,
-.rightParts {
-  min-width: 290px;
-}
-
-.leftParts {
-  min-height: 220px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .articleImg {
   position: relative;
-  max-width: 300px;
-  max-height: 220px;
+  width: 100%;
   cursor: zoom-in;
+  margin: 0 0 30px 0;
   box-shadow: 0px 1px 3px 0px #00000026;
 }
 
-.rightParts p {
+.articleMovie {
+  margin: 0 0 30px 0;
+  box-shadow: 0px 1px 3px 0px #00000026;
+}
+
+.bottomParts p {
   text-align: left;
-  padding: 0 0 0 40px;
   font-family: "Noto Sans JP", sans-serif;
 }
 
