@@ -2,7 +2,7 @@
   <div class="work section">
     <hr />
     <h2 id="Work">{{ worksTitle }}</h2>
-    <p class="caption">2020/11 ~ {{ date }}</p>
+    <p class="caption timeStamp">2020/11 ~ {{ date }}</p>
     <div class="projectList" name="works">
       <div v-for="work in workList" :key="work.id" class="projectItem">
         <router-link :to="`/Product/${work.id}`" class="projectLink">
@@ -71,6 +71,10 @@ export default {
 .work{
   position: relative;
   height: 100%;
+}
+
+.timeStamp{
+  letter-spacing: 1px;
 }
 
 .projectList {

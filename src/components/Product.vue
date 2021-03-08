@@ -24,7 +24,8 @@
     >
       <h1 class="productTitle">{{ works[id].name }}</h1>
       <div class="description">
-        <p>制作期間：　{{ works[id].time }}</p>
+        <p v-if="works[id].time">制作期間：{{ works[id].time }}</p>
+        <p v-if="works[id].position">担当：{{ works[id].position }}</p>
       </div>
       <div
         class="productImage"
@@ -65,7 +66,13 @@
                 target="_blank"
                 rel="noopener"
               >
-                <p class="sectionLink">{{ section.linktext }}</p>
+                <p class="sectionLink">URL：{{ section.linktext }}</p>
+              </a>
+              <a
+                v-if="section.DLpath"
+                :href="section.DLpath"
+              >
+                <p class="sectionLink">{{ section.DLtext }}</p>
               </a>
             </div>
           </div>
@@ -73,11 +80,11 @@
       </div>
 
       <div class="btnWrap">
-        <router-link to="/" exact>
-          <p class="backBtn backTop">Back to Top</p>
-        </router-link>
         <router-link to="/Gallery" exact>
           <p class="backBtn backWorks">Other Works</p>
+        </router-link>
+        <router-link to="/" exact>
+          <p class="backBtn backTop">Back to Top</p>
         </router-link>
       </div>
 
@@ -305,12 +312,16 @@ export default {
 
 .description {
   margin: 20px 0;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 
 .description p {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 90%;
-  text-align: right;
+  text-align: left;
+  margin: 0 20px 0 0;
   opacity: 0.6;
 }
 
@@ -383,11 +394,12 @@ export default {
 .btnWrap {
   position: relative;
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
 }
 .backBtn {
-  margin: 20px 0 0 0;
+  margin: 20px 20px 0;
   font-family: "Montserrat", sans-serif;
   font-size: 92%;
   font-weight: bold;
@@ -409,5 +421,9 @@ export default {
   border: solid 2px var(--sub-color);
   background-color: var(--sub-color);
   opacity: 1;
+}
+
+.articleSection {
+  margin-bottom: 60px;
 }
 </style>
