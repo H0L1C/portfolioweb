@@ -119,35 +119,7 @@
     .workBody {
         width: 90%;
     }
-    .skillItem {
-        display: grid;
-        grid-template-rows: 150px 40px;
-        width: 150px;
-        min-width: 150px;
-        max-width: 150px;
-        height: 190px;
-        margin: 20px 0 0 0;
-    }
-    .graph {
-        position: relative;
-        width: 150px;
-        max-width: 150px;
-        height: 150px;
-    }
-    .graph svg {
-        position: absolute;
-        top: 50px;
-        left: 50px;
-        scale: 0.75;
-    }
-    circle {}
-    .articleSection {
-        margin: 0;
-    }
-    .skillImage {
-        width: 36px;
-        height: 36px;
-    }
+    
     .topicPath {
         width: 90%;
     }
