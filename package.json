@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "elliptic": "^6.5.3",
+    "elliptic": "^6.5.4",
     "mailgo": "^0.8.5",
     "register-service-worker": "^1.7.1",
     "serialize-javascript": "^4.0.0",
