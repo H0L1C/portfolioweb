@@ -67,6 +67,12 @@ export default {
 </script>
 
 <style>
+
+.work{
+  position: relative;
+  height: 100%;
+}
+
 .projectList {
   width: 50%;
   margin: auto;
@@ -139,6 +145,7 @@ export default {
 .moreBtnWrap {
   position: relative;
   width: 100%;
+  height: 40px;
 }
 .moreBtn {
   position: absolute;

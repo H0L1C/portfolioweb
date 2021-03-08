@@ -32,7 +32,7 @@
       ></div>
       <div class="sectionList">
         <div
-          class="section"
+          class="articleSection"
           v-for="(section, index) in works[id].sections"
           :key="section.title"
         >

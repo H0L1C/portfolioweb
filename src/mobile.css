@@ -57,9 +57,6 @@
         left: 50%;
         transform: translate(-50%, 0);
     }
-    .section {
-        margin: 0 0 30px 0;
-    }
     .projectList, .skillList {
         min-width: 100%;
         justify-content: space-around;
@@ -131,12 +128,19 @@
         height: 190px;
         margin: 20px 0 0 0;
     }
-    .skillImage {
-        width: 40px;
-        height: 40px;
+    .graph svg {
+        width: 150px;
+        height: 150px;
     }
-    .projectList {
-        margin: 0 0 60px 0;
+    circle {
+        scale: 0.75;
+    }
+    .articleSection {
+        margin: 0;
+    }
+    .skillImage {
+        width: 36px;
+        height: 36px;
     }
     .topicPath {
         width: 90%;
@@ -147,10 +151,7 @@
     .sectionList {
         margin: 0;
     }
-    .section {
-        margin: 0;
-    }
     .sectionList :last-child, .eventsList {
-        margin: 0 0 30px 0;
+        margin-bottom: 30px;
     }
 }

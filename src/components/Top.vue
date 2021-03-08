@@ -30,7 +30,7 @@
   opacity: 0.2;
   font-family: "Montserrat";
   font-weight: bold;
-  z-index: 9999;
+  z-index: 9996;
 }
 
 .loadingAnim {
