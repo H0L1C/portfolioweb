@@ -22,6 +22,9 @@
               v-lazy="skill.img"
               loading="lazy"
               :alt="skill.alt"
+              width="50"
+              height="50"
+              decoding="“async”"
             />
           </div>
           <div class="graphTitle">

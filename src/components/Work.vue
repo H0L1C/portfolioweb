@@ -6,7 +6,14 @@
     <div class="projectList" name="works">
       <div v-for="work in workList" :key="work.id" class="projectItem">
         <router-link :to="`/Product/${work.id}`" class="projectLink">
-          <img v-lazy="work.image" loading="lazy" :alt="work.alt" />
+          <img
+            v-lazy="work.image"
+            loading="lazy"
+            :alt="work.alt"
+            width="300"
+            height="220"
+            decoding="“async”"
+          />
           <div class="productName">
             <h3>{{ work.name }}</h3>
           </div>
@@ -67,13 +74,12 @@ export default {
 </script>
 
 <style>
-
-.work{
+.work {
   position: relative;
   height: 100%;
 }
 
-.timeStamp{
+.timeStamp {
   letter-spacing: 1px;
 }
 

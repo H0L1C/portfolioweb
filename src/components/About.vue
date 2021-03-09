@@ -10,6 +10,9 @@
           alt="MyIcon"
           class="myImg"
           loading="lazy"
+          width="145"
+          height="145"
+          decoding="“async”"
         />
         <h3>H0L1C</h3>
       </div>

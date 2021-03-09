@@ -46,6 +46,9 @@
                 :alt="section.alt"
                 class="articleImg"
                 @click="openModal(index)"
+                width="640"
+                height="360"
+                decoding="“async”"
               />
             </div>
             <youtube
