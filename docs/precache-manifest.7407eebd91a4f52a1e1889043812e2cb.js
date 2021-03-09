@@ -4,8 +4,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "8295c7a54a3e65192efb",
-    "url": "/css/app.47ba4cd4.css"
+    "revision": "274e451df0160929d4d3",
+    "url": "/css/app.72fd00c1.css"
   },
   {
     "revision": "01a74cbe8cee3fa91f07b4893a7bb95b",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/HABAKI_web.14a0d1c2.png"
   },
   {
-    "revision": "9ab24bb03140236d02352aea10d19e50",
-    "url": "/img/HLC_IO.9ab24bb0.png"
+    "revision": "ca25ce3e75c64315c5cc9afd966479a2",
+    "url": "/img/HLC_IO.ca25ce3e.png"
   },
   {
     "revision": "ff6521c79b793c42b188d1a8a9a57bbb",
@@ -42,6 +42,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8046b8f1f9ed142754ec496843cd6e72",
     "url": "/img/HabakiBook.pdf"
+  },
+  {
+    "revision": "1ecf80dbdfaa94ba7886649a4aca3e0e",
+    "url": "/img/KOUSA_music.1ecf80db.png"
   },
   {
     "revision": "cfeaa0e95afa3a8a62dd9da4253a8aae",
@@ -56,8 +60,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/OGP.png"
   },
   {
+    "revision": "536d444c79c9c58d830aac6561caef79",
+    "url": "/img/PowerStation_live.536d444c.png"
+  },
+  {
+    "revision": "5a6d8f7ee64e8271fd0e029c889d8f99",
+    "url": "/img/PowerStation_thumbnail.5a6d8f7e.png"
+  },
+  {
     "revision": "ec25326a09e669f5ebefd2ecdfb99635",
     "url": "/img/Pr_Logo.ec25326a.svg"
+  },
+  {
+    "revision": "13a1b4fde1f5d7faf9b330e6ddf08595",
+    "url": "/img/Re_HaRMoNIZE_system.13a1b4fd.png"
+  },
+  {
+    "revision": "7a335f24802ff67b5536308396df03a4",
+    "url": "/img/Re_HaRMoNIZE_thumbnail.7a335f24.png"
   },
   {
     "revision": "4aa7d416073bf15fb466d25fe54ba69c",
@@ -68,16 +88,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/Xd_Logo.d549a894.svg"
   },
   {
-    "revision": "6be0714e7d53e6241da4345b0eca64ca",
-    "url": "/img/music_movie.6be0714e.png"
-  },
-  {
-    "revision": "f4eccf6d335bb6612857e98d9f8d1f1e",
+    "revision": "3d83d31c0b6ff3200294f6ff8b9d6ef2",
     "url": "/index.html"
   },
   {
-    "revision": "8295c7a54a3e65192efb",
-    "url": "/js/app.c676c0cf.js"
+    "revision": "274e451df0160929d4d3",
+    "url": "/js/app.fa5c2cc7.js"
   },
   {
     "revision": "2e339f41deee5c4876d5",

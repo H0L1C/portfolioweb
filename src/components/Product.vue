@@ -68,10 +68,7 @@
               >
                 <p class="sectionLink">URL：{{ section.linktext }}</p>
               </a>
-              <a
-                v-if="section.DLpath"
-                :href="section.DLpath"
-              >
+              <a v-if="section.DLpath" :href="section.DLpath">
                 <p class="sectionLink">{{ section.DLtext }}</p>
               </a>
             </div>

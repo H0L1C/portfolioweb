@@ -70,7 +70,7 @@ export default {
   data() {
     return {
       year: 2020,
-      tabShow: 1,
+      tabShow: 2,
       loading: true,
       error: false,
       list: [],
