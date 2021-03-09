@@ -41,7 +41,7 @@ const works = [
 
   {
     id: 1,
-    name: "響木アオ 4th LIVE+DJ -Re:HaRMoNIZE-",
+    name: "- Re:HaRMoNIZE -",
     time: "2020/12/12 ",
     position: "ライブシステム制作 / ライブオペレーション ",
     image: require("./assets/images/Re_HaRMoNIZE_thumbnail.png"),
