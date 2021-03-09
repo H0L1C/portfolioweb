@@ -88,7 +88,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/Xd_Logo.d549a894.svg"
   },
   {
-    "revision": "ca85affb20e2d1c367fe89b1e2fb133f",
+    "revision": "fe145812bbced97f852cf2670df618af",
     "url": "/index.html"
   },
   {
