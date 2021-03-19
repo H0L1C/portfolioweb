@@ -1,26 +1,27 @@
 const works = [
-  /*{
-    id: 5,
-    name: "OneNightDrunk",
-    time: "2021/03/16 ",
+  {
+    id: 0,
+    name: "One night drunk",
+    time: "2021/03/16 ~ 2021/03/20 ",
     position: "映像制作 ",
-    image: require("./assets/images/PowerStation_thumbnail.png"),
-    alt: "OneNightDrunkサムネイル画像",
+    image: require("./assets/images/Onenightdrunk_thumbnail.png"),
+    alt: "One night drunkサムネイル画像",
     caption: "MV制作",
     sections: [
       {
         title: "About",
-        img: require("./assets/images/PowerStation_live.png"),
-        alt: "OneNightDrunk画像",
-        text: "OneNightDrunkのMV制作",
-        linktext: "",
-        link: "",
+        img: "",
+        alt: "",
+        movie: "https://youtu.be/9i7aAsBUVBE",
+        text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUさんと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
+        linktext: "詳細ツイート",
+        link: "https://twitter.com/Sakinoki_6/status/1372925929249333248?s=20",
       },
     ]
-  },*/
+  },
 
   {
-    id: 0,
+    id: 1,
     name: "SUISEI MUSIC 'POWER' LIVE",
     time: "2020/11/22 ",
     position: "映像制作 / ライブオペレーション ",
@@ -40,7 +41,7 @@ const works = [
   },
 
   {
-    id: 1,
+    id: 2,
     name: "- Re:HaRMoNIZE -",
     time: "2020/12/12 ",
     position: "ライブシステム制作 / ライブオペレーション ",
@@ -61,7 +62,7 @@ const works = [
 
 
   {
-    id: 2,
+    id: 3,
     name: "HABAKI-GUMI",
     time: "2019/10/31 ~ 2020/02/28 ",
     position: "映像制作 / 配信サポート / デザイン",
@@ -99,7 +100,7 @@ const works = [
   },
 
   {
-    id: 3,
+    id: 4,
     name: "KOUSA",
     time: "2019",
     position: "企画運営 / 映像制作",

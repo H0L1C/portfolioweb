@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "021f8fa7482581b41f4e",
+    "revision": "348ee9680e0b52479c95",
     "url": "/css/app.e4f406cf.css"
   },
   {
@@ -60,6 +60,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/OGP.png"
   },
   {
+    "revision": "802e799f6429bf6f5307e9afbe1639b0",
+    "url": "/img/Onenightdrunk_thumbnail.802e799f.png"
+  },
+  {
     "revision": "536d444c79c9c58d830aac6561caef79",
     "url": "/img/PowerStation_live.536d444c.png"
   },
@@ -88,16 +92,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/Xd_Logo.d549a894.svg"
   },
   {
-    "revision": "60beea16e6d622e7c62bf689de3e633d",
+    "revision": "53e5d8584adbb0af17220086e36a3cbc",
     "url": "/index.html"
   },
   {
-    "revision": "021f8fa7482581b41f4e",
-    "url": "/js/app.b1e76e95.js"
+    "revision": "348ee9680e0b52479c95",
+    "url": "/js/app.b277d8a9.js"
   },
   {
-    "revision": "2e339f41deee5c4876d5",
-    "url": "/js/chunk-vendors.2b12eb6f.js"
+    "revision": "67afec642c661de83b82",
+    "url": "/js/chunk-vendors.bc7d1d26.js"
   },
   {
     "revision": "1d90b8dafed8043bd6f1afe8e428afd8",
