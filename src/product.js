@@ -12,7 +12,7 @@ const works = [
         title: "About",
         img: "",
         alt: "",
-        movie: "https://youtu.be/9i7aAsBUVBE",
+        movie: "9i7aAsBUVBE",
         text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUさんと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
         linktext: "詳細ツイート",
         link: "https://twitter.com/Sakinoki_6/status/1372925929249333248?s=20",

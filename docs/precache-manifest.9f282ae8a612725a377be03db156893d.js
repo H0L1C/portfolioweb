@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "348ee9680e0b52479c95",
+    "revision": "980b15f5211d5eeb6ca9",
     "url": "/css/app.e4f406cf.css"
   },
   {
@@ -92,12 +92,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/Xd_Logo.d549a894.svg"
   },
   {
-    "revision": "53e5d8584adbb0af17220086e36a3cbc",
+    "revision": "c50202825995e7f1463e606c2ec85bd4",
     "url": "/index.html"
   },
   {
-    "revision": "348ee9680e0b52479c95",
-    "url": "/js/app.b277d8a9.js"
+    "revision": "980b15f5211d5eeb6ca9",
+    "url": "/js/app.8d0c149b.js"
   },
   {
     "revision": "67afec642c661de83b82",
