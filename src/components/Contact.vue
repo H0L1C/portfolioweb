@@ -2,7 +2,9 @@
   <div class="contact section">
     <hr />
     <h2 id="Contact">CONTACT</h2>
-    <p class="caption">ご依頼などは、TwitterDM・メールにてお願い致します。</p>
+    <p class="caption">
+      ご依頼などは、TwitterDMまたはメールにてお願い致します。
+    </p>
     <div class="contactList">
       <div class="contactItem leftItem">
         <a href="https://twitter.com/HLC012" target="_blank" rel="noopener">
