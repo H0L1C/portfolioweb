@@ -38,7 +38,7 @@ import works from "../product.js";
 export default {
   data() {
     return {
-      date: "2021/02",
+      date: "2021/00",
       btnText: "AllWorks & Events",
     };
   },
