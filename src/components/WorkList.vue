@@ -3,7 +3,7 @@
     <mq-layout :mq="['xl']">
       <WorkMenu></WorkMenu>
     </mq-layout>
-    <Work :num="6" :worksTitle="workTitle"></Work>
+    <Work :worksTitle="workTitle"></Work>
     <hr />
     <Events></Events>
     <div class="btnWrap">

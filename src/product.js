@@ -1,7 +1,8 @@
 const works = [
+
   {
     id: 0,
-    name: "One night drunk",
+    name: "わるいくせだよ。",
     time: "2021/03/16 ~ 2021/03/20 ",
     position: "映像制作 ",
     image: require("./assets/images/Onenightdrunk_thumbnail.png"),
@@ -22,6 +23,48 @@ const works = [
 
   {
     id: 1,
+    name: "One night drunk",
+    time: "2021/03/16 ~ 2021/03/20 ",
+    position: "映像制作 ",
+    image: require("./assets/images/Onenightdrunk_thumbnail.png"),
+    alt: "One night drunkサムネイル画像",
+    caption: "MV制作",
+    sections: [
+      {
+        title: "About",
+        img: "",
+        alt: "",
+        movie: "9i7aAsBUVBE",
+        text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUさんと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
+        linktext: "詳細ツイート",
+        link: "https://twitter.com/Sakinoki_6/status/1372925929249333248?s=20",
+      },
+    ]
+  },
+
+  {
+    id: 2,
+    name: "One night drunk",
+    time: "2021/03/16 ~ 2021/03/20 ",
+    position: "映像制作 ",
+    image: require("./assets/images/Onenightdrunk_thumbnail.png"),
+    alt: "One night drunkサムネイル画像",
+    caption: "MV制作",
+    sections: [
+      {
+        title: "About",
+        img: "",
+        alt: "",
+        movie: "9i7aAsBUVBE",
+        text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUさんと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
+        linktext: "詳細ツイート",
+        link: "https://twitter.com/Sakinoki_6/status/1372925929249333248?s=20",
+      },
+    ]
+  },
+
+  {
+    id: 3,
     name: "SUISEI MUSIC 'POWER' LIVE",
     time: "2020/11/22 ",
     position: "制作進行 / 映像制作 / ライブオペレーション ",
@@ -41,8 +84,8 @@ const works = [
   },
 
   {
-    id: 2,
-    name: "- Re:HaRMoNIZE -",
+    id: 4,
+    name: "響木アオ 4th Live + DJ  - Re:HaRMoNIZE -",
     time: "2020/12/12 ",
     position: "ライブシステム制作 / ライブオペレーション ",
     image: require("./assets/images/Re_HaRMoNIZE_thumbnail.png"),
@@ -62,7 +105,7 @@ const works = [
 
 
   {
-    id: 3,
+    id: 5,
     name: "HABAKI-GUMI",
     time: "2019/10/31 ~ 2020/02/28 ",
     position: "制作進行 / 映像制作 / 配信サポート / デザイン",
@@ -100,7 +143,7 @@ const works = [
   },
 
   {
-    id: 4,
+    id: 6,
     name: "KOUSA",
     time: "2019",
     position: "制作進行 / 企画運営 / 映像制作",
@@ -131,8 +174,8 @@ const works = [
       }
     ]
   },
-  /*{
-    id: "",
+  {
+    id: 7,
     name: "PictIce",
     time: "2019/05/27 ~ 07/29",
     image: require("./assets/images/PICTICE_thumbnail.png"),
@@ -154,7 +197,7 @@ const works = [
         link: "https://h0l1c.github.io/IxDFinalWeb/",
       },
     ]
-  },*/
+  },
 
 
 
@@ -171,7 +214,7 @@ export default {
     return works
   },
   find(id) {
-    return works.find(el => el.id === id)
+    return works.find(el => el.id === id);
   },
   asyncFind(id, callback) {
     setTimeout(() => {

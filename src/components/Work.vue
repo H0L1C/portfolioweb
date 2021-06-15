@@ -2,7 +2,7 @@
   <div class="work section">
     <hr />
     <h2 id="Work">{{ worksTitle }}</h2>
-    <p class="caption timeStamp">2020/11 ~ {{ date }}</p>
+    <p class="caption timeStamp">2020/11 ~</p>
     <div class="projectList" name="works">
       <div v-for="work in workList" :key="work.id" class="projectItem">
         <router-link :to="`/Product/${work.id}`" class="projectLink">
@@ -38,31 +38,10 @@ import works from "../product.js";
 export default {
   data() {
     return {
-      date: "2021/00",
       btnText: "AllWorks & Events",
     };
   },
-  methods: {
-    updateTime: function () {
-      let currentdate = new Date();
-      this.date =
-        this.zeroPadding(currentdate.getFullYear(), 4) +
-        "/" +
-        this.zeroPadding(currentdate.getMonth() + 1, 2);
-    },
 
-    zeroPadding: function (num, len) {
-      let zero = "";
-
-      for (var i = 0; i < len; i++) {
-        zero += "0";
-      }
-      return (zero + num).slice(-len);
-    },
-  },
-  mounted: function () {
-    window.onload = this.updateTime;
-  },
   computed: {
     workList() {
       return this.works.slice(0, this.num);
@@ -159,28 +138,25 @@ export default {
 }
 .moreBtn {
   position: absolute;
-  margin: 20px 0 0 0;
+  margin: 40px 0 0 0;
   font-family: "Montserrat", sans-serif;
   font-size: 92%;
   font-weight: bold;
-  width: 10%;
+  width: 12%;
   min-width: 300px;
   height: 36px;
   left: 50%;
   transform: translateX(-50%);
   line-height: 36px;
-  color: var(--main-text);
-  border: solid 2px var(--main-text);
-  border-radius: 2px;
-  transition: 0.3s;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.moreBtn:hover {
   color: var(--main-bg);
   border: solid 2px var(--sub-color);
   background-color: var(--sub-color);
-  opacity: 1;
+  border-radius: 2px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.moreBtn:hover {
+  opacity: 0.7;
 }
 </style>

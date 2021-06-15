@@ -1,104 +1,107 @@
 <template>
   <div>
-    <ul class="topicPath">
-      <li class="topicPathLink">
-        <router-link to="/">
-          <p>Top</p>
-        </router-link>
-      </li>
-      <li class="topicPathLink">
-        <router-link to="/Gallery">
-          <p>Gallery</p>
-        </router-link>
-      </li>
-      <li class="topicPathCurrent">
-        <p>{{ works[id].name }}</p>
-      </li>
-    </ul>
+    <NotFound v-if="id > idMax" />
+    <div v-else>
+      <ul class="topicPath">
+        <li class="topicPathLink">
+          <router-link to="/">
+            <p>Top</p>
+          </router-link>
+        </li>
+        <li class="topicPathLink">
+          <router-link to="/Gallery">
+            <p>Gallery</p>
+          </router-link>
+        </li>
+        <li class="topicPathCurrent">
+          <p>{{ works[id].name }}</p>
+        </li>
+      </ul>
 
-    <div
-      class="workBody"
-      id="workmain"
-      v-scroll-lock="scrollLook"
-      v-bind:class="{ productBody: move, productBodyActive: moved }"
-    >
-      <h1 class="productTitle">{{ works[id].name }}</h1>
-      <div class="description">
-        <p v-if="works[id].time">制作期間：{{ works[id].time }}</p>
-        <p v-if="works[id].position">担当：{{ works[id].position }}</p>
-      </div>
       <div
-        class="productImage"
-        :style="{ backgroundImage: 'url(' + works[id].image + ')' }"
-      ></div>
-      <div class="sectionList">
+        class="workBody"
+        id="workmain"
+        v-scroll-lock="scrollLook"
+        v-bind:class="{ productBody: move, productBodyActive: moved }"
+      >
+        <h1 class="productTitle">{{ works[id].name }}</h1>
+        <div class="description">
+          <p v-if="works[id].time">制作期間：{{ works[id].time }}</p>
+          <p v-if="works[id].position">担当：{{ works[id].position }}</p>
+        </div>
         <div
-          class="articleSection"
-          v-for="(section, index) in works[id].sections"
-          :key="section.title"
-        >
-          <h2 v-if="section.title">{{ section.title }}</h2>
-          <div class="article">
-            <div v-if="section.img" class="topParts">
-              <img
-                v-lazy="section.img"
-                loading="lazy"
-                :alt="section.alt"
-                class="articleImg"
-                @click="openModal(index)"
-                width="640"
-                height="360"
-                decoding="“async”"
+          class="productImage"
+          :style="{ backgroundImage: 'url(' + works[id].image + ')' }"
+        ></div>
+        <div class="sectionList">
+          <div
+            class="articleSection"
+            v-for="(section, index) in works[id].sections"
+            :key="section.title"
+          >
+            <h2 v-if="section.title">{{ section.title }}</h2>
+            <div class="article">
+              <div v-if="section.img" class="topParts">
+                <img
+                  v-lazy="section.img"
+                  loading="lazy"
+                  :alt="section.alt"
+                  class="articleImg"
+                  @click="openModal(index)"
+                  width="640"
+                  height="360"
+                  decoding="“async”"
+                />
+              </div>
+              <youtube
+                :resize="true"
+                :fitParent="true"
+                v-if="section.movie"
+                :video-id="section.movie"
+                class="articleMovie"
               />
-            </div>
-            <youtube
-              :resize="true"
-              :fitParent="true"
-              v-if="section.movie"
-              :video-id="section.movie"
-              class="articleMovie"
-            />
 
-            <div class="bottomParts">
-              <p v-if="section.text" class="sectionText">
-                {{ section.text }}
-              </p>
-              <a
-                v-if="section.link"
-                :href="section.link"
-                target="_blank"
-                rel="noopener"
-              >
-                <p class="sectionLink">URL：{{ section.linktext }}</p>
-              </a>
-              <a v-if="section.DLpath" :href="section.DLpath">
-                <p class="sectionLink">{{ section.DLtext }}</p>
-              </a>
+              <div class="bottomParts">
+                <p v-if="section.text" class="sectionText">
+                  {{ section.text }}
+                </p>
+                <a
+                  v-if="section.link"
+                  :href="section.link"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <p class="sectionLink">URL：{{ section.linktext }}</p>
+                </a>
+                <a v-if="section.DLpath" :href="section.DLpath">
+                  <p class="sectionLink">{{ section.DLtext }}</p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="btnWrap">
-        <router-link to="/Gallery" exact>
-          <p class="backBtn backWorks">Other Works</p>
-        </router-link>
-        <router-link to="/" exact>
-          <p class="backBtn backTop">Back to Top</p>
-        </router-link>
-      </div>
-
-      <div class="popup" v-if="popupActive" @click="closeModal()">
-        <img
-          v-lazy="works[id].sections[num].img"
-          :alt="works[id].sections[num].alt"
-          class="zoomImg"
-          @click="closeModal()"
-        />
-        <div class="closeBtn" @click="closeModal()">
-          <p>CLOSE</p>
+        <div class="btnWrap">
+          <router-link to="/Gallery" exact>
+            <p class="backBtn backWorks">Other Works</p>
+          </router-link>
+          <router-link to="/" exact>
+            <p class="backBtn backTop">Back to Top</p>
+          </router-link>
         </div>
-        <div class="popupBG"></div>
+
+        <div class="popup" v-if="popupActive" @click="closeModal()">
+          <img
+            v-lazy="works[id].sections[num].img"
+            :alt="works[id].sections[num].alt"
+            class="zoomImg"
+            @click="closeModal()"
+          />
+          <div class="closeBtn" @click="closeModal()">
+            <p>CLOSE</p>
+          </div>
+          <div class="popupBG"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -106,6 +109,7 @@
 
 <script>
 import works from "../product.js";
+import NotFound from "./NotFound.vue";
 
 export default {
   mixins: [works],
@@ -115,6 +119,7 @@ export default {
   data: function () {
     return {
       num: "",
+      idMax: 7,
       popupActive: false,
       scrollLook: false,
       move: false,
@@ -122,6 +127,7 @@ export default {
       entered: false,
     };
   },
+
   methods: {
     openModal(index) {
       this.num = index;
@@ -143,22 +149,9 @@ export default {
       }, 500);
     },
   },
-  watch: {
-    entered: function () {
-      this.entered ? this.enter() : this.leave();
-    },
-  },
-  mounted() {
-    this.$router.beforeResolve((to, from, next) => {
-      scrollTo(0, 0);
-      this.entered = true;
-      next();
-    });
-    this.$router.afterEach((to, from, next) => {
-      setTimeout(() => {
-        this.entered = false;
-      }, 260);
-    });
+
+  components: {
+    NotFound,
   },
 };
 </script>

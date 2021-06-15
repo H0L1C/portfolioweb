@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Top from '@/components/Top'
-import Product from '@/components/Product'
+import NotFound from '@/components/NotFound.vue'
+import Top from '@/components/Top.vue'
+import Product from '@/components/Product.vue'
 import WorkList from '@/components/WorkList.vue'
 import VueLazyload from 'vue-lazyload'
 import VScrollLock from 'v-scroll-lock'
@@ -55,6 +56,10 @@ export default new Router({
   mode: 'history',
   routes: [
     {
+      path: "*",
+      redirect: "NotFound",
+    },
+    {
       path: '/',
       name: 'Top',
       component: Top
@@ -63,6 +68,11 @@ export default new Router({
       path: '/Gallery',
       name: 'Gallery',
       component: WorkList
+    },
+    {
+      path: '/NotFound',
+      name: 'NotFound',
+      component: NotFound
     },
     {
       path: '/Product/:id',

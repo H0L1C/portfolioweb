@@ -15,11 +15,49 @@
     </div>
 
     <About></About>
-    <Work :num="3" :worksTitle="workTitle"></Work>
+    <Work :num="workNum" :worksTitle="workTitle"></Work>
     <Skill></Skill>
     <Contact></Contact>
   </div>
 </template>
+
+<script>
+import Menu from "./Menu.vue";
+import About from "./About.vue";
+import Work from "./Work.vue";
+import Skill from "./Skill.vue";
+import Contact from "./Contact.vue";
+
+export default {
+  data() {
+    return {
+      loading: true,
+      ver: "2.1.0",
+      workNum: 6,
+      workTitle: "WORKS",
+      windowSize: 0,
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 300);
+  },
+  created() {
+    this.windowSize = window.innerWidth;
+    if (this.windowSize < 614) {
+      this.workNum = 3;
+    }
+  },
+  components: {
+    Menu,
+    About,
+    Work,
+    Skill,
+    Contact,
+  },
+};
+</script>
 
 <style>
 .version {
@@ -167,33 +205,5 @@
 }
 </style>
 
-<script>
-import Menu from "./Menu.vue";
-import About from "./About.vue";
-import Work from "./Work.vue";
-import Skill from "./Skill.vue";
-import Contact from "./Contact.vue";
 
-export default {
-  data() {
-    return {
-      loading: true,
-      ver: "2.0.0",
-      workTitle: "WORKS",
-    };
-  },
-  mounted() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 300);
-  },
-  components: {
-    Menu,
-    About,
-    Work,
-    Skill,
-    Contact,
-  },
-};
-</script>
 
