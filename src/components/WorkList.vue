@@ -8,7 +8,7 @@
     <Events></Events>
     <div class="btnWrap">
       <router-link to="/" exact>
-        <p class="backBtn backTop">Back to Top</p>
+        <p class="backBtn">Back to Top</p>
       </router-link>
     </div>
   </div>

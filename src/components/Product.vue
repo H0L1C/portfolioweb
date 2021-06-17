@@ -1,6 +1,11 @@
 <template>
   <div>
+    <transition name="loadingFade">
+      <div class="loadingAnim" v-if="loading"></div>
+    </transition>
+
     <NotFound v-if="id > idMax" />
+    <NotFound v-else-if="id < 0" />
     <div v-else>
       <ul class="topicPath">
         <li class="topicPathLink">
@@ -83,10 +88,7 @@
 
         <div class="btnWrap">
           <router-link to="/Gallery" exact>
-            <p class="backBtn backWorks">Other Works</p>
-          </router-link>
-          <router-link to="/" exact>
-            <p class="backBtn backTop">Back to Top</p>
+            <p class="backBtn">Back to Gallery</p>
           </router-link>
         </div>
 
@@ -116,9 +118,10 @@ export default {
   props: {
     id: Number,
   },
-  data: function () {
+  data() {
     return {
       num: "",
+      loading: true,
       idMax: 7,
       popupActive: false,
       scrollLook: false,
@@ -148,6 +151,13 @@ export default {
         this.moved = false;
       }, 500);
     },
+    backPage() {},
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 100);
   },
 
   components: {
@@ -178,6 +188,8 @@ export default {
   font-weight: bold;
   padding: 0 0 0 16px;
   margin: 20px 0;
+  height: 20px;
+  line-height: 20px;
   opacity: 0.7;
 }
 
@@ -391,6 +403,7 @@ export default {
   width: 70%;
   margin: auto;
 }
+
 .backBtn {
   margin: 20px 20px 0;
   font-family: "Montserrat", sans-serif;
@@ -408,8 +421,7 @@ export default {
   opacity: 0.7;
 }
 
-.backTop:hover,
-.backWorks:hover {
+.backBtn:hover {
   color: var(--main-bg);
   border: solid 2px var(--sub-color);
   background-color: var(--sub-color);

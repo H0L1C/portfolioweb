@@ -11,7 +11,7 @@
             loading="lazy"
             :alt="work.alt"
             width="300"
-            height="220"
+            height="168.75"
             decoding="“async”"
           />
           <div class="productName">
@@ -74,7 +74,7 @@ export default {
   width: calc((100% - 40px) / 2);
   max-width: 300px;
   min-width: 300px;
-  height: 330px;
+  height: 280px;
   margin: 0 0 40px 0;
   background-color: var(--sub-bg);
   box-shadow: 0px 1px 3px 0px #00000026;
@@ -94,10 +94,11 @@ export default {
 
 .projectLink img {
   width: 300px;
-  height: 220px;
+  height: 168.75px;
   border-radius: 10px 10px 0 0;
   opacity: 1;
   transition: 0.3s;
+  box-shadow: 0px 1px 3px 0px #00000006;
 }
 
 .projectLink img:hover {
@@ -114,9 +115,14 @@ export default {
 }
 
 .projectLink h3 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
   display: block;
   width: 90%;
-  font-size: 146%;
+  font-size: 140%;
+  line-height: 1.3;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .projectLink p {

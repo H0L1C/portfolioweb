@@ -2,42 +2,42 @@ const works = [
 
   {
     id: 0,
-    name: "わるいくせだよ。",
-    time: "2021/03/16 ~ 2021/03/20 ",
+    name: "わるいくせだよ 。\n - Hylen feat.可不 -",
+    time: "2021/05/11 ~ 2021/05/20 ",
     position: "映像制作 ",
-    image: require("./assets/images/Onenightdrunk_thumbnail.png"),
-    alt: "One night drunkサムネイル画像",
+    image: require("./assets/images/waruikusedayo_thumbnail.png"),
+    alt: "わるいくせだよ。サムネイル画像",
     caption: "MV制作",
     sections: [
       {
         title: "About",
         img: "",
         alt: "",
-        movie: "9i7aAsBUVBE",
-        text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUさんと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
-        linktext: "詳細ツイート",
-        link: "https://twitter.com/Sakinoki_6/status/1372925929249333248?s=20",
+        movie: "iiNB93EMOEQ",
+        text: "Hylen様の音楽的同位体「可不(KAFU)」オリジナル楽曲である『わるいくせだよ。 Hylen feat.可不』のMVをVirtualizeRealizeチームとしてメンバーのらいつ・LAKUと共に制作させていただきました。\n MV内では主にコンポジットやパーティクル演出などを担当しました。",
+        linktext: "詳細リンク",
+        link: "https://twitter.com/Hylen_JP/status/1402583479192219648",
       },
     ]
   },
 
   {
     id: 1,
-    name: "One night drunk",
-    time: "2021/03/16 ~ 2021/03/20 ",
+    name: "廻廻奇譚 \n - cover 一夜一世 -",
+    time: "2021/05/29 ~ 2021/06/01 ",
     position: "映像制作 ",
-    image: require("./assets/images/Onenightdrunk_thumbnail.png"),
-    alt: "One night drunkサムネイル画像",
-    caption: "MV制作",
+    image: require("./assets/images/kaikaikitan.png"),
+    alt: "廻廻奇譚サムネイル画像",
+    caption: "映像制作",
     sections: [
       {
         title: "About",
         img: "",
         alt: "",
-        movie: "9i7aAsBUVBE",
-        text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUさんと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
-        linktext: "詳細ツイート",
-        link: "https://twitter.com/Sakinoki_6/status/1372925929249333248?s=20",
+        movie: "V2H5FdQMfuo",
+        text: "SevenCarat所属Vtuberの一夜一世様による『廻廻奇譚 -Eve』のカバー動画の映像制作を担当させていただきました。\n原曲のMVの要素を取り入れつつ、歌声に合わせた凛々しい雰囲気の映像になるようアニメーションなどを工夫しました。",
+        linktext: "詳細リンク",
+        link: "https://twitter.com/Hitoyo_Vtuber/status/1400771232363020291?s=20",
       },
     ]
   },
@@ -56,8 +56,8 @@ const works = [
         img: "",
         alt: "",
         movie: "9i7aAsBUVBE",
-        text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUさんと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
-        linktext: "詳細ツイート",
+        text: "咲乃木ロク様の1stデジタルEP『MIDARE咲』の収録曲である『One night drunk』のMVをVirtualizeRealizeチームとしてメンバーのLAKUと共に制作させていただきました。\n MV内ではhook部分のリリックアニメーションとキャラクターアニメーションを主に担当しました。",
+        linktext: "詳細リンク",
         link: "https://twitter.com/Sakinoki_6/status/1372925929249333248?s=20",
       },
     ]
@@ -65,7 +65,7 @@ const works = [
 
   {
     id: 3,
-    name: "SUISEI MUSIC 'POWER' LIVE",
+    name: "SUISEI MUSIC \n'POWER' LIVE",
     time: "2020/11/22 ",
     position: "制作進行 / 映像制作 / ライブオペレーション ",
     image: require("./assets/images/PowerStation_thumbnail.png"),
@@ -77,7 +77,7 @@ const works = [
         img: require("./assets/images/PowerStation_live.png"),
         alt: "SUISEI MUSIC 'POWER' LIVE画像",
         text: "2020年11月22日に行われた「日清食品 POWER STATION [REBOOT]  SUISEI MUSIC 'POWER' LIVE」にて、VirtualizeRealizeチームよりSoundCommunityとして星街すいせい様の映像素材制作・オペレーションなどを一部担当させて頂きました。",
-        linktext: "詳細ツイート",
+        linktext: "詳細リンク",
         link: "https://twitter.com/VR_ize/status/1330489738751582210?s=20",
       },
     ]
@@ -85,7 +85,7 @@ const works = [
 
   {
     id: 4,
-    name: "響木アオ 4th Live + DJ  - Re:HaRMoNIZE -",
+    name: "響木アオ 4th Live + DJ  \n- Re:HaRMoNIZE -",
     time: "2020/12/12 ",
     position: "ライブシステム制作 / ライブオペレーション ",
     image: require("./assets/images/Re_HaRMoNIZE_thumbnail.png"),
@@ -97,7 +97,7 @@ const works = [
         img: require("./assets/images/Re_HaRMoNIZE_system.png"),
         alt: "Re:HaRMoNIZE画像",
         text: "2020年12月12日に秋葉原エンタスにて行われた響木アオ様のライブイベント「響木アオ 4th LIVE+DJ -Re:HaRMoNIZE-」にてライブシステムの制作とオペレーションを担当させて頂きました。\nライブシステムの制作にはTouchDesignerを使用し、VJ映像の集約やUnity内の照明操作などを一元管理できるように設計。また、本システムとUnityを組み合わせて空間全体の演出を目指しました。",
-        linktext: "詳細ツイート",
+        linktext: "詳細リンク",
         link: "https://twitter.com/HLC012/status/1338434809903816705?s=20",
       },
     ]
@@ -106,12 +106,12 @@ const works = [
 
   {
     id: 5,
-    name: "HABAKI-GUMI",
+    name: "鈨組 \n - 天ノ葉つむぎ&武者丸 -",
     time: "2019/10/31 ~ 2020/02/28 ",
     position: "制作進行 / 映像制作 / 配信サポート / デザイン",
     image: require("./assets/images/HABAKI_thumbnail.png"),
     alt: "HABAKIサムネイル画像",
-    caption: "バーチャルYouTuberの運営",
+    caption: "バーチャルYouTuberの制作・運営",
     sections: [
       {
         title: "About",
@@ -178,7 +178,7 @@ const works = [
     id: 7,
     name: "PictIce",
     time: "2019/05/27 ~ 07/29",
-    image: require("./assets/images/PICTICE_thumbnail.png"),
+    image: require("./assets/images//PictIce_thumbnail.png"),
     alt: "PictIceサムネイル画像",
     caption: "コミュニケーションデザインの提案",
     sections: [
