@@ -2,7 +2,7 @@ const works = [
 
   {
     id: 0,
-    name: "わるいくせだよ 。\n - Hylen feat.可不 -",
+    name: "わるいくせだよ 。",
     time: "2021/05/11 ~ 2021/05/20 ",
     position: "映像制作 ",
     image: require("./assets/images/waruikusedayo_thumbnail.png"),
@@ -65,7 +65,7 @@ const works = [
 
   {
     id: 3,
-    name: "SUISEI MUSIC \n'POWER' LIVE",
+    name: "SUISEI MUSIC 'POWER' LIVE",
     time: "2020/11/22 ",
     position: "制作進行 / 映像制作 / ライブオペレーション ",
     image: require("./assets/images/PowerStation_thumbnail.png"),
@@ -85,7 +85,7 @@ const works = [
 
   {
     id: 4,
-    name: "響木アオ 4th Live + DJ  \n- Re:HaRMoNIZE -",
+    name: "響木アオ 4th Live \n- Re:HaRMoNIZE -",
     time: "2020/12/12 ",
     position: "ライブシステム制作 / ライブオペレーション ",
     image: require("./assets/images/Re_HaRMoNIZE_thumbnail.png"),

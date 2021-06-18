@@ -182,9 +182,13 @@ export default {
   margin: 0 6px;
 }
 
+.topicPath li:first-child {
+  margin: 0 6px 0 0;
+}
+
 .topicPath p {
   position: relative;
-  font-size: 92%;
+  font-size: 90%;
   font-weight: bold;
   padding: 0 0 0 16px;
   margin: 20px 0;
@@ -218,6 +222,8 @@ export default {
 }
 
 .topicPathCurrent p {
+  white-space: nowrap;
+  overflow: hidden;
   color: var(--sub-color);
   opacity: 1;
 }
@@ -250,14 +256,18 @@ export default {
 }
 
 .productTitle {
+  font-size: 1.8rem;
   width: 100%;
   overflow: hidden;
   align-items: center;
   background: var(--sub-color);
   color: var(--main-bg);
-  line-height: 60px;
+  line-height: 40px;
+  padding: 10px 0;
   display: flex;
   box-shadow: 0px 1px 3px 0px #00000026;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 .productTitle:before,
 .productTitle:after {
