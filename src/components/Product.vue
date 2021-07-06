@@ -76,7 +76,7 @@
                   target="_blank"
                   rel="noopener"
                 >
-                  <p class="sectionLink">URL：{{ section.linktext }}</p>
+                  <p class="sectionLink">詳細リンク：{{ section.linktext }}</p>
                 </a>
                 <a v-if="section.DLpath" :href="section.DLpath">
                   <p class="sectionLink">{{ section.DLtext }}</p>
@@ -122,7 +122,7 @@ export default {
     return {
       num: "",
       loading: true,
-      idMax: 7,
+      idMax: 8,
       popupActive: false,
       scrollLook: false,
       move: false,
@@ -300,12 +300,11 @@ export default {
 }
 
 .sectionList {
-  max-width: 640px;
-  margin: 60px auto 0;
+  margin: 60px 0 0 0;
 }
 
 .sectionLink {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: bold;
   color: var(--sub-color);
   margin: 20px 0 0 0;

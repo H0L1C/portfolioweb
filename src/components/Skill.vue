@@ -68,6 +68,11 @@ export default {
           alt: "TouchDesigner icon",
         },
         {
+          title: "Unity",
+          img: require("../assets/images/Unity_Logo.svg"),
+          alt: "Unity icon",
+        },
+        {
           title: "XD",
           img: require("../assets/images/Xd_Logo.svg"),
           alt: "Adobe XD icon",
@@ -109,6 +114,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px 10px;
 }
 
 .skillItem {
@@ -118,10 +124,20 @@ export default {
   max-width: 200px;
   min-width: 200px;
   height: 240px;
-  margin: 20px 0 0 0;
   border-radius: 10px;
   box-shadow: 0px 1px 3px 0px #00000026;
   opacity: 0;
+}
+
+.skillList::before,
+.skillList::after {
+  display: block;
+  content: "";
+  width: 200px;
+}
+
+.skillList::before {
+  order: 1;
 }
 
 .skillImage {
@@ -185,6 +201,17 @@ circle:nth-child(2) {
   animation: bgc 2s 2.8s ease forwards;
 }
 
+.graphAnim:nth-child(1) img,
+.graphAnim:nth-child(2) img,
+.graphAnim:nth-child(3) img,
+.graphAnim:nth-child(6) img {
+  border-radius: 6px;
+}
+
+.graphAnim:nth-child(5) img {
+  padding-right: 6px;
+}
+
 .graphAnim:nth-child(1) {
   animation: show 2s ease forwards;
 }
@@ -217,23 +244,30 @@ circle:nth-child(2) {
   animation: show 2s 0.7s ease forwards;
 }
 
+.graphAnim:nth-child(9) {
+  animation: show 2s 0.8s ease forwards;
+}
+
 .graphAnim:nth-child(1) circle:nth-child(2),
-.graphAnim:nth-child(4) circle:nth-child(2) {
+.graphAnim:nth-child(4) circle:nth-child(2),
+.graphAnim:nth-child(7) circle:nth-child(2) {
   animation: circle 3s ease-in-out forwards;
 }
 
-.graphAnim:nth-child(2) circle:nth-child(2) {
+.graphAnim:nth-child(2) circle:nth-child(2),
+.graphAnim:nth-child(5) circle:nth-child(2),
+.graphAnim:nth-child(10) circle:nth-child(2) {
   animation: circle2 3s 0.1s ease-in-out forwards;
 }
 
 .graphAnim:nth-child(3) circle:nth-child(2),
-.graphAnim:nth-child(5) circle:nth-child(2),
-.graphAnim:nth-child(8) circle:nth-child(2) {
+.graphAnim:nth-child(6) circle:nth-child(2),
+.graphAnim:nth-child(8) circle:nth-child(2),
+.graphAnim:nth-child(9) circle:nth-child(2) {
   animation: circle3 3s 0.1s ease-in-out forwards;
 }
 
-.graphAnim:nth-child(6) circle:nth-child(2),
-.graphAnim:nth-child(7) circle:nth-child(2) {
+.graphAnim:nth-child(8) circle:nth-child(2) {
   animation: circle4 3s 0.1s ease-in-out forwards;
 }
 

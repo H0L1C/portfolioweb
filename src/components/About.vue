@@ -19,7 +19,7 @@
       <div class="profile">
         <p>
           <br />
-          1999年生まれ 映像クリエイター / VJ<br /><br />
+          1999年生まれ 映像・Webクリエイター / VJ<br /><br />
           映像作品やWeb・XRコンテンツの制作をしています。<br />
           VirtualizeRealizeに所属し、ライブシステムの開発からオペレーションなども行っています。<br />
         </p>

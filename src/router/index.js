@@ -56,10 +56,6 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: "*",
-      redirect: "NotFound",
-    },
-    {
       path: '/',
       name: 'Top',
       component: Top
@@ -68,6 +64,10 @@ export default new Router({
       path: '/Gallery',
       name: 'Gallery',
       component: WorkList
+    },
+    {
+      path: "*",
+      redirect: "NotFound",
     },
     {
       path: '/NotFound',

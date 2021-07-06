@@ -5,9 +5,9 @@
     <div class="eventsList">
       <div class="tabs">
         <input type="radio" name="tab" id="tab1" value="1" v-model="tabShow" />
-        <label for="tab1">{{ year }}</label>
+        <label for="tab1">{{ year + 1 }}</label>
         <input type="radio" name="tab" id="tab2" value="2" v-model="tabShow" />
-        <label for="tab2">{{ year + 1 }}</label>
+        <label for="tab2">{{ year }}</label>
       </div>
       <div class="eventsContents">
         <div v-if="loading" class="loading">
@@ -26,7 +26,7 @@
               <th>担当</th>
             </tr>
           </thead>
-          <tr v-for="item in contents2020" :key="item.id">
+          <tr v-for="item in contents2021" :key="item.id">
             <td>{{ item.year }}/{{ item.date }}</td>
             <td class="eventsLink">
               <a :href="item.url" target="_blank" rel="noopener">
@@ -45,7 +45,7 @@
               <th>担当</th>
             </tr>
           </thead>
-          <tr v-for="item in contents2021" :key="item.id">
+          <tr v-for="item in contents2020" :key="item.id">
             <td>{{ item.year }}/{{ item.date }}</td>
             <td class="eventsLink">
               <a :href="item.url" target="_blank" rel="noopener">
@@ -69,7 +69,7 @@ export default {
   data() {
     return {
       year: 2020,
-      tabShow: 2,
+      tabShow: 1,
       loading: true,
       error: false,
       list: [],

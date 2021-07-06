@@ -68,14 +68,19 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 0 10px;
+}
+
+.projectList::after {
+  display: block;
+  content: "";
+  width: 300px;
 }
 
 .projectItem {
-  width: calc((100% - 40px) / 2);
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
   height: 280px;
-  margin: 0 0 40px 0;
+  margin: 20px 0;
   background-color: var(--sub-bg);
   box-shadow: 0px 1px 3px 0px #00000026;
   transition: 0.3s;
