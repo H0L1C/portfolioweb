@@ -120,7 +120,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/waruikusedayo_thumbnail.10654eda.png"
   },
   {
-    "revision": "2da506f6fd3ef5fa680a3e195959f70d",
+    "revision": "c3369b3e8fde77bfe0de2dee1dc2db19",
     "url": "/index.html"
   },
   {
@@ -128,8 +128,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/app.c34da19d.js"
   },
   {
-    "revision": "28e2f4ace15cb8d5c10e",
-    "url": "/js/chunk-vendors.f3eb342f.js"
+    "revision": "7e89870e4fc83e321c5b",
+    "url": "/js/chunk-vendors.9bcbde9e.js"
   },
   {
     "revision": "1d90b8dafed8043bd6f1afe8e428afd8",
