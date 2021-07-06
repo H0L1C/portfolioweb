@@ -197,7 +197,7 @@ const works = [
     id: 8,
     name: "PictIce",
     time: "2019/05/27 ~ 07/29",
-    image: require("./assets/images//PictIce_thumbnail.png"),
+    image: require("./assets/images/PictIce_thumbnail.png"),
     alt: "PictIceサムネイル画像",
     caption: "コミュニケーションデザインの提案",
     sections: [
