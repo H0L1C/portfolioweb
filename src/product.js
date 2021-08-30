@@ -20,7 +20,7 @@ const works = [
         alt: "PictIceWebサイト画像",
         text: "提案したデザインを紹介するためのWebサイトのデザイン・制作を行いました。「アイスキューブ」という冷やすことを目的とした製品に合わせ、ユーザーのスクロールに応じて温度が下がるような表現を取り入れたデザインにまとめました。",
         linktext: "実際に制作したWebサイト",
-        link: "https://h0l1c.github.io/project2021/",
+        link: "https://www.ne.senshu-u.ac.jp/project2021",
       },
     ]
   },
