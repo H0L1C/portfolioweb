@@ -32,8 +32,8 @@ export default {
   data() {
     return {
       loading: true,
-      ver: "2.2.0",
-      workNum: 6,
+      ver: "2.2.2",
+      workNum: 5,
       workTitle: "WORKS",
       windowSize: 0,
     };
@@ -46,7 +46,7 @@ export default {
   created() {
     this.windowSize = window.innerWidth;
     if (this.windowSize < 614) {
-      this.workNum = 3;
+      this.workNum = 8;
     }
   },
   components: {

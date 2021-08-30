@@ -96,7 +96,7 @@ export default {
         .get(baseURL)
         .then((res) => {
           this.loading = false;
-          this.list = res.data;
+          this.list = res.data.reverse();
         })
         .catch((err) => {
           this.error = true;
@@ -176,7 +176,7 @@ th {
 
 td {
   height: 50px;
-  line-height: 50px;
+  line-height: 30px;
   border-bottom: dotted 2px #20202010;
 }
 

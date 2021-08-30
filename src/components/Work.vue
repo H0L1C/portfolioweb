@@ -44,7 +44,7 @@ export default {
 
   computed: {
     workList() {
-      return this.works.slice(0, this.num);
+      return this.works.slice(this.num).reverse();
     },
   },
   props: ["num", "worksTitle"],
