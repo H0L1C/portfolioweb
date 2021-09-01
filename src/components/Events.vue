@@ -115,7 +115,8 @@ input {
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 400px;
+  min-height: 600px;
+  height: 100%;
   box-shadow: 0px 1px 3px 0px #00000026;
 }
 

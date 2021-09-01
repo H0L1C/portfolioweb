@@ -1,7 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "44e73ac8fb65b1192924",
-    "url": "/css/app.26dfd55c.css"
+    "revision": "f416f4ff4aef08241174",
+    "url": "/css/app.50f92cbc.css"
+  },
+  {
+    "revision": "6d9a4143e3bbc6b6d4a548f0a9f2a60e",
+    "url": "/img/AI_LOVE_SAKU_LIVE.6d9a4143.png"
+  },
+  {
+    "revision": "5ed439bbe1335ae9fdff6a11b6aa4693",
+    "url": "/img/AI_LOVE_SAKU_LIVE_thumbnail.5ed439bb.png"
   },
   {
     "revision": "9709c8bc1f739f6a050b38bc26876c21",
@@ -42,6 +50,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "df0ea6ce46b9f2b739da67db36cfbbd8",
     "url": "/img/HabakiBook.pdf"
+  },
+  {
+    "revision": "0a771df70d19ae03a8b1f41c47baee00",
+    "url": "/img/KMNZ.0a771df7.png"
+  },
+  {
+    "revision": "c6fce3f791f91a6e1735181b06ccf799",
+    "url": "/img/KMNZ_thumbnail.c6fce3f7.png"
   },
   {
     "revision": "1ecf80dbdfaa94ba7886649a4aca3e0e",
@@ -108,6 +124,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/SenshuProjectWeb2021_OutLine.6e90e01b.png"
   },
   {
+    "revision": "78a68a22fe46ac6ac4dc69224dab5922",
+    "url": "/img/SpecialNIGHT__thumbnail.78a68a22.png"
+  },
+  {
+    "revision": "85b7b7a89bbcee9b3efb0649b640b390",
+    "url": "/img/SpecialNight.85b7b7a8.png"
+  },
+  {
     "revision": "4eaa087d957f98432f130243895557db",
     "url": "/img/TC2WS.4eaa087d.png"
   },
@@ -140,16 +164,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/waruikusedayo_thumbnail.10654eda.png"
   },
   {
-    "revision": "ff5ba87923cd6bf904e634392b36fdb5",
+    "revision": "e35c1548c2bb9338cc9c9c7c2bcd7ce9",
     "url": "/index.html"
   },
   {
-    "revision": "44e73ac8fb65b1192924",
-    "url": "/js/app.1c7adf97.js"
+    "revision": "f416f4ff4aef08241174",
+    "url": "/js/app.94853325.js"
   },
   {
-    "revision": "1d3ab37908fa71c85f20",
-    "url": "/js/chunk-vendors.1a7e5cd7.js"
+    "revision": "50cb67911f6d36e00875",
+    "url": "/js/chunk-vendors.048b0a30.js"
   },
   {
     "revision": "1d90b8dafed8043bd6f1afe8e428afd8",

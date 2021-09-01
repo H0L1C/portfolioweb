@@ -122,7 +122,7 @@ export default {
     return {
       num: "",
       loading: true,
-      idMax: 10,
+      idMax: 13,
       popupActive: false,
       scrollLook: false,
       move: false,

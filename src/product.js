@@ -119,7 +119,7 @@ const works = [
 
   {
     id: 4,
-    name: "SUISEI MUSIC 'POWER' LIVE",
+    name: "SUISEI MUSIC \n'POWER' LIVE",
     time: "2020/11/22 ",
     position: "制作進行 / 映像制作 / ライブオペレーション ",
     image: require("./assets/images/PowerStation_thumbnail.png"),
@@ -130,7 +130,7 @@ const works = [
         title: "About",
         img: require("./assets/images/PowerStation_live.png"),
         alt: "SUISEI MUSIC 'POWER' LIVE画像",
-        text: "2020年11月22日に行われた「日清食品 POWER STATION [REBOOT]  SUISEI MUSIC 'POWER' LIVE」にて、VirtualizeRealizeチームよりSoundCommunityとして星街すいせい様の映像素材制作・オペレーションなどを一部担当させて頂きました。",
+        text: "2020年11月22日に行われた「日清食品 POWER STATION [REBOOT]  SUISEI MUSIC 'POWER' LIVE」にて、VirtualizeRealizeチームよりSoundCommunityとしてホロライブ所属の星街すいせい様の映像素材制作・オペレーションなどを担当させて頂きました。",
         linktext: "TwitterURL",
         link: "https://twitter.com/VR_ize/status/1330489738751582210?s=20",
       },
@@ -139,6 +139,66 @@ const works = [
 
   {
     id: 5,
+    name: "KMNZ in the 日清食品 \nパワステリブート！",
+    time: "2020/12/06 ",
+    position: "制作進行 / 映像制作 / ライブオペレーション ",
+    image: require("./assets/images/KMNZ_thumbnail.png"),
+    alt: "KMNZサムネイル画像",
+    caption: "映像制作・ライブオペレーション",
+    sections: [
+      {
+        title: "About",
+        img: require("./assets/images/KMNZ.png"),
+        alt: "KMNZライブ画像",
+        text: "2020年12月6日に行われた「KMNZ in the 日清食品パワステリブート！」にて、VirtualizeRealizeチームよりSoundCommunityとしてKMNZ様の映像素材制作・オペレーションなどを担当させて頂きました。",
+        linktext: "TwitterURL",
+        link: "https://twitter.com/nissin_psr/status/1328959987360686080?s=20",
+      },
+    ]
+  },
+
+  {
+    id: 6,
+    name: "花鋏キョウ \nSpecial NIGHT",
+    time: "2020/12/20 ",
+    position: "制作進行 / 映像制作 / ライブオペレーション ",
+    image: require("./assets/images/SpecialNIGHT__thumbnail.png"),
+    alt: "SpecialNIGHTサムネイル画像",
+    caption: "映像制作・ライブオペレーション",
+    sections: [
+      {
+        title: "About",
+        img: require("./assets/images/SpecialNight.png"),
+        alt: "SpecialNIGHT画像",
+        text: "2020年12月20日に行われた「花鋏キョウ Special NIGHT」にて、VirtualizeRealizeチームよりSoundCommunityとしてRe:Act所属の花鋏キョウ様の映像素材制作・オペレーションなどを担当させて頂きました。",
+        linktext: "TwitterURL",
+        link: "https://twitter.com/nissin_psr/status/1328960171721285634?s=20",
+      },
+    ]
+  },
+
+  {
+    id: 7,
+    name: "AI LOVE SAKU LIVE",
+    time: "2021/2/14 ",
+    position: "制作進行 / 映像制作 / ライブオペレーション ",
+    image: require("./assets/images/AI_LOVE_SAKU_LIVE_thumbnail.png"),
+    alt: "AI LOVE SAKU LIVEサムネイル画像",
+    caption: "映像制作・ライブオペレーション",
+    sections: [
+      {
+        title: "About",
+        img: require("./assets/images/AI_LOVE_SAKU_LIVE.png"),
+        alt: "AI LOVE SAKU LIVE画像",
+        text: "2021年2月14日に行われた「AI LOVE SAKU LIVE」にて、VirtualizeRealizeチームよりSoundCommunityとしてKizuna AI様と大原櫻子様の映像素材制作・オペレーションなどを担当させて頂きました。",
+        linktext: "公式レポート",
+        link: "https://panora.tokyo/archives/20714",
+      },
+    ]
+  },
+
+  {
+    id: 8,
     name: "One night drunk",
     time: "2021/03/16 ~ 2021/03/20 ",
     position: "映像制作 ",
@@ -160,7 +220,7 @@ const works = [
 
 
   {
-    id: 6,
+    id: 9,
     name: "廻廻奇譚 \n - cover 一夜一世 -",
     time: "2021/05/29 ~ 2021/06/01 ",
     position: "映像制作 ",
@@ -181,7 +241,7 @@ const works = [
   },
 
   {
-    id: 7,
+    id: 10,
     name: "わるいくせだよ 。",
     time: "2021/05/11 ~ 2021/05/20 ",
     position: "映像制作 ",
@@ -202,7 +262,7 @@ const works = [
   },
 
   {
-    id: 8,
+    id: 11,
     name: "専修大学 \nプロジェクトサイト 2021",
     time: "2021/06/18 ~ 2021/06/28 ",
     position: "Webサイト制作 / 制作進行 / デザインアレンジ  ",
@@ -223,7 +283,7 @@ const works = [
   },
 
   {
-    id: 9,
+    id: 12,
     name: "Digital Stars 2021 \n Reno DJ Set",
     time: "2021/08/29 ~ 2021/08/29 ",
     position: "映像制作",
@@ -244,7 +304,7 @@ const works = [
   },
 
   {
-    id: 10,
+    id: 13,
     name: "TwitchComment 2 \n WebSocket",
     time: "2021/08/29 ~ ",
     position: "デザイン / フロントエンド   ",
