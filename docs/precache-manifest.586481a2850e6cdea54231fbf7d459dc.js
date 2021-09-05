@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/404.html"
   },
   {
-    "revision": "0d0ec6a4f78c1bc5bc4b",
+    "revision": "a2065cb6ccc3ffce0f6d",
     "url": "/css/app.a2f2ff30.css"
   },
   {
@@ -168,12 +168,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/waruikusedayo_thumbnail.10654eda.png"
   },
   {
-    "revision": "c8cb32828ef79e73582c0396785f72a0",
+    "revision": "f23c454c7772d3261c5fb9b524e1205d",
     "url": "/index.html"
   },
   {
-    "revision": "0d0ec6a4f78c1bc5bc4b",
-    "url": "/js/app.62f97dcc.js"
+    "revision": "a2065cb6ccc3ffce0f6d",
+    "url": "/js/app.b3d2c099.js"
   },
   {
     "revision": "85607c9c292cc680da37",

@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       loading: true,
-      ver: "2.2.5",
+      ver: "2.2.6",
       workNum: 8,
       workTitle: "WORKS",
       windowSize: 0,
