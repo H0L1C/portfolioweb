@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import NotFound from '@/components/NotFound.vue'
-import Top from '@/components/Top.vue?version=20210905'
+import Top from '@/components/Top.vue'
 import Product from '@/components/Product.vue'
 import WorkList from '@/components/WorkList.vue'
 import VueLazyload from 'vue-lazyload'
@@ -56,15 +56,6 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: "*",
-      redirect: "NotFound",
-    },
-    {
-      path: '/NotFound',
-      name: 'NotFound',
-      component: NotFound
-    },
-    {
       path: '/',
       name: 'Top',
       component: Top
@@ -73,6 +64,15 @@ export default new Router({
       path: '/Gallery',
       name: 'Gallery',
       component: WorkList
+    },
+    {
+      path: "*",
+      redirect: "NotFound",
+    },
+    {
+      path: '/NotFound',
+      name: 'NotFound',
+      component: NotFound
     },
     {
       path: '/Product/:id',

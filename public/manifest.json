@@ -1,0 +1,9 @@
+{
+    "name": "STUDIO H0L1C",
+    "short_name": "H0L1C",
+    "theme_color": "#fafafa",
+    "background_color": "#fafafa",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+}

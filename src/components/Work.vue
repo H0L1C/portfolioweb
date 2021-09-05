@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import works from "../product.js?version=20210905";
+import works from "../product.js";
 export default {
   data() {
     return {
