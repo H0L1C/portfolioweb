@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import Sidebar from "./components/Sidebar.vue";
+import Sidebar from "./components/sidebar.vue";
 import Hamburger from "./components/Hamburger.vue";
-import Topbtn from "./components/TopBtn.vue";
+import Topbtn from "./components/topbtn.vue";
 
 export default {
   data() {

@@ -37,7 +37,26 @@
           );
         }
       }
-    }(window.location))
+    }(window.location));
+
+    docCookies.setItem("temp", "true");
+    if ("true" == docCookies.getItem("temp")) {
+      if ("true" != docCookies.getItem("refresh")) {
+        docCookies.setItem("refresh", "true");
+        docCookies.removeItem("temp");
+        location.reload(true);
+      } else {
+        docCookies.removeItem("temp");
+      }
+    };
+
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
   </script>
   <style>
     .v-enter-active,

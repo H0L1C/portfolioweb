@@ -16,7 +16,7 @@
 
 <script>
 import WorkMenu from "./WorkMenu.vue";
-import Work from "./Work.vue";
+import Work from "./Work.vue?v2.2.5";
 import Events from "./Events.vue";
 
 export default {

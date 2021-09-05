@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Menu from "./Menu.vue";
+import Menu from "./menu.vue";
 import About from "./About.vue";
 import Work from "./Work.vue";
 import Skill from "./Skill.vue";
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       loading: true,
-      ver: "2.2.4",
+      ver: "2.2.5",
       workNum: 8,
       workTitle: "WORKS",
       windowSize: 0,
