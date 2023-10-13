@@ -196,7 +196,7 @@ const works = [
       },
     ]
   },
-
+/*
   {
     id: 8,
     name: "One night drunk",
@@ -239,7 +239,7 @@ const works = [
       },
     ]
   },
-
+*/
   {
     id: 10,
     name: "わるいくせだよ 。",
@@ -261,6 +261,7 @@ const works = [
     ]
   },
 
+/*
   {
     id: 11,
     name: "専修大学 \nプロジェクトサイト 2021",
@@ -281,7 +282,7 @@ const works = [
       },
     ]
   },
-
+*/
   {
     id: 12,
     name: "Digital Stars 2021 \n Reno DJ Set",
@@ -302,7 +303,7 @@ const works = [
       },
     ]
   },
-
+/*
   {
     id: 13,
     name: "TwitchComment 2 \n WebSocket",
@@ -332,7 +333,7 @@ const works = [
       },
     ]
   },
-
+*/
 
 ]
 
